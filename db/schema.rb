@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110406214437) do
+ActiveRecord::Schema.define(:version => 20110406224303) do
 
   create_table "categories", :force => true do |t|
     t.string   "tags"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20110406214437) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "flickr_user_email"
   end
 
 end
