@@ -46,4 +46,8 @@ Prtfl::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  APPLICATION_API_KEY = "15308080fe510399d83e2b185ed1a073"
+  APPLICATION_SECRET = "b5608a4e7f6512da"
+  
 end
