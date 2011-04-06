@@ -1,0 +1,7 @@
+- if @category.nil?
+  Cette catégorie n'existe pas MEC
+- else
+  #photos
+    - @category.photos.each do |photo|
+      .photo
+        = image_tag photo.flickr_url_b

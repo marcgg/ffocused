@@ -1,0 +1,16 @@
+!!!
+%html
+%head
+  %title= @portfolio.title
+
+%body
+  %h1= @portfolio.title
+  #nav
+    - @portfolio.categories.each do |category|
+      = link_to category.name, "/showcase/#{@portfolio.id}/#{category.id}"
+      
+  = yield 
+
+  #footer
+  #footest
+    powered by me

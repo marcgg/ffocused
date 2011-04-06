@@ -1,0 +1,18 @@
+- if @current_portfolio.flickr_user_id.blank?  
+  Your account aint setup, you crazy!
+  - form_for @current_portfolio do |f|
+    = f.label :title
+    = f.text_field :title
+    
+    = f.label :flickr_user_name
+    = f.text_field :flickr_user_name
+    
+    = f.label :description
+    = f.text_field :description
+
+    = f.submit
+- else
+  Gr8 mec, tu es:
+  = debug @current_portfolio
+  
+  = link_to "Categories", categories_path

@@ -1,0 +1,3 @@
+%h2= @category.name
+- @category.photos.each do |photo|
+  = image_tag photo.flickr_url_s

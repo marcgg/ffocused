@@ -1,0 +1,17 @@
+Catégories actuelles la:
+
+- @categories.each do |category|
+  .category #{category.name} (#{category.tags})
+
+- form_for Category.new do |f|
+  = f.label :tags
+  = f.text_field :tags
+  
+  = f.label :name
+  = f.text_field :name
+  
+  = f.label :description
+  = f.text_field :description
+  
+  = f.submit
+  
