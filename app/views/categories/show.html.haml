@@ -1,3 +1,8 @@
 %h2= @category.name
-- @category.photos.each do |photo|
-  = image_tag photo.flickr_url_s
+= link_to t("categories.show.back"), categories_path
+
+%ul#photos
+  - @category.photos.each do |photo|
+    %li.photo
+      = image_tag photo.flickr_url_s
+      %span.title= photo.title

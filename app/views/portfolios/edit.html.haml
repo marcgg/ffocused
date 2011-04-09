@@ -1,0 +1,15 @@
+%h2= t("portfolios.edit.#{params[:type]}.title")
+- form_for @current_portfolio do |f|
+  - if params[:type] == "settings" 
+    = f.label :title
+    = f.text_field :title
+
+    = f.label :description
+    = f.text_area :description
+  
+  - if params[:type] == "theme"
+    = f.label :css
+    = f.text_area :css
+    
+  .submit_wrapper
+    = f.submit t("portfolios.show.setup_button")

@@ -1,17 +1,27 @@
-Catégories actuelles la:
+%p=raw t("categories.index.blurb")
+%p= link_to t("categories.index.new_category"), "#", :class => "show-rel", :rel => "#new-category"
 
-- @categories.each do |category|
-  .category #{category.name} (#{category.tags})
+#new-category{:style => (@categories.empty? ? "" : "display:none")}
+  - form_for Category.new do |f|
+    = f.label :tags
+    = f.text_field :tags
+  
+    = f.label :name
+    = f.text_field :name
+  
+    = f.label :description
+    = f.text_area :description
+  
+    .submit-wrapper
+      = f.submit
 
-- form_for Category.new do |f|
-  = f.label :tags
-  = f.text_field :tags
-  
-  = f.label :name
-  = f.text_field :name
-  
-  = f.label :description
-  = f.text_field :description
-  
-  = f.submit
+%h2= t("categories.index.all_categories")
+%ul#categories
+  - @categories.each do |category|
+    %li.category
+      = link_to category.name, category_path(category)
+      (#{category.tags})
+      , #{category.photos.count} Photos
+
+
   

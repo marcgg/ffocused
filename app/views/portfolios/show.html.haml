@@ -1,5 +1,6 @@
 - if @current_portfolio.flickr_user_id.blank?  
-  Your account aint setup, you crazy!
+  %p=raw t("portfolios.show.not_setup")
+  
   - form_for @current_portfolio do |f|
     = f.label :title
     = f.text_field :title
@@ -8,11 +9,10 @@
     = f.text_field :flickr_user_email
     
     = f.label :description
-    = f.text_field :description
+    = f.text_area :description
 
-    = f.submit
+    .submit_wrapper
+      = f.submit t("portfolios.show.setup_button")
+    
 - else
-  Gr8 mec, tu es:
-  = debug @current_portfolio
-  
-  = link_to "Categories", categories_path
+  %p=raw t("portfolios.show.setup_ok", :flickr_user_name => @current_portfolio.flickr_user_name)

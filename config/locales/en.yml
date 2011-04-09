@@ -3,3 +3,45 @@
 
 en:
   app_name: PRTFL
+  success: Success!
+  back:
+    title: "RLVNT Portfolio"
+    nav:
+      categories: Categories
+      home: Home
+      theme: Theme
+      settings: Settings
+      
+  portfolios:
+    show:
+      setup_ok: |
+        Alright, your account has been setup properly to the flickr account <strong>%{flickr_user_name}</strong>.<br />
+        Have fun playing around in the backoffice.
+      not_setup: |
+        To get started, you first need to link your account with your Flickr user. You can only link to one user. <br />
+        While you're at it, you might as well set a title & description for your portfolio!
+      setup_button: "Let's get started!"
+    update:
+      notice_text: Settings have been updated.
+    edit:
+      theme:
+        title: Theme
+      settings:
+        title: Settings
+        
+  categories:
+    index:
+      blurb: |
+        Categories allow you to sort your photos. Each category is linked to one or more Flickr tags.<br />
+        Keep in mind that you can only display a maximum of <strong>15</strong> photos.
+      new_category: Create a New Category
+      all_categories: Current Categories
+    show:
+      back: "<< Back to Categories"
+  
+  activerecord:
+    attributes:
+      portfolio:
+        title: Your Portfolio's Title*
+        description: Description used in the 'about' page*
+        flickr_user_email: Email used on Flickr*

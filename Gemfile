@@ -7,6 +7,7 @@ gem 'haml'
 gem 'ruby-debug'
 gem 'curb'
 gem 'json'
+gem 'compass'
 
 group :test, :test do
   gem 'rspec'

@@ -2,15 +2,23 @@
 %html
 %head
   %title= @portfolio.title
-
-%body
-  %h1= @portfolio.title
-  #nav
+  %style{:media => "screen", :rel => "stylesheet", :type => "text/css" }
+    = @portfolio.css
+    
+%body{:id => @category.blank? ? "" : "category-#{@category.id}"}
+  %header
+    %h1= @portfolio.title
+    %p= @portfolio.description
+    
+  %nav
     - @portfolio.categories.each do |category|
-      = link_to category.name, "/showcase/#{@portfolio.id}/#{category.id}"
-      
-  = yield 
+      .nav-link-wrapper
+        = link_to category.name, "/showcase/#{@portfolio.id}/#{category.id}"
+  
+  #content 
+    = yield 
 
-  #footer
+  %footer
+  
   #footest
-    powered by me
+    Portfolio powered by RLVNT, original theme by @marcgg

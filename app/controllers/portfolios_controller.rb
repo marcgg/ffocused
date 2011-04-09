@@ -5,12 +5,16 @@ class PortfoliosController < ApplicationController
   
   def new
     @portfolio = Portfolio.new
+    render :layout => "home"
   end
 
   def create
     # FIXME: security
     @portfolio = Portfolio.create!(params[:portfolio])
     redirect_to portfolio_path(@portfolio)
+  end
+
+  def edit
   end
 
   def show
@@ -20,6 +24,7 @@ class PortfoliosController < ApplicationController
 
   def update
     # FIXME: security
+    flash[:notice] = {:title =>t("success"), :text => t("portfolios.update.notice_text")}
     @current_portfolio.update_attributes(params[:portfolio])
     redirect_to portfolio_path(@current_portfolio)
   end

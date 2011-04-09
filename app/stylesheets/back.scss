@@ -1,0 +1,140 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/reset/utilities";
+@include reset-html5;
+
+/* Generalities */
+body{
+  font-family:"Arial";
+}
+
+a{
+  color:#333;
+  text-decoration:none;
+}
+a:hover{
+ text-decoration:underline;
+}
+p{
+  color:#333; 
+  margin: 20px 0px;
+}
+
+strong{
+  background-color:yellow;
+}
+h2{
+  font-size: 1.5em;
+  margin: 0px 0px 10px 0px;
+}
+ul{
+  list-style-type:none;
+}
+
+/* Header */
+header{
+  padding:20px;
+  background-color:#fff;
+  border-bottom: 2px solid #333;
+}
+
+h1{
+  font-size: 2em;
+  background-color:yellow;
+  display:inline-block;
+  font-weight:bold;
+}
+#showcase-link{
+  float:right;
+  display:inline-block;
+  margin:10px;
+}
+
+/* Navigation */
+nav{
+  padding: 0px 20px;
+  .selected{
+    background-color:yellow;
+    font-weight:bold;
+  }
+  a{
+    display:inline-block;
+    border: 2px solid #333;
+    border-top:0px !important;
+    padding: 10px;
+    margin: 0px 10px 0px 0px;
+  }
+  a:hover{
+    text-decoration:none;
+    background-color:#333;
+    color:#fff;
+  }
+}
+
+/* Content */
+#content{
+  margin: 20px;
+}
+
+/* Footer */
+footer{
+  background-color:#333;
+  z-index:30;
+  width:100%;
+  height:10px;
+  margin-top: 100px;
+}
+
+/* Forms */
+label{
+  display:block;
+  margin-top: 15px;
+}
+input[type=text], textarea{
+  width: 450px;
+  padding: 5px;
+  border: 1px solid #333;
+  font-size: 1em;
+  margin-top:5px;
+  color:#555;
+}
+textarea{
+  height:200px;
+}
+.submit_wrapper{
+  margin-top: 15px;
+  input{
+   padding: 5px; 
+  }
+}
+
+/* Photos */
+#photos{
+  margin-top: 20px;
+  .photo{
+    height:85px;
+    .title{
+      font-size: 1.3em;
+      display:inline-block;
+      padding-top:27px;
+    }
+    *{
+      float:left;
+    }
+    img{
+      margin-right: 20px;
+    }
+  }
+}
+
+/* Categories */
+.category{
+  a{
+   text-decoration:underline;
+   font-weight:bold;
+  }
+}

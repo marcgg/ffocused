@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110406224303) do
+ActiveRecord::Schema.define(:version => 20110409225145) do
 
   create_table "categories", :force => true do |t|
     t.string   "tags"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110406224303) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "flickr_id"
   end
 
   create_table "portfolios", :force => true do |t|
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20110406224303) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "flickr_user_email"
+    t.text     "css"
   end
 
 end

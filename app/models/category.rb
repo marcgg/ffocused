@@ -13,7 +13,9 @@ class Category < ActiveRecord::Base
         :flickr_photo_id => flickr_photo_id,
         :flickr_url_b => flickr_url_b,
         :flickr_url_s => flickr_url_s,
-        :category_id => self.id
+        :flickr_id => photo["id"],
+        :category_id => self.id,
+        :title => photo["title"]
       )
     end
   end
