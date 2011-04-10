@@ -205,27 +205,27 @@ textarea {
   padding: 5px;
 }
 
-/* Photos */
+/* Lists */
 /* line 116, ../../../app/stylesheets/back.scss */
-#photos {
+ul {
   margin-top: 20px;
 }
 /* line 118, ../../../app/stylesheets/back.scss */
-#photos .photo {
+ul li {
   height: 85px;
 }
 /* line 120, ../../../app/stylesheets/back.scss */
-#photos .photo .title {
+ul li .title {
   font-size: 1.3em;
   display: inline-block;
   padding-top: 27px;
 }
 /* line 125, ../../../app/stylesheets/back.scss */
-#photos .photo * {
+ul li * {
   float: left;
 }
 /* line 128, ../../../app/stylesheets/back.scss */
-#photos .photo img {
+ul li img {
   margin-right: 20px;
 }
 

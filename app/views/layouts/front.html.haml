@@ -2,8 +2,11 @@
 %html
 %head
   %title= @portfolio.title
-  %style{:media => "screen", :rel => "stylesheet", :type => "text/css" }
-    = @portfolio.css
+  - if @portfolio.css.blank?
+    = stylesheet_link_tag "default_css"
+  - else
+    %style{:media => "screen", :rel => "stylesheet", :type => "text/css" }
+      = @portfolio.css
     
 %body{:id => @category.blank? ? "" : "category-#{@category.id}"}
   %header
@@ -12,19 +15,23 @@
     
   %nav
     - @portfolio.categories.each do |category|
-      .nav-link-wrapper
+      .nav-link-wrapper{:class => (!@category.nil? and @category.id == category.id ? "selected" : "")}
         = link_to category.name, "/showcase/#{@portfolio.id}/#{category.id}"
-  
+    .nav-link-wrapper.about{:class => (@category.nil? ? "selected" : "")}
+      = link_to "About", "/showcase/#{@portfolio.id}/about"
+      
   #content 
     = yield 
 
   %footer
   
-  / If really necessary, removing credits can be done by contacting us directly.
-  / In the meantime, do not remove credits using CSS or face our wrath.
-  / Feel free to style it, just keep it visible somehow.
+  / 
+    If really necessary, removing credits can be done by contacting us directly.
+    In the meantime, do not remove credits using CSS or face our wrath.
+    Feel free to style it, but please be nice and keep it visible somehow.
+    
   #footest
     %span.rlvnt 
       Portfolio powered by RLVNT
     %span.theme
-      Original theme by @marcgg underline license Creative Commons
+      Original theme by @marcgg under license Creative Commons

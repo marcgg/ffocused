@@ -14,6 +14,13 @@ class PortfoliosController < ApplicationController
     redirect_to portfolio_path(@portfolio)
   end
 
+  def order_categories
+    params[:item_ids].each_with_index do |item_id, i|
+      @current_portfolio.categories.find(item_id).update_attribute(:position, i)
+    end
+    render :nothing => true
+  end
+
   def edit
   end
 

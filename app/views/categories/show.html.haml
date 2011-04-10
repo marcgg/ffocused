@@ -1,8 +1,8 @@
 %h2= @category.name
 = link_to t("categories.show.back"), categories_path
 
-%ul#photos
+%ul#photos.sortable{:rel => order_photos_category_path(@category)}
   - @category.photos.each do |photo|
-    %li.photo
+    %li.photo{:rel => photo.id}
       = image_tag photo.flickr_url_s
       %span.title= photo.title

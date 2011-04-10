@@ -1,11 +1,19 @@
 class CategoriesController < ApplicationController
   layout 'back'
-  
+    
   def index
     @categories = @current_portfolio.categories
   end
 
   def edit
+  end
+  
+  def order_photos
+    @category = @current_portfolio.categories.find(params[:id])
+    params[:item_ids].each_with_index do |item_id, i|
+      @category.photos.find(item_id).update_attribute(:position, i)
+    end
+    render :nothing => true
   end
   
   def create

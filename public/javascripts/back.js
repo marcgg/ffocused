@@ -1,6 +1,33 @@
 $(function(){
+  setupCsrf();
   initHelpers();
+  initSortables();
 });
+
+
+/* Security */
+function setupCsrf(){
+  $(document).ajaxSend(function(e, xhr, options) {
+    var token = $("meta[name='csrf-token']").attr("content");
+    xhr.setRequestHeader("X-CSRF-Token", token);
+  });
+}
+
+/* Sortable Lists */
+function initSortables(){
+  $(".sortable").sortable();
+  
+  $(".sortable").bind( "sortupdate", function(event, ui) {
+    var items = new Array();
+    var $this = $(this);
+    var i = 0;
+    $(".sortable li").each(function(){
+      items[i] = $(this).attr("rel")
+      i++;
+    });
+    $.post($this.attr("rel"), {item_ids: items});
+  });
+}
 
 /* Simple snippets */
 function initHelpers(){

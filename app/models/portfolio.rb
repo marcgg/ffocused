@@ -1,5 +1,5 @@
 class Portfolio < ActiveRecord::Base
-  has_many :categories
+  has_many :categories, :order => "position ASC"
   
   before_save :save_flickr_user_id, :if => Proc.new{ |app| app.changes.keys.include?("flickr_user_email")}
   

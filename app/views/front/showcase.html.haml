@@ -1,14 +1,17 @@
 - if @category.nil?
-  Cette catégorie n'existe pas MEC
-- else
-  #category-description
-    %h2.name= @category.name
-    .description= @category.description
+  #error-404
+    This category doesn't exist, sorry.
     
-  #photos
-    - @category.photos.each do |photo|
-      .photo{:id => "photo-#{photo.flickr_id}"}
-        .image-wrapper= image_tag photo.flickr_url_b
-        .description-wrapper
-          %h3= photo.title
-          %p= photo.description
+- else
+  #main-content
+    #category-description
+      %h2.name= @category.name
+      .description= @category.description
+    
+    #photos
+      - @category.photos.each do |photo|
+        .photo{:id => "photo-#{photo.flickr_id}"}
+          .image-wrapper= image_tag photo.flickr_url_b
+          .description-wrapper
+            %h3= photo.title
+            %p= photo.description

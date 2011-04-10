@@ -16,12 +16,11 @@
       = f.submit
 
 %h2= t("categories.index.all_categories")
-%ul#categories
+%ul#categories.sortable{:rel => order_categories_portfolios_path}
   - @categories.each do |category|
-    %li.category
-      = link_to category.name, category_path(category)
-      (#{category.tags})
-      , #{category.photos.count} Photos
-
-
-  
+    %li.category{:rel => category.id}
+      = image_tag category.photos.find(:first).flickr_url_s
+      .title
+        = link_to category.name, category_path(category)
+        &nbsp;(#{category.tags})
+        , #{category.photos.count} Photos

@@ -1,8 +1,8 @@
 class FrontController < ApplicationController
   skip_before_filter :find_current_portfolio
+  before_filter :find_front_portfolio
   
   def showcase
-    @portfolio = Portfolio.find(params[:id])
     if params[:category_id].blank?
       @category = @portfolio.categories.first
     else
@@ -10,4 +10,11 @@ class FrontController < ApplicationController
     end
   end
 
+  def about
+  end
+  
+  private 
+  def find_front_portfolio
+    @portfolio = Portfolio.find(params[:id])
+  end
 end
