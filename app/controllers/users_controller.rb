@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Registration successful."
-      redirect_to root_url
+      redirect_to portfolio_path(@user.portfolio)
     else
       render :action => 'new'
     end
