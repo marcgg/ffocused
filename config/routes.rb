@@ -1,7 +1,12 @@
 Prtfl::Application.routes.draw do
   get "/showcase/:id/about" => "front#about"
   get "/showcase/:id(/:category_id)" => "front#showcase"
-
+  
+  resources :users
+  resources :user_sessions
+  match "/login" => "user_sessions#new"
+  match "/logout" => "user_sessions#destroy"
+  
   root :to => "home#index"
   
   resources :portfolios do

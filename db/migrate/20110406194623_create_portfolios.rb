@@ -6,8 +6,7 @@ class CreatePortfolios < ActiveRecord::Migration
       t.text :footer
       t.string :flickr_user_name
       t.string :flickr_user_id
-      t.string :email
-
+      t.integer :user_id
       t.timestamps
     end
   end

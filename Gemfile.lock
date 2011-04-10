@@ -29,6 +29,8 @@ GEM
       activesupport (= 3.0.6)
     activesupport (3.0.6)
     arel (2.0.9)
+    authlogic (2.1.6)
+      activesupport
     builder (2.1.2)
     columnize (0.3.2)
     compass (0.10.6)
@@ -91,6 +93,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic
   compass
   curb
   haml

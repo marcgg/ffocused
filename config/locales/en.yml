@@ -4,6 +4,8 @@
 en:
   app_name: PRTFL
   success: Success!
+  error: Error
+  logout: Logout
   back:
     title: "RLVNT Portfolio"
     nav:
@@ -23,6 +25,7 @@ en:
       setup_button: "Let's get started!"
     update:
       notice_text: Settings have been updated.
+      wrong_email: This email doesn't seem to be linked to a valid Flickr account
     edit:
       theme:
         title: Theme

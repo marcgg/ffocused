@@ -43,6 +43,6 @@ function startGritter(my_title, my_text){
 		title: my_title,
 		text: my_text,
 		sticky: false,
-		time: 3000
+		time: 5000
 	});
 }

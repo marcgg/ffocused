@@ -8,6 +8,7 @@ gem 'ruby-debug'
 gem 'curb'
 gem 'json'
 gem 'compass'
+gem 'authlogic'
 
 group :test, :test do
   gem 'rspec'

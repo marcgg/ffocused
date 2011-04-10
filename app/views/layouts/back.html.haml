@@ -8,15 +8,24 @@
   = csrf_meta_tag 
 
 %body
-  - unless flash.blank?
+  - unless flash.nil? or flash[:notice].blank?
     :javascript
       $(function(){
         startGritter("#{escape_javascript flash[:notice][:title]}", "#{escape_javascript flash[:notice][:text]}");
       });
-    
+      
+  - unless flash.nil? or flash[:error].blank?
+    :javascript
+      $(function(){
+        startGritter("#{escape_javascript flash[:error][:title]}", "#{escape_javascript flash[:error][:text]}");
+      });
+        
   %header
     %h1= t("back.title")
-  
+    #logout
+      Logged in as #{current_user.email}
+      = link_to t("logout"), "/logout"
+    
   - if @current_portfolio.setup?
     = render :partial => "/shared/nav"
     
