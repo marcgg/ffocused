@@ -1,5 +1,6 @@
 - if current_user
   #logout= link_to t("logout"), "/logout"
+  #account= link_to t("account"), portfolio_path(current_user.portfolio)
 - else
   #login= link_to t("login"), "/login"
   or

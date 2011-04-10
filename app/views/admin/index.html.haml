@@ -1,0 +1,17 @@
+%h2 Users
+
+%table#users
+  %tr
+    %th ID
+    %th Email
+    %th Title
+    %th Description
+    %th Categories
+    
+  - @users.each do |user|
+    %tr
+      %td= user.id
+      %td= user.email
+      %td= user.portfolio.title
+      %td= user.portfolio.description
+      %td= user.portfolio.categories.count

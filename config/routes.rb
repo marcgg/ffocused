@@ -1,4 +1,7 @@
 Prtfl::Application.routes.draw do
+  resources :themes
+  match "/admin" => "admin#index"
+
   get "/showcase/:id/about" => "front#about"
   get "/showcase/:id(/:category_id)" => "front#showcase"
   

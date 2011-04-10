@@ -7,6 +7,7 @@ en:
   error: Error
   logout: Logout
   login: Login
+  logged_in: "Logged in as %{mail}"
   or: or
   back:
     title: "RLVNT Portfolio"
@@ -41,6 +42,7 @@ en:
         Keep in mind that you can only display a maximum of <strong>15</strong> photos.
       new_category: Create a New Category
       all_categories: Current Categories
+      first_time: Go ahead and create your first category
     show:
       back: "<< Back to Categories"
   

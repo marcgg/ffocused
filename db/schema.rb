@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110410191102) do
+ActiveRecord::Schema.define(:version => 20110410220153) do
 
   create_table "categories", :force => true do |t|
     t.string   "tags"
-    t.string   "name"
+    t.string   "title"
     t.text     "description"
     t.string   "slug"
     t.integer  "position"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(:version => 20110410191102) do
     t.datetime "updated_at"
     t.string   "flickr_user_email"
     t.text     "css"
+    t.integer  "theme_id"
+  end
+
+  create_table "themes", :force => true do |t|
+    t.text     "css"
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
@@ -56,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20110410191102) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_admin"
   end
 
 end

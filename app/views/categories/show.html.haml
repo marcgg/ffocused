@@ -1,4 +1,4 @@
-%h2= @category.name
+%h2= @category.title
 = link_to t("categories.show.back"), categories_path
 
 %ul#photos.sortable{:rel => order_photos_category_path(@category)}

@@ -1,0 +1,29 @@
+%h2 Themes
+%h3 New
+- form_for Theme.new do |f|
+  = f.label :name
+  = f.text_field :name
+  
+  = f.label :css
+  = f.text_area :css
+  
+  = f.label :user_id
+  = f.select(:user_id, options_from_collection_for_select(User.all, :id, :email) )
+  
+  = f.submit
+
+%h3 List
+%table
+  %tr
+    %th ID
+    %th Name
+    %th User
+    %th &nbsp;
+  
+  - @themes.each do |theme|
+    %tr
+      %td= theme.id
+      %td= theme.name
+      %td= theme.user.email
+      %td
+        = link_to "Edit", edit_theme_path(theme)
