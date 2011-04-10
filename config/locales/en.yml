@@ -6,6 +6,8 @@ en:
   success: Success!
   error: Error
   logout: Logout
+  login: Login
+  or: or
   back:
     title: "RLVNT Portfolio"
     nav:

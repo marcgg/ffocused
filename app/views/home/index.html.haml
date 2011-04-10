@@ -1,3 +1,7 @@
-
-#register= link_to "Create an account", new_user_path
-#login= link_to "login", "/login"
+- if current_user
+  #logout= link_to t("logout"), "/logout"
+- else
+  #login= link_to t("login"), "/login"
+  or
+  #register= link_to "Create an account", new_user_path
+  
