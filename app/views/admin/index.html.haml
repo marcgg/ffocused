@@ -7,6 +7,7 @@
     %th Title
     %th Description
     %th Categories
+    %th Link
     
   - @users.each do |user|
     %tr
@@ -15,3 +16,4 @@
       %td= user.portfolio.title
       %td= user.portfolio.description
       %td= user.portfolio.categories.count
+      %td= showcase_path(:slug => user.portfolio.slug)
