@@ -26,6 +26,6 @@
       %li.category{:rel => category.id}
         = image_tag category.photos.find(:first).flickr_url_s
         .title
-          = link_to category.name, category_path(category)
+          = link_to category.title, category_path(category)
           &nbsp;(#{category.tags})
           , #{category.photos.count} Photos
