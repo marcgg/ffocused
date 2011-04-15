@@ -16,4 +16,8 @@
       %td= user.portfolio.title
       %td= user.portfolio.description
       %td= user.portfolio.categories.count
-      %td= showcase_path(:slug => user.portfolio.slug)
+      %td
+        - if user.portfolio.slug
+          = showcase_path(:slug => user.portfolio.slug)
+        - else
+          No Slug
