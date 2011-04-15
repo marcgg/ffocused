@@ -9,4 +9,3 @@
   
   - if current_user.is_admin?
     = link_to t("back.nav.admin"), "/admin", :class => ((controller.controller_name == "admin")? "selected" : "")
-    = link_to t("back.nav.admin_themes"), themes_path, :class => ((controller.controller_name == "themes")? "selected" : "")
