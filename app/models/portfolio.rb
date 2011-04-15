@@ -1,8 +1,12 @@
 class Portfolio < ActiveRecord::Base
+  validates_uniqueness_of :slug
   belongs_to :user
   has_many :categories, :order => "position ASC"
-  belongs_to :theme
   before_save :save_flickr_user_id, :if => Proc.new{ |app| app.changes.keys.include?("flickr_user_email")}
+  
+  def theme
+    THEMES[theme_id]
+  end
   
   def save_flickr_user_id
     res = Flickr::Request.call_method("people.findByEmail", {:find_email => flickr_user_email})

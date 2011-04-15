@@ -18,6 +18,8 @@ en:
       settings: Settings
       
   portfolios:
+    theme:
+      your_own: Use the CSS Editor
     show:
       setup_ok: |
         Alright, your account has been setup properly to the flickr account <strong>%{flickr_user_name}</strong>.<br />

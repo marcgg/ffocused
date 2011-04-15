@@ -1,21 +1,16 @@
 %h2= t("portfolios.edit.#{params[:type]}.title")
+
 - form_for @current_portfolio do |f|
   - if params[:type] == "settings" 
-    = f.label :title
-    = f.text_field :title
-
-    = f.label :description
-    = f.text_area :description
-  
-    = f.label :footer
-    = f.text_area :footer
+    = render :partial => "form", :locals => {:f => f}
   
   - if params[:type] == "theme"
+    = f.label :theme_id
+    = f.select(:theme_id, options_for_select([[t("portfolios.theme.your_own"), ""]] + THEMES.map{|k,v| [v[:title], k]}, @current_portfolio.theme_id))
+  
     = f.label :css
     = f.text_area :css
     
-    = f.label :theme_id
-    = f.select(:theme_id, options_from_collection_for_select(Theme.all, :id, :name), :include_blank => true )
     
   .submit_wrapper
     = f.submit t("portfolios.show.setup_button")

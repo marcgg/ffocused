@@ -1,7 +1,10 @@
 New user!
 = debug @user.errors
 
-- form_for @user do |f|   
+- form_for @user do |f|
+  = f.label :login 
+  = f.text_field :login
+  
   = f.label :email 
   = f.text_field :email
   

@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   def setup_portfolio
     Portfolio.create!(:title => "My Portfolio", :description => "It is pretty great.", :user_id => id)
   end
+  
+  def self.find_by_login_or_email(login)
+     find_by_login(login) || find_by_email(login)
+  end
 end

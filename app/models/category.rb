@@ -2,6 +2,7 @@ class Category < ActiveRecord::Base
   after_create :set_photos_from_flickr
   belongs_to :portfolio
   has_many :photos, :order => "position ASC"
+  validates_uniqueness_of :slug, :scope => :portfolio_id
   
   def set_photos_from_flickr
     res = Flickr::Request.call_method("photos.search", {:user_id => portfolio.flickr_user_id, :tags => tags})

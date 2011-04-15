@@ -2,14 +2,7 @@
   %p=raw t("portfolios.show.not_setup")
   
   - form_for @current_portfolio do |f|
-    = f.label :title
-    = f.text_field :title
-    
-    = f.label :flickr_user_email
-    = f.text_field :flickr_user_email
-    
-    = f.label :description
-    = f.text_area :description
+    = render :partial => "form", :locals => {:f => f}
 
     .submit_wrapper
       = f.submit t("portfolios.show.setup_button")

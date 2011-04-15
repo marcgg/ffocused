@@ -2,26 +2,23 @@
 %html
 %head
   %title= @portfolio.title
-  - if @portfolio.css.blank? and @portfolio.theme.nil?
-    = stylesheet_link_tag "default_css"
-  - else
+  - if @portfolio.theme_id.blank?
     %style{:media => "screen", :rel => "stylesheet", :type => "text/css" }
-      - if @portfolio.theme.nil?
-        = @portfolio.css
-      - else
-        = @portfolio.theme.css
+      = @portfolio.css
+  - else
+    = stylesheet_link_tag "themes/#{@portfolio.theme[:code]}"
     
 %body{:id => @category.blank? ? "" : "category-#{@category.id}"}
   %header
     %h1= @portfolio.title
     %p= @portfolio.description
-  
+
   %nav
     - @portfolio.categories.each do |category|
       .nav-link-wrapper{:class => (!@category.nil? and @category.id == category.id ? "selected" : "")}
-        = link_to category.title, "/showcase/#{@portfolio.id}/#{category.id}"
+        = link_to category.title, showcase_path(:slug => @portfolio.slug, :category_slug => category.slug)
     .nav-link-wrapper.about{:class => (@category.nil? ? "selected" : "")}
-      = link_to "About", "/showcase/#{@portfolio.id}/about"
+      = link_to "About", about_path(:slug => @portfolio.slug)
       
   #content 
     = yield 
@@ -37,6 +34,6 @@
   #footest
     %span.rlvnt 
       Portfolio powered by RLVNT
-    - unless @portfolio.theme.nil?
+    - unless @portfolio.theme_id.blank?
       %span.theme
-        Original theme by #{@portfolio.theme.user.email} under license Creative Commons
+        Original theme by #{@portfolio.theme[:user]} under license Creative Commons

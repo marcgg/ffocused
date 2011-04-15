@@ -1,14 +1,13 @@
 Prtfl::Application.routes.draw do
-  resources :themes
   match "/admin" => "admin#index"
 
-  get "/showcase/:id/about" => "front#about"
-  get "/showcase/:id(/:category_id)" => "front#showcase"
+  get "/photos/:slug/about" => "front#about", :as => :about
+  get "/photos/:slug(/:category_slug)" => "front#showcase", :as => :showcase
   
   resources :users
   resources :user_sessions
-  match "/login" => "user_sessions#new"
-  match "/logout" => "user_sessions#destroy"
+  match "/login" => "user_sessions#new", :as => :login
+  match "/logout" => "user_sessions#destroy", :as => :logout
   
   root :to => "home#index"
   

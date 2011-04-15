@@ -15,7 +15,7 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-    @current_portfolio.update_attributes(params[:portfolio])
+    @current_portfolio.update_attributes!(params[:portfolio])
     if @current_portfolio.flickr_user_name.blank?
       flash[:error] = {:title =>t("error"), :text => t("portfolios.update.wrong_email")}
     else

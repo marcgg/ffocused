@@ -14,7 +14,7 @@
     %h1= t("back.title")
     #logout
       = t("logged_in", :mail => current_user.email)
-      = link_to t("logout"), "/logout"
+      = link_to t("logout"), logout_path
     
   - if @current_portfolio.setup?
     = render :partial => "/shared/nav"
