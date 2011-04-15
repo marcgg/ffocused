@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   after_create :setup_portfolio
    
   def setup_portfolio
-    Portfolio.create!(:title => "My Portfolio", :description => "It is pretty great.", :user_id => id)
+    Portfolio.create!(:title => "My Portfolio", :description => "It is pretty great.", :user_id => id, :slug => login)
   end
   
   def self.find_by_login_or_email(login)
