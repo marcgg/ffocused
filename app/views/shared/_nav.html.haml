@@ -1,6 +1,3 @@
-- if @current_portfolio.setup?
-  = link_to "Access Your Website", showcase_path(:slug => @current_portfolio.slug), :id => "showcase-link"
-  
 %nav
   = link_to t("back.nav.home"), portfolio_path(@current_portfolio), :class => ((controller.controller_name == "portfolios" and controller.action_name == "show")? "selected" : "")
   = link_to t("back.nav.categories"), categories_path, :class => ((controller.controller_name == "categories")? "selected" : "")

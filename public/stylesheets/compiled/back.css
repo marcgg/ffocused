@@ -197,11 +197,11 @@ textarea {
 }
 
 /* line 108, ../../../app/stylesheets/back.scss */
-.submit_wrapper {
+.submit-wrapper {
   margin-top: 15px;
 }
 /* line 110, ../../../app/stylesheets/back.scss */
-.submit_wrapper input {
+.submit-wrapper input {
   padding: 5px;
 }
 

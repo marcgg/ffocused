@@ -1,10 +1,9 @@
-Login!
-
 - form_for @user_session do |f|
   = f.label :login
-  = f.text_field :login
+  = f.text_field :login, :class => "text"
   
   = f.label :password
-  = f.password_field :password
+  = f.password_field :password, :class => "text"
   
-  = f.submit
+  .submit-wrapper
+    = f.submit t("login")

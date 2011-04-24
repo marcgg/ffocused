@@ -7,7 +7,7 @@ en:
   error: Error
   logout: Logout
   login: Login
-  logged_in: "Logged in as %{mail}"
+  logged_in: "Hey %{name}! "
   or: or
   back:
     title: "RLVNT Portfolio"
@@ -16,6 +16,14 @@ en:
       home: Home
       theme: Theme
       settings: Settings
+    footer:
+      home: Home
+      contact: Contact
+      twitter: Twitter
+      Terms: Terms
+      copyright: "Copyright &copy 2011 RLVNT"
+    header:
+      view_website: View Your Website
       
   portfolios:
     theme:
@@ -40,7 +48,7 @@ en:
   categories:
     index:
       blurb: |
-        Categories allow you to sort your photos. Each category is linked to one or more Flickr tags.<br />
+        Categories allow you to sort your photos. Each category is linked to one or more Flickr tags.
         Keep in mind that you can only display a maximum of <strong>15</strong> photos.
       new_category: Create a New Category
       all_categories: Current Categories

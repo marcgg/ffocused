@@ -1,5 +1,6 @@
 class UserSessionsController < ApplicationController
   skip_before_filter :find_current_portfolio
+  layout "back"
   
   def new
     @user_session = UserSession.new

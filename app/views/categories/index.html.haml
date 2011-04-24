@@ -1,3 +1,5 @@
+%h2= t("categories.index.all_categories")
+
 %p=raw t("categories.index.blurb")
 
 - if @categories.empty?
@@ -23,7 +25,6 @@
       = f.submit
       
 - unless @categories.empty?
-  %h2= t("categories.index.all_categories")
   %ul#categories.sortable{:rel => order_categories_portfolios_path}
     - @categories.each do |category|
       %li.category{:rel => category.id}

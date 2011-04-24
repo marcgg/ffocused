@@ -9,19 +9,31 @@
 
 %body
   = render :partial => "/shared/errors"
-        
   %header
-    %h1= t("back.title")
-    #logout
-      = t("logged_in", :mail => current_user.email)
-      = link_to t("logout"), logout_path
-    
-  - if @current_portfolio.setup?
+    .grid
+      %h1 &nbsp;
+      - unless @current_user.nil?
+        #logout
+          = t("logged_in", :name => current_user.login)
+          = link_to t("logout"), logout_path
+          
+      - if @current_portfolio and @current_portfolio.setup?
+        = link_to t("back.header.view_website"), showcase_path(:slug => @current_portfolio.slug), :id => "showcase-link"
+  
+  - if @current_portfolio and @current_portfolio.setup?
     = render :partial => "/shared/nav"
     
-  #content
-    = yield 
+    #content
+      = yield 
 
   %footer
-    &nbsp;
-  
+    .grid
+      .extra-nav
+        = link_to t("back.footer.home")
+        = link_to t("back.footer.contact")
+        = link_to t("back.footer.twitter")
+        = link_to t("back.footer.terms")
+        
+      .extra-details
+        =raw t("back.footer.copyright")
+      
