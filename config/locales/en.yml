@@ -35,7 +35,7 @@ en:
       not_setup: |
         To get started, you first need to link your account with your Flickr user. You can only link to one user. <br />
         While you're at it, you might as well set a title & description for your portfolio!
-      setup_button: "Let's get started!"
+      setup_button: Save
     update:
       notice_text: Settings have been updated.
       wrong_email: This email doesn't seem to be linked to a valid Flickr account
@@ -46,6 +46,9 @@ en:
         title: Settings
         
   categories:
+    reset_category:
+      title: Reseted
+      text: "The category has been reseted based on the data on Flickr."
     index:
       blurb: |
         Categories allow you to sort your photos. Each category is linked to one or more Flickr tags.
@@ -54,11 +57,14 @@ en:
       all_categories: Current Categories
       first_time: Go ahead and create your first category
     show:
+      get_started: Get Started
       back: "<< Back to Categories"
-  
+      blurb: "Only the first 15 will be displayed on your portfolio. Drag & drop the photos to reorder them."
+      reset: Reset all photos in this category
   activerecord:
     attributes:
       portfolio:
         title: Your Portfolio's Title*
         description: Description used in the 'about' page*
         flickr_user_email: Email used on Flickr*
+        slug: Slug*

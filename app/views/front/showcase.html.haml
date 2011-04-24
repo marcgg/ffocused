@@ -9,7 +9,7 @@
       .description= @category.description
     
     #photos
-      - @category.photos.each do |photo|
+      - @category.photos.all(:limit => 15).each do |photo|
         .photo{:id => "photo-#{photo.flickr_id}"}
           .image-wrapper= image_tag photo.flickr_url_b
           .description-wrapper

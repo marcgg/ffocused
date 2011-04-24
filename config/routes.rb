@@ -17,5 +17,6 @@ Prtfl::Application.routes.draw do
   
   resources :categories do
     post "order_photos", :on => :member
+    post "reset_category", :on => :member
   end
 end

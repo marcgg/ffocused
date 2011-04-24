@@ -1,5 +1,7 @@
-- if @current_portfolio.flickr_user_id.blank?  
-  %p=raw t("portfolios.show.not_setup")
+- if @current_portfolio.flickr_user_id.blank?
+  %h2= t("portfolios.show.get_started")
+  
+  %p= raw t("portfolios.show.not_setup")
   
   - form_for @current_portfolio do |f|
     = render :partial => "form", :locals => {:f => f}

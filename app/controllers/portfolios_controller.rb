@@ -15,11 +15,14 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-    @current_portfolio.update_attributes!(params[:portfolio])
-    if @current_portfolio.flickr_user_name.blank?
-      flash[:error] = {:title =>t("error"), :text => t("portfolios.update.wrong_email")}
+    if @current_portfolio.update_attributes(params[:portfolio])
+      if @current_portfolio.flickr_user_name.blank?
+        flash[:error] = {:title =>t("error"), :text => t("portfolios.update.wrong_email")}
+      else
+        flash[:notice] = {:title =>t("success"), :text => t("portfolios.update.notice_text")}
+      end
     else
-      flash[:notice] = {:title =>t("success"), :text => t("portfolios.update.notice_text")}
+      flash[:error] = {:title =>t("error"), :text => @current_portfolio.errors.full_messages.join(", ")}
     end
     redirect_to portfolio_path(@current_portfolio)
     
