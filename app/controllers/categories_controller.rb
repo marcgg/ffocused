@@ -22,11 +22,18 @@ class CategoriesController < ApplicationController
     render :nothing => true
   end
   
-  def reset_category
+  def reset
     @category = @current_portfolio.categories.find(params[:id])
     @category.photos.destroy_all
     @category.set_photos_from_flickr
-    flash[:notice] = {:title => t("categories.reset_category.title"), :text => t("categories.reset_category.text")}
+    flash[:notice] = {:title => t("categories.reset.title"), :text => t("categories.reset.text")}
+    redirect_to category_path(@category)
+  end
+  
+  def refresh
+    @category = @current_portfolio.categories.find(params[:id])
+    @category.set_photos_from_flickr
+    flash[:notice] = {:title => t("categories.refresh.title"), :text => t("categories.refresh.text")}
     redirect_to category_path(@category)
   end
   

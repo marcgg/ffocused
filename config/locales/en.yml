@@ -9,6 +9,7 @@ en:
   login: Login
   logged_in: "Hey %{name}! "
   or: or
+  delete: Delete
   back:
     title: "RLVNT Portfolio"
     nav:
@@ -57,7 +58,10 @@ en:
         title: Settings
         
   categories:
-    reset_category:
+    refresh:
+      title: "Refreshed!"
+      text: "Category re-synchronized with Flickr"
+    reset:
       title: Reseted
       text: "The category has been reseted based on the data on Flickr."
     index:
@@ -70,6 +74,8 @@ en:
       all_categories: Current Categories
       first_time: Please go ahead and create your first category!
     show:
+      refresh: "Refresh this category, fetching any new content added to Flickr while preserving the current data."
+      refresh_button: "Refresh!"
       title: "Category: \"%{title}\""
       get_started: Get Started
       back: "<< Back to Categories"

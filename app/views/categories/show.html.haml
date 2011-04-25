@@ -8,9 +8,14 @@
       = image_tag photo.flickr_url_s
       .title
         = photo.title
-        = link_to "Delete", photo_path(photo, :category_id => @category.id), :class => "delete", :rel => "#entry-#{photo.id}"
+        = link_to t("delete"), photo_path(photo, :category_id => @category.id), :class => "delete", :rel => "#entry-#{photo.id}"
 
 .bottom-reset
+  = t("categories.show.refresh")
+  - form_tag refresh_category_path(@category), :id => "reset-category" do
+    = submit_tag t("categories.show.refresh_button")
+    
+.bottom-reset
   = t("categories.show.reset")
-  - form_tag reset_category_category_path(@category), :id => "reset-category" do
+  - form_tag reset_category_path(@category), :id => "reset-category" do
     = submit_tag t("categories.show.reset_button")
