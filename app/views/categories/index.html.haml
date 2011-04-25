@@ -5,7 +5,7 @@
 - if @categories.empty?
   %p= t("categories.index.first_time")
 - else
-  %p= link_to t("categories.index.new_category"), "#", :class => "show-rel hide-self", :rel => "#new-category"
+  %p= link_to t("categories.index.new_category"), "#", :class => "show-rel hide-self plus-button", :rel => "#new-category"
 
 #new-category{:style => (@categories.empty? ? "" : "display:none")}
   %h3= t("categories.index.add_category_title")
