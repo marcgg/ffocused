@@ -3,6 +3,9 @@
 - form_for @current_portfolio do |f|
   - if params[:type] == "settings" 
     = render :partial => "form", :locals => {:f => f}
+    
+    = f.label :footer
+    = f.text_area :footer
   
   - if params[:type] == "theme"
     = f.label :theme_id

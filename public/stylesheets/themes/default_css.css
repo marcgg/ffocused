@@ -139,13 +139,17 @@ h3{
 }
 
 /* Footer */
+footer, #footest{
+  width: 1024px;
+  text-align:right;
+  margin: auto;
+  
+}
 footer{
-  display:none;
+  margin-top:40px;
 }
 #footest{
-  width: 1024px;
-  margin:40px auto;
-  text-align:right;
+  margin-bottom:40px;
 }
 #footest .rlvnt{
   display:inline-block;
