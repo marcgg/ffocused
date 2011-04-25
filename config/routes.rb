@@ -21,4 +21,6 @@ Prtfl::Application.routes.draw do
   end
   
   resources :photos
+  
+  match "/faq" => "faq#index", :as => :faq
 end
