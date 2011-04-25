@@ -7,7 +7,7 @@
 - else
   %p= link_to t("categories.index.new_category"), "#", :class => "show-rel hide-self", :rel => "#new-category"
 
-#new-category{:style => (@categories.empty? ? "" : "displayx:none")}
+#new-category{:style => (@categories.empty? ? "" : "display:none")}
   %h3= t("categories.index.add_category_title")
   - form_for Category.new do |f|
       

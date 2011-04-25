@@ -252,6 +252,19 @@ ul{
   }
 }
 
+/* Todo entries */
+#todos{
+  margin-bottom: 30px;
+  .todo{
+    padding: 0px 40px 10px 40px;
+    background: url(/images/tick_disabled.jpg) no-repeat 20px 1px;
+  }
+  .ticked{
+    background: url(/images/tick.jpg) no-repeat 20px 1px;
+    text-decoration:line-through;
+  }
+}
+
 /* Admin */
 table{
   th{

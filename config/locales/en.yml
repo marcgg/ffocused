@@ -31,11 +31,21 @@ en:
     show:
       setup_ok: |
         Alright, your account has been setup properly to the flickr account <strong>%{flickr_user_name}</strong>.<br />
-        Have fun playing around in the backoffice.
+        Have fun playing around in the backoffice!
       not_setup: |
         To get started, you first need to link your account with your Flickr user. You can only link to one user. <br />
         While you're at it, you might as well set a title & description for your portfolio!
       setup_button: Save
+      left_to_do:
+        title: Left to Do
+        intro: "Your portfolio is not yet fully setup. Here's what you need to do:"
+        category: 
+          text: to showcase your best pictures.
+          link: Create a category
+        theme:
+          text: by either creating your own one using CSS or picking one out of the library.
+          link: Customize your theme
+        other_category: "Create another category, an empty portfolio is a sad portfolio."
     update:
       notice_text: Settings have been updated.
       wrong_email: This email doesn't seem to be linked to a valid Flickr account
