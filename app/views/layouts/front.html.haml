@@ -36,4 +36,6 @@
       Portfolio powered by RLVNT
     - unless @portfolio.theme_id.blank?
       %span.theme
-        Original theme by #{@portfolio.theme[:user]} under license Creative Commons
+        Original theme by 
+        = raw @portfolio.theme[:user]
+        under license Creative Commons

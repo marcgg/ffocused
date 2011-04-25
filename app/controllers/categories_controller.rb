@@ -31,8 +31,14 @@ class CategoriesController < ApplicationController
   end
   
   def create
-    @category = Category.create(params[:category].merge(:portfolio_id => @current_portfolio.id))
-    redirect_to category_path(@category)
+    @category = Category.new(params[:category].merge(:portfolio_id => @current_portfolio.id))
+    if @category.save
+      flash[:notice] = {:title => t("categories.create.success_title"), :text => t("categories.create.success_text")}
+      redirect_to category_path(@category)
+    else
+      flash[:error] = {:title => t("categories.create.error_title"), :text => t("categories.create.error_text", :errors => @category.errors.full_messages.join(", "))}
+      redirect_to categories_path
+    end
   end
 
   def show

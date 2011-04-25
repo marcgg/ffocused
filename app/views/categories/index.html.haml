@@ -9,11 +9,11 @@
 
 #new-category{:style => (@categories.empty? ? "" : "display:none")}
   - form_for Category.new do |f|
-    = f.label :tags
-    = f.text_field :tags
-  
     = f.label :title
     = f.text_field :title
+  
+    = f.label :tags
+    = f.text_field :tags
   
     = f.label :slug
     = f.text_field :slug

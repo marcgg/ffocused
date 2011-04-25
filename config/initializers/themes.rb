@@ -2,6 +2,6 @@ THEMES = {
   1 => {
     :title => "Default Theme",
     :code => "default_css",
-    :user => "@marcgg"
+    :user => "<a href='http://twitter.com/marcgg'>@marcgg</a>"
   }
 }
