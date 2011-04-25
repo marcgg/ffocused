@@ -50,6 +50,8 @@ en:
       title: Reseted
       text: "The category has been reseted based on the data on Flickr."
     index:
+      type: "How to link to Flickr?"
+      add_category_title: Add a Category
       blurb: |
         Categories allow you to sort your photos. Each category is linked to one or more Flickr tags.
         Keep in mind that you can only display a maximum of <strong>15</strong> photos.
@@ -63,7 +65,8 @@ en:
       blurb: "Only the first 15 will be displayed on your portfolio. Drag & drop the photos to reorder them."
       reset: |
         Reset all photos in this category. 
-        This will fetch all the pictures again from Flickr. 
+        This will fetch all the pictures again from Flickr, discarding the titles, 
+        descriptions and order you might have already set.
         This action is not reversible.
       reset_button: "Reset Now!"
     create:
@@ -71,6 +74,7 @@ en:
       success_text: This category has been created
       error_title: Error
       error_text: "Something went wrong: %{errors}"
+      
   activerecord:
     attributes:
       portfolio:
@@ -83,4 +87,4 @@ en:
         tags: Flickr Tags*
         slug: Slug Used for the Category's URL*
         description: Description*
-        
+        flickr_set_id: Flickr Set*

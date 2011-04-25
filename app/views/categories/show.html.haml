@@ -10,7 +10,7 @@
         = photo.title
         = link_to "Delete", photo_path(photo, :category_id => @category.id), :class => "delete", :rel => "#entry-#{photo.id}"
 
-%p
+.bottom-reset
   = t("categories.show.reset")
   - form_tag reset_category_category_path(@category), :id => "reset-category" do
     = submit_tag t("categories.show.reset_button")

@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
   end
   
   def create
-    @category = Category.new(params[:category].merge(:portfolio_id => @current_portfolio.id))
+    @category = params[:type].constantize.new(params[:category].merge(:portfolio_id => @current_portfolio.id))
     if @category.save
       flash[:notice] = {:title => t("categories.create.success_title"), :text => t("categories.create.success_text")}
       redirect_to category_path(@category)

@@ -43,8 +43,11 @@ h2{
   text-align:center;
 }
 h3{
-  font-size: 1.4em;
-  margin: 15px 0px 5px 20px;
+  font-size: 1.2em;
+  color:#88929b;
+  padding: 10px 0px 10px 20px;
+  border-bottom: 1px solid #d2d7dc;
+  border-top: 1px solid #c6ccd1;
 }
 ul{
   list-style-type:none;
@@ -193,20 +196,39 @@ textarea{
    font-weight:bold;
   }
 }
-
+#new-category{
+  background-color:#eceff2;
+  border-bottom: 1px solid #d2d7dc;
+}
+.bottom-reset{
+  color:#999;
+  border-top: 1px solid #d2d7dc;
+  font-size: 0.9em;
+  margin-top:60px;
+  padding: 20px 20px 10px 20px;
+  text-align:justify;
+  line-height:1.2em;
+  form{
+   padding: 10px 0px; 
+  }
+  input{
+    border: 1px solid #ccc;
+    background: #eee;
+    @include border-radius(5px);
+  }
+}
 /* Lists */
 ul{
   margin: 20px;
-  width:100%;
+  width:90%;
   li{
     height:85px;
+    background:url(/images/draggable.jpg) no-repeat right 23px;
     .title{
       width:75%;
       font-size: 1.3em;
       display:inline-block;
-      padding-top:27px;
-    }
-    *{
+      padding-top:15px;
       float:left;
     }
     img{
@@ -217,12 +239,16 @@ ul{
       border: 1px solid #c4ced5;
       background-color:#eee;
       @include border-radius(5px);
+      float:left;
     }
   }
   .delete{
-    float:right;
     font-weight:normal;
-    font-size: 0.8em;
+    display:block;
+    font-size: 0.7em;
+    margin-top:5px;
+    text-decoration:none;
+    color: #999;
   }
 }
 

@@ -24,6 +24,11 @@ class Portfolio < ActiveRecord::Base
     end
   end
   
+  def flickr_sets
+    res = Flickr::Request.call_method("photosets.getList", {:user_id => flickr_user_id})
+    res["photosets"] ? res["photosets"]["photoset"].map{|s| [s["title"]["_content"], s["id"]]} : []
+  end
+  
   def setup?
     !flickr_user_name.blank?
   end

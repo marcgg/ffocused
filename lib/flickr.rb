@@ -13,8 +13,7 @@ module Flickr
   end
   
   module Photo
-    extend self
-    def create_url_from_json(photo, size)
+    def self.create_url_from_json(photo, size)
       "http://farm#{photo["farm"]}.static.flickr.com/#{photo["server"]}/#{photo["id"]}_#{photo["secret"]}_#{size}.jpg"
     end
   end

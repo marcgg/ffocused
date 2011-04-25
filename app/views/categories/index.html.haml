@@ -5,15 +5,25 @@
 - if @categories.empty?
   %p= t("categories.index.first_time")
 - else
-  %p= link_to t("categories.index.new_category"), "#", :class => "show-rel", :rel => "#new-category"
+  %p= link_to t("categories.index.new_category"), "#", :class => "show-rel hide-self", :rel => "#new-category"
 
-#new-category{:style => (@categories.empty? ? "" : "display:none")}
+#new-category{:style => (@categories.empty? ? "" : "displayx:none")}
+  %h3= t("categories.index.add_category_title")
   - form_for Category.new do |f|
+      
     = f.label :title
     = f.text_field :title
   
-    = f.label :tags
-    = f.text_field :tags
+    = label :type, t("categories.index.type")
+    = select_tag(:type, options_for_select([["Use Flickr Sets", "Category::FromSet"], ["Use Flickr Tags","Category::FromTag"]]))
+  
+    #group-flickr-set
+      = f.label :flickr_set_id
+      = f.select(:flickr_set_id, options_for_select(@current_portfolio.flickr_sets))
+  
+    #group-flickr-tags{:style => "display:none"}
+      = f.label :tags
+      = f.text_field :tags
   
     = f.label :slug
     = f.text_field :slug

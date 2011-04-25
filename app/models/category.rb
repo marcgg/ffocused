@@ -4,9 +4,8 @@ class Category < ActiveRecord::Base
   has_many :photos, :order => "position ASC"
   validates_uniqueness_of :slug, :scope => :portfolio_id
   
-  def set_photos_from_flickr
-    res = Flickr::Request.call_method("photos.search", {:user_id => portfolio.flickr_user_id, :tags => tags})
-    res["photos"]["photo"].map do |photo|
+  def map_photos(photos)
+    photos.map do |photo|
       flickr_photo_id = photo["id"]
       flickr_url_b = Flickr::Photo.create_url_from_json(photo, "b")
       flickr_url_s = Flickr::Photo.create_url_from_json(photo, "s")

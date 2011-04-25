@@ -3,9 +3,23 @@ $(function(){
   initHelpers();
   initSortables();
   initDelete();
+  initCategoryForm();
 });
 
-
+/* Category */
+function initCategoryForm(){
+  $("#type").val("Category::FromSet");
+  $("#type").change(function(e){
+    var $this = $(this);
+    if($this.val() == "Category::FromTag"){
+      $("#group-flickr-set").hide();
+      $("#group-flickr-tags").show();
+    }else if($this.val() == "Category::FromSet"){
+      $("#group-flickr-set").show();
+      $("#group-flickr-tags").hide();
+    }
+  });
+}
 /* Delete */
 function initDelete(){
   $(".delete").click(function(e){
@@ -46,6 +60,11 @@ function initHelpers(){
   $(".show-rel").click(function(e){
     e.preventDefault();
     $($(this).attr("rel")).show();
+  });
+  
+  $(".hide-self").click(function(e){
+    e.preventDefault();
+    $(this).parent().hide();
   });
 }
 

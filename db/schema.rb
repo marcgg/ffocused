@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110415211707) do
+ActiveRecord::Schema.define(:version => 20110425133535) do
 
   create_table "categories", :force => true do |t|
     t.string   "tags"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20110415211707) do
     t.integer  "portfolio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
+    t.string   "flickr_set_id"
   end
 
   create_table "photos", :force => true do |t|
@@ -49,14 +51,6 @@ ActiveRecord::Schema.define(:version => 20110415211707) do
     t.text     "css"
     t.integer  "theme_id"
     t.string   "slug"
-  end
-
-  create_table "themes", :force => true do |t|
-    t.text     "css"
-    t.integer  "user_id"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
