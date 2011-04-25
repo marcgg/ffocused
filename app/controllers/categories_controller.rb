@@ -8,6 +8,12 @@ class CategoriesController < ApplicationController
   def edit
   end
   
+  def destroy
+    @category = @current_portfolio.categories.find(params[:id])
+    @category.destroy
+    render :nothing => true
+  end
+  
   def order_photos
     @category = @current_portfolio.categories.find(params[:id])
     params[:item_ids].each_with_index do |item_id, i|

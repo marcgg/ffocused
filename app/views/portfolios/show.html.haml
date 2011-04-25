@@ -3,11 +3,11 @@
   
   %p= raw t("portfolios.show.not_setup")
   
-  - form_for @current_portfolio do |f|
+  = form_for @current_portfolio do |f|
     = render :partial => "form", :locals => {:f => f}
 
     .submit-wrapper
       = f.submit t("portfolios.show.setup_button")
     
 - else
-  %p=raw t("portfolios.show.setup_ok", :flickr_user_name => @current_portfolio.flickr_user_name)
+  %p= raw t("portfolios.show.setup_ok", :flickr_user_name => @current_portfolio.flickr_user_name)

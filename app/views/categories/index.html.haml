@@ -27,9 +27,11 @@
 - unless @categories.empty?
   %ul#categories.sortable{:rel => order_categories_portfolios_path}
     - @categories.each do |category|
-      %li.category{:rel => category.id}
+      %li.category{:rel => category.id, :id => "entry-#{category.id}"}
         = image_tag category.photos.find(:first).flickr_url_s
         .title
           = link_to category.title, category_path(category)
-          &nbsp;(#{category.tags})
           , #{category.photos.count} Photos
+          = link_to "Delete", category_path(category), :class => "delete", :rel => "#entry-#{category.id}"
+          
+          

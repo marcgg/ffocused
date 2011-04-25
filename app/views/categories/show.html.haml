@@ -1,12 +1,16 @@
-%h2= @category.title
+%h2= t("categories.show.title", :title => @category.title)
 = link_to t("categories.show.back"), categories_path, :class => "back-link"
 %p= t("categories.show.blurb")
     
 %ul#photos.sortable{:rel => order_photos_category_path(@category)}
   - @category.photos.each do |photo|
-    %li.photo{:rel => photo.id}
+    %li.photo{:rel => photo.id, :id => "entry-#{photo.id}"}
       = image_tag photo.flickr_url_s
-      %span.title= photo.title
-      
-- form_tag reset_category_category_path(@category), :id => "reset-category" do
-  = submit_tag t("categories.show.reset")
+      .title
+        = photo.title
+        = link_to "Delete", photo_path(photo, :category_id => @category.id), :class => "delete", :rel => "#entry-#{photo.id}"
+
+%p
+  = t("categories.show.reset")
+  - form_tag reset_category_category_path(@category), :id => "reset-category" do
+    = submit_tag t("categories.show.reset_button")

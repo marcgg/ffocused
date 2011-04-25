@@ -2,8 +2,20 @@ $(function(){
   setupCsrf();
   initHelpers();
   initSortables();
+  initDelete();
 });
 
+
+/* Delete */
+function initDelete(){
+  $(".delete").click(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.post($this.attr("href"), {_method:"DELETE"}, function(data){
+      $($this.attr("rel")).slideUp("slow");
+    });
+  });
+}
 
 /* Security */
 function setupCsrf(){

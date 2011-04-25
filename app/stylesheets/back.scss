@@ -14,7 +14,7 @@
 /* Generalities */
 body{
   font-family:"Arial";
-  background-color: #f5f5f5;
+  background-color: #fff;
   font-size: 14px;
 }
 
@@ -117,10 +117,14 @@ nav{
 /* Content */
 #content{
   width: 560px;
-  margin: 20px auto;
+  margin: auto;
   background-color: #fff;
   border: 1px solid #c6cace;
   padding: 0px;
+}
+#content-wrapper{
+  background-color:#f5f5f5;
+  padding: 40px 0px 80px 0px;
 }
 
 /* Footer */
@@ -131,7 +135,6 @@ footer{
   height:50px;
   border-top: 1px solid #c6cace ;
   padding: 15px 0px;
-  margin-top: 100px;
   color: #777;
   .extra-nav{
     margin-bottom: 15px;
@@ -154,6 +157,10 @@ form{
 label{
   display:block;
   margin-top: 15px;
+}
+select{
+  margin-top:5px;
+  font-size: 0.9em;
 }
 input[type=text], textarea, .text{
   width: 450px;
@@ -179,12 +186,22 @@ textarea{
   }
 }
 
+/* Categories */
+.category{
+  a{
+   text-decoration:underline;
+   font-weight:bold;
+  }
+}
+
 /* Lists */
 ul{
   margin: 20px;
+  width:100%;
   li{
     height:85px;
     .title{
+      width:75%;
       font-size: 1.3em;
       display:inline-block;
       padding-top:27px;
@@ -202,13 +219,10 @@ ul{
       @include border-radius(5px);
     }
   }
-}
-
-/* Categories */
-.category{
-  a{
-   text-decoration:underline;
-   font-weight:bold;
+  .delete{
+    float:right;
+    font-weight:normal;
+    font-size: 0.8em;
   }
 }
 
