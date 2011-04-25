@@ -3,7 +3,7 @@ class FrontController < ApplicationController
   before_filter :find_front_portfolio
   
   def showcase
-    @category = params[:category_id].blank? ? @portfolio.categories.first : Category.find(params[:category_id])
+    @category = params[:category_slug].blank? ? @portfolio.categories.first : Category.find_by_slug(params[:category_slug])
   end
 
   def about
