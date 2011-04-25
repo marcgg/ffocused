@@ -26,6 +26,11 @@ en:
       copyright: "Copyright &copy 2011 RLVNT"
     header:
       view_website: View Your Website
+  
+  photos:
+    edit:
+      title: "Editing Photo: %{title}"
+      back: "<< Back to %{category}"
       
   portfolios:
     theme:

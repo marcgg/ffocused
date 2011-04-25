@@ -1,8 +1,8 @@
 Prtfl::Application.routes.draw do
   match "/admin" => "admin#index"
 
-  get "/photos/:slug/about" => "front#about", :as => :about
-  get "/photos/:slug(/:category_slug)" => "front#showcase", :as => :showcase
+  get "/p/:slug/about" => "front#about", :as => :about
+  get "/p/:slug(/:category_slug)" => "front#showcase", :as => :showcase
   
   resources :users
   resources :user_sessions

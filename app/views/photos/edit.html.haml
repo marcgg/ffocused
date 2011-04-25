@@ -1,0 +1,19 @@
+%h2= t("photos.edit.title", :title => @photo.title)
+#photo-preview
+  = image_tag @photo.flickr_url_s
+  
+= link_to t("photos.edit.back", :category => @category.title), category_path(@category), :class => "back-link"
+
+
+
+= form_for @photo do |f|
+  = hidden_field_tag :category_id, @photo.category.id
+
+  = f.label :title
+  = f.text_field :title
+  
+  = f.label :description
+  = f.text_area :description
+  
+  .submit-wrapper
+    = f.submit

@@ -242,13 +242,15 @@ ul{
       float:left;
     }
   }
-  .delete{
-    font-weight:normal;
-    display:block;
-    font-size: 0.7em;
-    margin-top:5px;
-    text-decoration:none;
-    color: #999;
+  #actions{
+    .action{
+      font-weight:normal;
+      display:inline-block;
+      font-size: 0.7em;
+      margin-top:5px;
+      text-decoration:none;
+      color: #999;
+    }
   }
 }
 
@@ -273,6 +275,15 @@ table{
   }
   td, th{
     padding: 5px 10px;
+  }
+}
+
+/* Photo */
+#photo-preview{
+  margin-top: -50px;
+  img{
+    margin: 3px;
+    width: 34px;
   }
 }
 

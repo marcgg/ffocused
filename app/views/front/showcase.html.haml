@@ -13,5 +13,7 @@
         .photo{:id => "photo-#{photo.flickr_id}"}
           .image-wrapper= image_tag photo.flickr_url_b
           .description-wrapper
-            %h3= photo.title
-            %p= photo.description
+            - unless photo.title.blank?
+              %h3= photo.title
+            - unless photo.description.blank?
+              %p= photo.description

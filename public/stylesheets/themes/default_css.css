@@ -133,6 +133,10 @@ h3{
 .description-wrapper *{
   color:#fff;
 }
+.description-wrapper p{
+  margin-top: 30px;
+  font-size: 0.9em;
+}
 
 /* Footer */
 footer{
