@@ -64,6 +64,10 @@ ul{
   padding:10px 20px;
   color: #888;
 }
+.sidenote{
+  color: #888;
+  font-size: 0.9em;
+}
 /* Header */
 header{
   padding: 10px 0px;
@@ -165,7 +169,7 @@ select{
   margin-top:5px;
   font-size: 0.9em;
 }
-input[type=text], textarea, .text{
+input[type=text], textarea, .text, input[type=password]{
   width: 450px;
   padding: 5px;
   border: 1px solid #d3d8dc;
@@ -268,6 +272,9 @@ ul{
 /* Todo entries */
 #todos{
   margin-bottom: 30px;
+  a{
+    text-decoration:underline;
+  }
   .todo{
     padding: 0px 40px 10px 40px;
     background: url(/images/tick_disabled.jpg) no-repeat 20px 1px;

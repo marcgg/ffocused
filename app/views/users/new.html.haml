@@ -1,5 +1,4 @@
-New user!
-= debug @user.errors
+%h2= t("users.new.title")
 
 - form_for @user do |f|
   = f.label :login 
@@ -14,4 +13,5 @@ New user!
   = f.label :password_confirmation 
   = f.password_field :password_confirmation
   
-  = f.submit
+  .submit-wrapper
+    = f.submit t("users.new.go")

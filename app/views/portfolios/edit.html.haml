@@ -2,18 +2,16 @@
 
 - form_for @current_portfolio do |f|
   - if params[:type] == "settings" 
-    = render :partial => "form", :locals => {:f => f}
-    
-    = f.label :footer
-    = f.text_area :footer
+    = render :partial => "form", :locals => {:f => f, :simple => false}
   
   - if params[:type] == "theme"
     = f.label :theme_id
     = f.select(:theme_id, options_for_select([[t("portfolios.theme.your_own"), ""]] + THEMES.map{|k,v| [v[:title], k]}, @current_portfolio.theme_id))
   
     = f.label :css
-    = f.text_area :css
+    = f.text_area :css, {:style => "height:300px; width:100%;"}
     
+    .sidenote=raw t("portfolios.edit.theme.creative")
     
   .submit-wrapper
     = f.submit t("portfolios.show.setup_button")

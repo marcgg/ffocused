@@ -24,12 +24,12 @@
     #group-flickr-tags{:style => "display:none"}
       = f.label :tags
       = f.text_field :tags
+
+    = f.label :description
+    = f.text_area :description
   
     = f.label :slug
     = f.text_field :slug
-  
-    = f.label :description
-    = f.text_area :description
   
     .submit-wrapper
       = f.submit

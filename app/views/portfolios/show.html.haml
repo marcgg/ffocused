@@ -4,7 +4,7 @@
   %p= raw t("portfolios.show.not_setup")
   
   = form_for @current_portfolio do |f|
-    = render :partial => "form", :locals => {:f => f}
+    = render :partial => "form", :locals => {:f => f, :simple => true}
 
     .submit-wrapper
       = f.submit t("portfolios.show.setup_button")

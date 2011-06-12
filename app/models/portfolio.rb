@@ -7,7 +7,7 @@ class Portfolio < ActiveRecord::Base
   before_save :save_flickr_user_id, :if => Proc.new{ |app| app.changes.keys.include?("flickr_user_email")}
   
   def set_slug
-    self.slug = "portfolio-#{rand(1000000)}-#{Time.now.strftime("%d%m%Y")}" if self.new_record?
+    self.slug = user.login if self.new_record?
   end
   
   def theme
