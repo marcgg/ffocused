@@ -2,7 +2,7 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  app_name: PRTFL
+  app_name: Rlvnt - Showcase Your Best Photos From Flickr
   success: Success!
   error: Error
   logout: Logout

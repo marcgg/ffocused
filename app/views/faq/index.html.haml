@@ -2,39 +2,112 @@
   - if I18n.locale == :en
     %h2 Frequently Asked Questions
   
-    %h4 What is this?
-    %p This is a service that allows you to create a customized website to showcase your photos.
+    %h3 What Am I Doing Here?
     
-    %h4 How do I Add Photos?
+    %h4 What?
+    %p
+      This is Relevant.
+    %p 
+      It is a free service that allows you to create a customized website to showcase your photos.
+      You can link your Flickr account and sort pictures into various categories. You also have
+      a complete CSS editor with no limitation as well as predefined themes from the community.
+      
+    %h4 Why?
+    %p 
+      The current services available for photography portfolio don't satisfy me so I figured
+      that instead of complaining I'd better create my own!
+    %p
+      Let me elaborate.
+    %p 
+      Some services would display a lot of pictures with small previews and you would have to click 
+      to see the full size version. To me, photos are meant to be seen as big as possible,
+      and there should be as little clicking as possible.
+    %p
+      Other websites would only offer a generic layout with very little customisation possible... unless you pay.
+      This is fair, but why not offer a free service that does the same thing?
+    %p
+      Finally there would be services displaying hundreds of pictures on the same page. 
+      I think that a portfolio should be the very best work of someone, and not a pile of
+      random pictures.
+      
+    %p
+      Maybe people will agree with me and use Rlvnt!
+      
+    %h4 Who?
+    %p
+      This is a development side project by Marc G Gauthier
+      = link_to "(@marcgg)", "http://twitter.com/marcgg"
+      with design help from Kevin Tunc
+      = link_to "(@kevintunc)", "http://twitter.com/kevintunc"
+      = ". "
+   
+    %h4 For How Long?
+    %p 
+      My plan for the website is to evolve and stay up as long as possible while remaining free.
+      This is easy to say but of course I'm not sure if I'll be able to keep up maintaining it or
+      if server cost will start to become a problem.
+    %p
+      I can't guaranty that the service will have a perfect uptime for now, but it's still in beta
+      and totally free! 
+    %p
+      Of course if I end up having to close the service (let's hope not), I'll give you all the
+      categories and photo descriptions that you created in CSV format for you to reuse 
+      somewhere else.
+    
+    %h4 What's Next?
+    %p
+      A lot of things hopefully! You can follow me on twitter -
+      = link_to "@marcgg", "http://twitter.com/marcgg"
+      = " - "
+      where I will post updates on the project.
+    
+    %h3 How Does It Work?
+    
+    %h4 How do I add photos?
     %p 
       Photos are all contained in categories. You can create categories by logging in. 
       Each category is linked to either a Flickr "tag" or a "set". 
       These are concepts from Flickr used to sort your pictures.
     
-    %h4 I Created a Category but my Photo isn't Displayed
-    %p
+    %h4 I created a category but my photo isn't displayed
+    %p 
       There can be various reasons. 
-    
     %p
       If you use tags, it usually takes some time for the information to be public. 
       Meaning you'll have to wait a bit between adding a tag and trying to fetch the pictures for your portfolio.
-    
     %p
       If your portfolio shows a Flickr logo and "This photo is currently unavailable", it means that the photo is
       either not at a valid format, has been removed or is not public anymore
       
-    %h4 My Photos are Private, can I Use This Service?
+    %h4 My photos are private, can I use this service?
     %p
       No, if your photos are set as private on Flickr it means that they are not meant to be showcased.
       
-    %h4 Why Only 15 Photos are Displayed?
+    %h4 Why only 15 photos are displayed?
     %p 
       The idea of this portfolio is to showcase your favorite pictures, and not losing the visitor into
       a huge list of photos when they get to a category.
       If you want to display more than 15 you should use different categories.
+    
+    %h4 What's a 'slug'?
+    %p 
+      Straight from 
+      = link_to "Wikipedia: ", "http://en.wikipedia.org/wiki/Slug_(web_publishing)", :target => "_blank"
+    %p
+      "A slug is the part of a URL which identifies a page using human-readable keywords, for example "Slug_(web_publishing)", rather than an opaque identifier such as the ID number of the content within the database (e.g. "4859604"). 
+    %p
+      Slugs are used to construct clean URLs (often for permalinks) that are easy to type, descriptive, and easy to remember."
       
-      
-      
+    %h3 Tech Talk?
+    %h4 Specs?
+    %p 
+      Sure ! Everything here is built using Ruby on Rails and hosted on Heroku because the cloud is so much fun.
+    %p
+      We also use SCSS+blueprints as well as jQuery, CoffeeScript and HAML.
+    
+    %h4 Open Source?
+    %p
+      The project isn't open source yet, but it might be if people feel like they would want to contribute.
       
       
       

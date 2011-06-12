@@ -24,4 +24,6 @@ Prtfl::Application.routes.draw do
   resources :photos
   
   match "/faq" => "faq#index", :as => :faq
+  match "/terms" => "home#terms", :as => :terms
+  match "/contact" => "home#contact", :as => :contact
 end

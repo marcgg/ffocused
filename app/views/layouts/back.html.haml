@@ -30,10 +30,10 @@
   %footer
     .grid
       .extra-nav
-        = link_to t("back.footer.home")
-        = link_to t("back.footer.contact")
-        = link_to t("back.footer.twitter")
-        = link_to t("back.footer.terms")
+        = link_to t("back.footer.home"), root_path
+        = link_to t("back.footer.contact"), contact_path
+        = link_to t("back.footer.twitter"), "http://twitter.com/marcgg"
+        = link_to t("back.footer.terms"), terms_path
         = link_to t("back.footer.faq"), faq_path
       .extra-details
         =raw t("back.footer.copyright")
