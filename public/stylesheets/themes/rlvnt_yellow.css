@@ -122,13 +122,13 @@ a:hover{
 #category-6 a{
   color: yellow !important;
   text-decoration:underline !important;
-  background-color: none !important;
+  background-color: black !important;
 }
 #category-6 .description-wrapper{ /* Iceland */
   display:none;
 }
 #category-6 a:hover{
-  background-color:none !important;
+  background-color:black !important;
   color: yellow !important;
 }
 #category-6 #category-description .description{
