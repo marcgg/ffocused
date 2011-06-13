@@ -1,0 +1,117 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through;}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+header, footer, nav, section, article { display:block; }
+
+/* THEME */
+
+body{
+  background: url(/images/themes/rlvnt_yellow/bg.png);
+  font-family: "Courier New", "Courier";
+  font-size: 18px;
+  color: #333;
+}
+
+/* Header and Nav */
+header{
+  display:block;
+  width:610px;
+  height:210px;
+  margin: 20px auto;
+  background: url(/images/themes/rlvnt_yellow/logo.png)
+}
+
+header h1, header p{ display:none; }
+
+nav{
+  text-align:center;
+  margin: 40px 0px 40px;
+}
+.nav-link-wrapper{
+  display:inline-block;
+}
+
+/* Photos */
+#main-content{
+  width: 1034px;
+  margin: auto;
+}
+
+#category-description{
+  display:none;
+}
+
+.photo{
+  border: 5px solid black;
+  margin-bottom: 30px;
+  text-align:center;
+}
+
+.image-wrapper{
+  background-color:#000;
+}
+
+.description-wrapper{
+  padding: 10px;
+}
+
+/* About */
+#about-page{
+  width: 1024px;
+  margin: auto;
+}
+#about-page h2{
+  display: none;
+}
+/* Links and Such */
+a{
+  color: #333;
+  background-color: yellow;
+  text-decoration:none;
+  padding-top:1px;
+}
+.selected{
+  font-weight:bold;
+}
+a:hover{
+  color: yellow;
+  background-color:#333;
+}
+
+/* Footer & Footest*/
+#footest{
+  text-align: center;
+  font-size: 0.8em;
+  margin: 40px 0px 40px 0px;
+  background: url(/images/themes/rlvnt_yellow/smalllogo.png);
+  padding: 8px 0px;
+}

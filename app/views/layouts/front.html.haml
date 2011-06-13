@@ -13,15 +13,12 @@
     %h1= @portfolio.title
     %p= @portfolio.description
 
-  %nav
-    - @portfolio.categories.each do |category|
-      .nav-link-wrapper{:class => (!@category.nil? and @category.id == category.id ? "selected" : "")}
-        = link_to category.title, showcase_path(:slug => @portfolio.slug, :category_slug => category.slug)
-    .nav-link-wrapper.about{:class => (@category.nil? ? "selected" : "")}
-      = link_to "About", about_path(:slug => @portfolio.slug)
+  #nav-top= render :partial => "/front/nav"
       
   #content 
     = yield 
+
+  #nav-bottom= render :partial => "/front/nav"
 
   %footer
     = @portfolio.footer
