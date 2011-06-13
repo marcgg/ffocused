@@ -134,10 +134,14 @@ a:hover{
 #category-6 #category-description{
   display:block;
 }
+#category-6 #category-description .name{
+  display:none;
+}
 #category-6 #category-description .description{
   display: block;
   text-align: center;
   color: #fff;
+  margin: 40px 0px;
 }
 
 /* Footer & Footest*/
