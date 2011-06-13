@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
   layout 'back'
-    
+  
+  before_filter :find_category, :only => [:edit, :destroy, :update]
+  
   def index
     @categories = @current_portfolio.categories
   end
@@ -8,8 +10,22 @@ class CategoriesController < ApplicationController
   def edit
   end
   
+  def update
+    params[:category] = params[:category_from_set] if params[:category].blank?
+    params[:category] = params[:category_from_tag] if params[:category].blank?
+    if @category.update_attributes(
+                    :title => params[:category][:title],
+                    :slug => params[:category][:slug],
+                    :description => params[:category][:description]
+                    )
+      flash[:notice] = {:title => t("categories.update.success_title"), :text => t("categories.update.success_text")}
+    else
+      flash[:error] = {:title => t("categories.update.error_title"), :text => t("categories.update.error_text")}
+    end
+    redirect_to edit_category_path(@category)
+  end
+  
   def destroy
-    @category = @current_portfolio.categories.find(params[:id])
     @category.destroy
     render :nothing => true
   end
@@ -49,6 +65,12 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = @current_portfolio.categories.find(params[:id])
+  end
+
+  protected
+  
+  def find_category
     @category = @current_portfolio.categories.find(params[:id])
   end
 

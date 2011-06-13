@@ -44,4 +44,5 @@
           , #{category.photos.count} Photos
           #actions
             = link_to "Delete", category_path(category), :class => "delete action", :rel => "#entry-#{category.id}"
+            = link_to "Edit", edit_category_path(category), :class => "edit action"
                   

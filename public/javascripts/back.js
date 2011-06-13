@@ -4,7 +4,20 @@ $(function(){
   initSortables();
   initDelete();
   initCategoryForm();
+  initTheme();
 });
+
+/* Themes */
+function initTheme(){
+  $("#portfolio_theme_id").change(function(e){
+    var $this = $(this);
+    if($this.val() == ""){
+      $("#css-editor").show();
+    }else{
+      $("#css-editor").hide();
+    }
+  });
+}
 
 /* Category */
 function initCategoryForm(){

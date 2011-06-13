@@ -106,7 +106,13 @@ en:
       success_text: This category has been created
       error_title: Error
       error_text: "Something went wrong: %{errors}"
-      
+    edit:
+      title: "Edit Category '%{name}'"
+    update:
+      error_title: Error
+      error_text: "Sorry, the data you entered is invalid"
+      success_title: Updated!
+      success_text: Your changes have been made!
   activerecord:
     attributes:
       portfolio:
