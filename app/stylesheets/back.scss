@@ -203,7 +203,13 @@ textarea{
   border: 1px solid #7a8c97;
   text-decoration:none;
 }
-
+.form-error{
+  color:#FF3333;
+  float:right;
+  font-size:0.9em;
+  margin-top:17px;
+  text-align:right;;
+}
 /* Categories */
 .category{
   a{

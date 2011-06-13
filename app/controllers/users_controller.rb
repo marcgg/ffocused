@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Registration successful."
       redirect_to portfolio_path(@user.portfolio)
     else
-      render :action => 'new'
+      render :action => 'new', :layout => "back"
     end
   end
 

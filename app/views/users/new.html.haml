@@ -1,15 +1,20 @@
 %h2= t("users.new.title")
 
+
 - form_for @user do |f|
-  = f.label :login 
+  .form-error= @user.errors[:login].is_a?(Array) ? @user.errors[:login].first : @user.errors[:login]
+  = f.label :login
   = f.text_field :login
   
+  .form-error= @user.errors[:email].is_a?(Array) ? @user.errors[:email].first : @user.errors[:email]
   = f.label :email 
   = f.text_field :email
   
+  .form-error= @user.errors[:password].is_a?(Array) ? @user.errors[:password].first : @user.errors[:password]
   = f.label :password
   = f.password_field :password 
   
+  .form-error= @user.errors[:password_confirmation].is_a?(Array) ? @user.errors[:password_confirmation].first : @user.errors[:password_confirmation]
   = f.label :password_confirmation 
   = f.password_field :password_confirmation
   
