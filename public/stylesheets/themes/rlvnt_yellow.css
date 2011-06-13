@@ -131,6 +131,9 @@ a:hover{
   background-color:black !important;
   color: yellow !important;
 }
+#category-6 #category-description{
+  display:block;
+}
 #category-6 #category-description .description{
   display: block;
   text-align: center;
