@@ -107,6 +107,32 @@ a:hover{
   background-color:#333;
 }
 
+/* Category Specific CSS */
+
+#category-9 h3{ /* Iceland */
+  display:none;
+}
+
+#category-6{ /* In Motion */
+  background:#000 !important;
+}
+#category-6 header{
+  background: url(/images/themes/rlvnt_yellow/logo_dark.png) !important;
+}
+#category-6 a{
+  color: yellow !important;
+  text-decoration:underline !important;
+}
+#category-6 a:hover{
+  background-color:none !important;
+  color: yellow !important;
+}
+#category-6 #category-description .description{
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+
 /* Footer & Footest*/
 #footest{
   text-align: center;
