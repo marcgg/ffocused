@@ -109,7 +109,7 @@ a:hover{
 
 /* Category Specific CSS */
 
-#category-9 h3{ /* Iceland */
+#category-9 .description-wrapper{ /* Iceland */
   display:none;
 }
 
@@ -122,6 +122,10 @@ a:hover{
 #category-6 a{
   color: yellow !important;
   text-decoration:underline !important;
+  background-color: none !important;
+}
+#category-6 .description-wrapper{ /* Iceland */
+  display:none;
 }
 #category-6 a:hover{
   background-color:none !important;
