@@ -10,11 +10,12 @@ class Category < ActiveRecord::Base
   end
   
   def map_photos(photos)
-    photos.map do |photo|
+    photos.each_with_index do |photo, i|
       flickr_photo_id = photo["id"]
       flickr_url_b = Flickr::Photo.create_url_from_json(photo, "b")
       flickr_url_s = Flickr::Photo.create_url_from_json(photo, "s")
-      Photo.create(  
+      Photo.create(
+        :position => i, 
         :flickr_photo_id => flickr_photo_id,
         :flickr_url_b => flickr_url_b,
         :flickr_url_s => flickr_url_s,
