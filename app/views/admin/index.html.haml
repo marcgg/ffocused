@@ -1,11 +1,15 @@
 %h2 Users
+= form_for BetaCode.new do |f|
+  = f.label :code
+  = f.text_field :code
+  = f.submit
 
 %table#users
   %tr
     %th ID
     %th Email
+    %th Beta Code
     %th Title
-    %th Description
     %th Categories
     %th Link
     
@@ -13,11 +17,22 @@
     %tr
       %td= user.id
       %td= user.email
+      %td= user.beta_code
       %td= user.portfolio.title
-      %td= user.portfolio.description
       %td= user.portfolio.categories.count
-      %td
-        - if user.portfolio.slug
-          = showcase_path(:slug => user.portfolio.slug)
-        - else
-          No Slug
+      %td= link_to user.portfolio.slug, showcase_path(:slug => user.portfolio.slug)
+
+%table#beta-codes
+  %tr
+    %th ID
+    %th Code
+    %th Used?
+    
+  - @beta_codes.each do |beta_code|
+    %tr
+      %td= beta_code.id
+      %td= beta_code.code
+      %td{:style => (beta_code.used ? "color:red" : "color:green")}
+        = beta_code.used ? "Used" : "Not Used"
+    
+    

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110425133535) do
+ActiveRecord::Schema.define(:version => 20110619185904) do
+
+  create_table "beta_codes", :force => true do |t|
+    t.string   "code"
+    t.boolean  "used",       :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "tags"
@@ -62,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110425133535) do
     t.datetime "updated_at"
     t.boolean  "is_admin"
     t.string   "login"
+    t.string   "beta_code"
   end
 
 end

@@ -1,7 +1,6 @@
 %h2= t("users.new.title")
 
-
-- form_for @user do |f|
+= form_for @user do |f|
   .form-error= @user.errors[:login].is_a?(Array) ? @user.errors[:login].first : @user.errors[:login]
   = f.label :login
   = f.text_field :login
@@ -17,6 +16,10 @@
   .form-error= @user.errors[:password_confirmation].is_a?(Array) ? @user.errors[:password_confirmation].first : @user.errors[:password_confirmation]
   = f.label :password_confirmation 
   = f.password_field :password_confirmation
+  
+  .form-error= @user.errors[:beta_code].is_a?(Array) ? @user.errors[:beta_code].first : @user.errors[:beta_code]
+  = f.label :beta_code
+  = f.text_field :beta_code 
   
   .submit-wrapper
     = f.submit t("users.new.go")

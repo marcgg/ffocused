@@ -4,5 +4,6 @@ class AdminController < ApplicationController
   
   def index
     @users = User.all
+    @beta_codes = BetaCode.all
   end
 end

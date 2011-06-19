@@ -1,10 +1,25 @@
 class User < ActiveRecord::Base
   acts_as_authentic
   attr_protected :is_admin
+  
   has_one :portfolio
   has_many :themes
+  
+  validate :check_beta_code
+  
   after_create :setup_portfolio
-   
+  after_create :burn_beta_code
+  
+  def burn_beta_code
+    code = BetaCode.where(:code => self.beta_code, :used => false).first
+    code.update_attributes(:used => true)
+  end
+  
+  def check_beta_code
+    code = BetaCode.where(:code => self.beta_code, :used => false).first
+    self.errors.add(:beta_code, I18n.t("users.check_beta_code.invalid")) if code.nil?
+  end
+  
   def setup_portfolio
     Portfolio.create!(:title => "#{login}'s Portfolio", :description => "This is my portfolio using Rlvnt, it's awesome.", :user_id => id, :slug => login)
   end

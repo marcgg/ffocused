@@ -7,7 +7,8 @@ namespace :rlvnt do
   end
   
   task :set_me_as_admin => :environment do
-    puts "Setting marcgg as admin"
+    puts "Setting marcgg & kevintunc as admin"
     User.first(:conditions => {:login => "marcgg"}).update_attribute(:is_admin, true)
+    User.first(:conditions => {:login => "kevintunc"}).update_attribute(:is_admin, true)
   end
 end
