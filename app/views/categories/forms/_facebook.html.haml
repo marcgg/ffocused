@@ -4,27 +4,28 @@
 - if accounts.is_a? Exception
   Problem
   = debug accounts  
-  
-- if accounts.empty?
-  No Albums
-  
-- else
-  - form_for Category.new do |f|
-  
-    = f.hidden_field :remote_account_id, :value => remote_account.id
-    = hidden_field_tag :type, "Category::Facebook"
-  
-    = f.label :title
-    = f.text_field :title
 
-    = f.label :facebook_album_id
-    = f.select(:facebook_album_id, options_for_select(remote_account.facebook_albums))
+- else  
+  - if accounts.empty?
+    No Albums
+  
+  - else
+    - form_for Category.new do |f|
+  
+      = f.hidden_field :remote_account_id, :value => remote_account.id
+      = hidden_field_tag :type, "Category::Facebook"
+  
+      = f.label :title
+      = f.text_field :title
 
-    = f.label :description
-    = f.text_area :description
+      = f.label :facebook_album_id
+      = f.select(:facebook_album_id, options_for_select(remote_account.facebook_albums))
 
-    = f.label :slug
-    = f.text_field :slug
+      = f.label :description
+      = f.text_area :description
 
-    .submit-wrapper
-      = f.submit
+      = f.label :slug
+      = f.text_field :slug
+
+      .submit-wrapper
+        = f.submit
