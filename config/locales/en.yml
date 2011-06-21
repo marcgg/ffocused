@@ -107,6 +107,7 @@ en:
       title: Reseted
       text: "The category has been reseted."
     index:
+      choose_account: Choose What Photo Account to Use
       type: "How to link to Flickr?"
       add_category:
         flickr:

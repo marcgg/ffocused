@@ -51,6 +51,7 @@ function initCategoryForm(){
     var $this = $(this);
     $.get($this.attr("href"), function(data){
       $("#new-category-form").html(data);
+      $("#all-get-category-form").hide();
     });
   });
 }
