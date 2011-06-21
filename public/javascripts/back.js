@@ -34,13 +34,12 @@ function initTheme(){
 
 /* Category */
 function initCategoryForm(){
-  $("#new-category #type").val("Category::FromSet");
-  $("#new-category #type").change(function(e){
+  $("#flickr-category-select #type").live("change", function(e){
     var $this = $(this);
-    if($this.val() == "Category::FromTag"){
+    if($this.val() == "Category::Flickr::FromTag"){
       $("#group-flickr-set").hide();
       $("#group-flickr-tags").show();
-    }else if($this.val() == "Category::FromSet"){
+    }else if($this.val() == "Category::Flickr::FromSet"){
       $("#group-flickr-set").show();
       $("#group-flickr-tags").hide();
     }
@@ -52,6 +51,7 @@ function initCategoryForm(){
     $.get($this.attr("href"), function(data){
       $("#new-category-form").html(data);
       $("#all-get-category-form").hide();
+      $("#flickr-category-select #type").val("Category::FromSet");
     });
   });
 }

@@ -13,7 +13,9 @@
   %ul#categories.sortable{:rel => order_categories_portfolios_path}
     - @categories.each do |category|
       %li.category{:rel => category.id, :id => "entry-#{category.id}"}
-        = image_tag category.photos.find(:first).small_photo_url
+        - unless category.photos.empty?
+          = image_tag category.photos.find(:first).small_photo_url
+        
         .title
           = link_to category.title, category_path(category)
           , #{category.photos.count} Photos

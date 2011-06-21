@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110621190247) do
+ActiveRecord::Schema.define(:version => 20110621205558) do
 
   create_table "beta_codes", :force => true do |t|
     t.string   "code"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20110621190247) do
     t.string   "type"
     t.string   "flickr_set_id"
     t.integer  "remote_account_id"
+    t.string   "facebook_album_id"
   end
 
   create_table "photos", :force => true do |t|
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20110621190247) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "flickr_id"
+    t.string   "facebook_photo_id"
   end
 
   create_table "portfolios", :force => true do |t|
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20110621190247) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.string   "remote_profile_url"
   end
 
   create_table "users", :force => true do |t|

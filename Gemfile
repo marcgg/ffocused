@@ -9,6 +9,7 @@ gem 'curb'
 gem 'json'
 gem 'compass'
 gem 'authlogic'
+gem "koala", "~> 1.1rc"
 
 group :test, :test do
   gem 'rspec'

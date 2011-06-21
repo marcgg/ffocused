@@ -10,7 +10,7 @@
     %th Email
     %th Beta Code
     %th Title
-    %th Categories
+    %th Cats/RA
     %th Link
     
   - @users.each do |user|
@@ -19,7 +19,7 @@
       %td= user.email
       %td= user.beta_code
       %td= user.portfolio.title
-      %td= user.portfolio.categories.count
+      %td= "#{user.portfolio.categories.count} / #{user.portfolio.remote_accounts.count}"
       %td= link_to user.portfolio.slug, showcase_path(:slug => user.portfolio.slug)
 
 %table#beta-codes

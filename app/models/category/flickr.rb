@@ -1,4 +1,5 @@
 class Category::Flickr < Category
+  after_create :set_photos_from_flickr
   
   def refresh
     set_photos_from_flickr

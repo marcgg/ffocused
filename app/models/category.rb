@@ -1,5 +1,4 @@
 class Category < ActiveRecord::Base
-  after_create :set_photos_from_flickr
   after_create :set_slug
   
   belongs_to :portfolio

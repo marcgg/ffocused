@@ -112,6 +112,11 @@ en:
       add_category:
         flickr:
           title: "Add a Category from %{name}'s Flickr Account"
+        facebook:
+          title: "Add a Category from %{name}'s Facebook Profile"
+          no_albums: |
+            It seems like there are no albums linked to this account.
+            Remember that only <strong>public</strong> albums will be fetched.
       blurb: |
         Categories allow you to sort your photos. <br /><br /> 
         Only public photos will be fetched.
@@ -163,3 +168,5 @@ en:
         beta_code: Invitation Code
       remote_account:
         remote_user_email: Email Associated to the Account
+        remote_profile_url: Your profile URL
+        

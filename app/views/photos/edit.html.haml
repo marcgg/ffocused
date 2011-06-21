@@ -1,5 +1,4 @@
-%h2= t("photos.edit.title", :title => @photo.title)
-#photo-preview= image_tag @photo.small_photo_url
+%h2= t("photos.edit.title", :title => truncate(@photo.title, :length => 30))
   
 = link_to t("photos.edit.back", :category => @category.title), category_path(@category), :class => "back-link"
 
