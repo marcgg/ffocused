@@ -11,7 +11,7 @@
     #photos
       - @category.photos.all(:limit => 15).each do |photo|
         .photo{:id => "photo-#{photo.flickr_id}"}
-          .image-wrapper= image_tag photo.flickr_url_b
+          .image-wrapper= image_tag photo.large_photo_url
           .description-wrapper
             - unless photo.title.blank?
               %h3= photo.title

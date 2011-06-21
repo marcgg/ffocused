@@ -5,7 +5,7 @@
 %ul#photos.sortable{:rel => order_photos_category_path(@category)}
   - @category.photos.each do |photo|
     %li.photo{:rel => photo.id, :id => "entry-#{photo.id}"}
-      = image_tag photo.flickr_url_s
+      = image_tag photo.small_photo_url
       .title
         = photo.title
         #actions

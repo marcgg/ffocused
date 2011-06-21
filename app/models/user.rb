@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   acts_as_authentic
   attr_protected :is_admin
   
-  has_one :portfolio
+  has_one :portfolio, :dependent => :destroy
   has_many :themes
   
   validate :check_beta_code
@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   end
   
   def setup_portfolio
+    # FIXME: Handle case where slug is already taken
     Portfolio.create!(:title => "#{login}'s Portfolio", :description => "This is my portfolio using Rlvnt, it's awesome.", :user_id => id, :slug => login)
   end
   

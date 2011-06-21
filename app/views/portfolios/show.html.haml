@@ -1,17 +1,17 @@
-- if @current_portfolio.flickr_user_id.blank?
+- unless @current_portfolio.setup?
   %h2= t("portfolios.show.get_started")
   
   %p= raw t("portfolios.show.not_setup")
-  
-  = form_for @current_portfolio do |f|
-    = render :partial => "form", :locals => {:f => f, :simple => true}
-
-    .submit-wrapper
-      = f.submit t("portfolios.show.setup_button")
+  = render :partial => "/remote_accounts/new_forms"
     
 - else
   %h2= t("portfolios.show.welcome")
-  %p= raw t("portfolios.show.setup_ok", :flickr_user_name => @current_portfolio.flickr_user_name)
+  - if @current_portfolio.remote_accounts.size > 1
+    %p= raw t("portfolios.show.setup_ok_advanced")
+  - else
+    %p= raw t("portfolios.show.setup_ok", 
+            :name => @current_portfolio.remote_accounts.last.remote_user_name,
+            :service => @current_portfolio.remote_accounts.last.class_name.capitalize)
   
   - if @current_portfolio.categories.size < 2 or (@current_portfolio.css.blank? and @current_portfolio.theme_id.blank?)
     %h3= t("portfolios.show.left_to_do.title")

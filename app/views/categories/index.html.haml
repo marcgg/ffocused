@@ -7,38 +7,13 @@
 - else
   %p= link_to t("categories.index.new_category"), "#", :class => "show-rel hide-self plus-button", :rel => "#new-category"
 
-#new-category{:style => (@categories.empty? ? "" : "display:none")}
-  %h3= t("categories.index.add_category_title")
-  - form_for Category.new do |f|
-      
-    = f.label :title
-    = f.text_field :title
-  
-    = label :type, t("categories.index.type")
-    = select_tag(:type, options_for_select([["Use Flickr Sets", "Category::FromSet"], ["Use Flickr Tags","Category::FromTag"]]))
-  
-    #group-flickr-set
-      = f.label :flickr_set_id
-      = f.select(:flickr_set_id, options_for_select(@current_portfolio.flickr_sets))
-  
-    #group-flickr-tags{:style => "display:none"}
-      = f.label :tags
-      = f.text_field :tags
-
-    = f.label :description
-    = f.text_area :description
-  
-    = f.label :slug
-    = f.text_field :slug
-  
-    .submit-wrapper
-      = f.submit
+= render :partial => "new"
       
 - unless @categories.empty?
   %ul#categories.sortable{:rel => order_categories_portfolios_path}
     - @categories.each do |category|
       %li.category{:rel => category.id, :id => "entry-#{category.id}"}
-        = image_tag category.photos.find(:first).flickr_url_s
+        = image_tag category.photos.find(:first).small_photo_url
         .title
           = link_to category.title, category_path(category)
           , #{category.photos.count} Photos

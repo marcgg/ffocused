@@ -6,6 +6,7 @@ namespace :rlvnt do
     puts Portfolio.all.to_yaml
   end
   
+  desc "Set some people as admins"
   task :set_me_as_admin => :environment do
     puts "Setting marcgg & kevintunc as admin"
     User.first(:conditions => {:login => "marcgg"}).update_attribute(:is_admin, true)

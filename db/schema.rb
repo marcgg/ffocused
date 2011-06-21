@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110619185904) do
+ActiveRecord::Schema.define(:version => 20110621190247) do
 
   create_table "beta_codes", :force => true do |t|
     t.string   "code"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20110619185904) do
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "tags"
+    t.string   "flickr_tags"
     t.string   "title"
     t.text     "description"
     t.string   "slug"
@@ -30,11 +30,12 @@ ActiveRecord::Schema.define(:version => 20110619185904) do
     t.datetime "updated_at"
     t.string   "type"
     t.string   "flickr_set_id"
+    t.integer  "remote_account_id"
   end
 
   create_table "photos", :force => true do |t|
-    t.string   "flickr_url_b"
-    t.string   "flickr_url_s"
+    t.string   "large_photo_url"
+    t.string   "small_photo_url"
     t.string   "flickr_photo_id"
     t.text     "title"
     t.text     "description"
@@ -49,15 +50,22 @@ ActiveRecord::Schema.define(:version => 20110619185904) do
     t.text     "description"
     t.string   "title"
     t.text     "footer"
-    t.string   "flickr_user_name"
-    t.string   "flickr_user_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "flickr_user_email"
     t.text     "css"
     t.integer  "theme_id"
     t.string   "slug"
+  end
+
+  create_table "remote_accounts", :force => true do |t|
+    t.string   "remote_user_name"
+    t.integer  "portfolio_id"
+    t.string   "remote_user_id"
+    t.string   "remote_user_email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "type"
   end
 
   create_table "users", :force => true do |t|

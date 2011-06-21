@@ -1,4 +1,6 @@
 Prtfl::Application.routes.draw do
+  get "remote_accounts/index"
+
   # ADMIN
   match "/admin" => "admin#index"
   resources :beta_codes
@@ -25,7 +27,10 @@ Prtfl::Application.routes.draw do
     post "order_photos", :on => :member
     post "reset", :on => :member
     post "refresh", :on => :member
+    get "fetch_form", :on => :collection
   end
+  
+  resources :remote_accounts
   
   resources :photos
   

@@ -5,7 +5,20 @@ $(function(){
   initDelete();
   initCategoryForm();
   initTheme();
+  initRemoteAccounts();
 });
+
+/* Remote Accounts*/
+function initRemoteAccounts(){
+  $("#choose-account a").click(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $(".account").hide();
+    $("#choose-account .selected").removeClass("selected");
+    $($this.attr("rel")).show();
+    $this.addClass("selected");
+  });
+}
 
 /* Themes */
 function initTheme(){
@@ -21,8 +34,8 @@ function initTheme(){
 
 /* Category */
 function initCategoryForm(){
-  $("#type").val("Category::FromSet");
-  $("#type").change(function(e){
+  $("#new-category #type").val("Category::FromSet");
+  $("#new-category #type").change(function(e){
     var $this = $(this);
     if($this.val() == "Category::FromTag"){
       $("#group-flickr-set").hide();
@@ -31,6 +44,14 @@ function initCategoryForm(){
       $("#group-flickr-set").show();
       $("#group-flickr-tags").hide();
     }
+  });
+  
+  $(".get-new-category-form").click(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.get($this.attr("href"), function(data){
+      $("#new-category-form").html(data);
+    });
   });
 }
 /* Delete */

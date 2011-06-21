@@ -1,4 +1,4 @@
-module Flickr
+module Fetchers::Flickr
   BASE_URL = "http://api.flickr.com/services/rest/"
   VERBOSE = true
   FORMAT = "json"

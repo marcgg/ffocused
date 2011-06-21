@@ -5,9 +5,15 @@ class CategoriesController < ApplicationController
   
   def index
     @categories = @current_portfolio.categories
+    @remote_accounts = @current_portfolio.remote_accounts
   end
 
   def edit
+  end
+  
+  def fetch_form
+    remote_account = @current_portfolio.remote_accounts.find(params[:remote_account_id])
+    render :partial => "/categories/forms/#{remote_account.class_name}", :locals => {:remote_account => remote_account}
   end
   
   def update
@@ -40,15 +46,14 @@ class CategoriesController < ApplicationController
   
   def reset
     @category = @current_portfolio.categories.find(params[:id])
-    @category.photos.destroy_all
-    @category.set_photos_from_flickr
+    @category.reset
     flash[:notice] = {:title => t("categories.reset.title"), :text => t("categories.reset.text")}
     redirect_to category_path(@category)
   end
   
   def refresh
     @category = @current_portfolio.categories.find(params[:id])
-    @category.set_photos_from_flickr
+    @category.refresh
     flash[:notice] = {:title => t("categories.refresh.title"), :text => t("categories.refresh.text")}
     redirect_to category_path(@category)
   end

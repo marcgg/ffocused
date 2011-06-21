@@ -1,0 +1,9 @@
+#choose-account
+  - RemoteAccount::AVAILABLE_ACCOUNTS.each do |account|
+    = link_to t("remote_accounts.new.accounts.#{account}"), "#", :rel => "#account-#{account}", :class => "account-entry-#{account}"
+    
+#all-accounts-forms
+  - RemoteAccount::AVAILABLE_ACCOUNTS.each do |account|
+    .account{:id => "account-#{account}", :style => "display:none;"}
+      %h3= t("remote_accounts.new.#{account}_title")
+      = render :partial => "/remote_accounts/forms/#{account}"

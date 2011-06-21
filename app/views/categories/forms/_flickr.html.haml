@@ -1,0 +1,27 @@
+%h3= t("categories.index.add_category.flickr.title", :name => remote_account.remote_user_name.capitalize)
+- form_for Category.new do |f|
+  
+  = f.hidden_field :remote_account_id, :value => remote_account.id
+  
+  = f.label :title
+  = f.text_field :title
+
+  = label :type, t("categories.index.type")
+  = select_tag(:type, options_for_select([["Use Flickr Sets", "Category::Flickr::FromSet"], ["Use Flickr Tags","Category::Flickr::FromTag"]]))
+
+  #group-flickr-set
+    = f.label :flickr_set_id
+    = f.select(:flickr_set_id, options_for_select(remote_account.flickr_sets))
+
+  #group-flickr-tags{:style => "display:none"}
+    = f.label :flickr_tags
+    = f.text_field :flickr_tags
+
+  = f.label :description
+  = f.text_area :description
+
+  = f.label :slug
+  = f.text_field :slug
+
+  .submit-wrapper
+    = f.submit
