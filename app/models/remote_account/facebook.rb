@@ -16,10 +16,10 @@ class RemoteAccount::Facebook < RemoteAccount
   
   def facebook_albums
     begin
-      graph = Koala::Facebook::GraphAPI.new("2227470867|2.AQDfkS7iH5DtezoM.3600.1308693600.0-560289256|MdaysY4jFnreqvBJW2gn-6xJsk4")
+      graph = Koala::Facebook::GraphAPI.new(FACEBOOK_ACCESS_TOKEN)
       res = graph.get_connections(remote_user_id, "albums", :fields => "id,name,count", :limit => 100)
-    rescue
-      res = []
+    rescue Exception => e
+      return e
     end
     res.map{|s| ["#{s["name"]} (#{s["count"]} photos)", s["id"]]}
   end

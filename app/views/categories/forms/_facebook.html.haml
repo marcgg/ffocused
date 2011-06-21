@@ -1,5 +1,9 @@
 %h3= t("categories.index.add_category.facebook.title", :name => remote_account.remote_user_name.capitalize)
 - accounts = remote_account.facebook_albums
+
+- if accounts.is_a? Exception
+  Problem
+  = debug accounts  
   
 - if accounts.empty?
   No Albums

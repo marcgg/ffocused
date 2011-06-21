@@ -23,7 +23,15 @@ Prtfl::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
   
-  APPLICATION_API_KEY = "15308080fe510399d83e2b185ed1a073"
-  APPLICATION_SECRET = "b5608a4e7f6512da"
+  # Flickr
+  FLICKR_APPLICATION_API_KEY = "15308080fe510399d83e2b185ed1a073"
+  FLICKR_APPLICATION_SECRET = "b5608a4e7f6512da"
+  
+  # Facebook
+  FACEBOOK_APPLICATION_ID = "212399708799450"
+  FACEBOOK_APPLICATION_SECRET = "6d6be8c09cbee1399a53ae3b8b816ee9"
+  FACEBOOK_APPLICATION_API_KEY = "062d0279e6bc49e9bd0dcef8055b0eca"
+  FACEBOOK_ACCESS_TOKEN = "2227470867|2.AQDfkS7iH5DtezoM.3600.1308693600.0-560289256|MdaysY4jFnreqvBJW2gn-6xJsk4"
+
 end
 
