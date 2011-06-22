@@ -32,6 +32,11 @@ Prtfl::Application.routes.draw do
   
   resources :remote_accounts
   
+  resources :oauth do
+    get "instagram_connect", :on => :collection
+    get "instagram_callback", :on => :collection
+  end
+  
   resources :photos
   
   # ADDITIONAL PAGES
