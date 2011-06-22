@@ -120,6 +120,8 @@ en:
           no_albums: |
             It seems like there are no albums linked to this account.
             Remember that only <strong>public</strong> albums will be fetched.
+        instagram:
+          title: "Add a Category From %{name}'s Recent Instagram Pictures"
       blurb: |
         Categories allow you to sort your photos. <br /><br /> 
         Only public photos will be fetched.
