@@ -5,4 +5,4 @@
   
   - @remote_accounts.each do |account|
     .account-entry{:class => "account-entry-#{account.class_name}"}
-      = render :partial => "/remote_accounts/entries/#{account.class_name}", :locals => {:account => account}
+      = account.remote_user_name

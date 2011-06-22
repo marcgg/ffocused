@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110621205558) do
+ActiveRecord::Schema.define(:version => 20110622223854) do
 
   create_table "beta_codes", :force => true do |t|
     t.string   "code"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110621205558) do
     t.datetime "updated_at"
     t.string   "type"
     t.string   "remote_profile_url"
+    t.string   "access_token"
   end
 
   create_table "users", :force => true do |t|

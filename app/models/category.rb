@@ -3,6 +3,7 @@ class Category < ActiveRecord::Base
   
   belongs_to :portfolio
   has_many :photos, :order => "position ASC"
+  belongs_to :remote_account
   
   validates_uniqueness_of :slug, :scope => :portfolio_id, :if => Proc.new { |category| !category.new_record? }
   validates_presence_of :title
