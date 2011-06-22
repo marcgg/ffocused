@@ -11,7 +11,7 @@ FACEBOOK_ACCESS_TOKEN         = "2227470867|2.AQDfkS7iH5DtezoM.3600.1308693600.0
 # Instagram
 INSTAGRAM_CLIENT_ID     = "b724ceb601144bee964ff3fc76ae065e"
 INSTAGRAM_CLIENT_SECRET = "c50cbef5e5ee47c39710bbb8acfca879"
-INSTAGRAM_CALLBACK_URL  = "http://heroku.rlvnt.net/oauth/instagram_callback"
+INSTAGRAM_CALLBACK_URL  = "http://rlvnt.heroku.com/oauth/instagram_callback"
 
 Instagram.configure do |config|
   config.client_id = INSTAGRAM_CLIENT_ID
