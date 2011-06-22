@@ -113,6 +113,9 @@ en:
         flickr:
           title: "Add a Category from %{name}'s Flickr Account"
         facebook:
+          bug: |
+            Facebook is not responding correctly. Please wait a bit and retry, or
+            contact us by sending us the following error code:
           title: "Add a Category from %{name}'s Facebook Profile"
           no_albums: |
             It seems like there are no albums linked to this account.

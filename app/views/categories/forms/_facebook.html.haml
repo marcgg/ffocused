@@ -2,12 +2,12 @@
 - accounts = remote_account.facebook_albums
 
 - if accounts.is_a? Exception
-  Problem
-  = debug accounts  
+  %p= t("categories.index.add_category.facebook.bug")
+  = debug accounts
 
 - else  
   - if accounts.empty?
-    No Albums
+    %p= t("categories.index.add_category.facebook.no_albums")
   
   - else
     - form_for Category.new do |f|
