@@ -1,4 +1,14 @@
 
+v0.3.0 / 2011-06-23 
+===================
+
+  ** Handling Instagram **
+
+  * wording
+  * added instagram image
+  * bad callback url
+  * instagram
+
 v0.2.0 / 2011-06-23 
 ===================
 
