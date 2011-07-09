@@ -19,14 +19,23 @@ body{
 
 a{
   text-decoration:none;
+  color: #6c88a2;
+  outline: none;
 }
 a:hover{
  text-decoration:underline;
 }
+
 p{
   color:#777; 
-  padding: 20px;
+  padding: 15px 20px;
   line-height:1.2em;
+  a{
+    text-decoration:underline;
+  }
+  a:hover{
+    text-decoration:none;
+  }
 }
 
 strong{
@@ -68,6 +77,8 @@ ul{
 .sidenote{
   color: #888;
   font-size: 0.9em;
+  margin: 10px 0px;
+  text-align: justify;
 }
 /* Header */
 header{
@@ -204,12 +215,12 @@ select{
   font-size: 0.9em;
 }
 input[type=text], textarea, .text, input[type=password]{
-  width: 450px;
+  width: 98%;
   padding: 5px;
   border: 1px solid #d3d8dc;
   font-size: 1em;
   margin-top:5px;
-  color:#666686;
+  color: #888;
   font-family: "Arial";
   @include border-radius(5px);
 }
@@ -264,6 +275,7 @@ textarea{
 .account-entry-flickr{ background: url(/images/remote_accounts/flickr.png) no-repeat; }
 .account-entry-facebook{ background: url(/images/remote_accounts/facebook.png) no-repeat; }
 .account-entry-instagramaccount{ background: url(/images/remote_accounts/instagram.png) no-repeat; }
+.account-entry-instagram{ background: url(/images/remote_accounts/instagram.png) no-repeat; }
 
 #choose-account{
   margin: 10px 0px 30px 10px;
@@ -326,7 +338,6 @@ ul{
       color:#999;
       a{
         font-size: 1.3em;
-        color: #6c88a2;
       }
     }
     img{
@@ -354,6 +365,7 @@ ul{
 
 /* Todo entries */
 #todos{
+  color:#777; 
   margin-bottom: 30px;
   a{
     text-decoration:underline;

@@ -1,10 +1,10 @@
-- unless flash.nil? or flash[:notice].blank?
+- unless flash.nil? or flash[:notice].blank? or flash[:notice][:title].blank? or flash[:notice][:text].blank?
   :javascript
     $(function(){
       startGritter("#{escape_javascript flash[:notice][:title]}", "#{escape_javascript flash[:notice][:text]}");
     });
     
-- unless flash.nil? or flash[:error].blank?
+- unless flash.nil? or flash[:error].blank? or flash[:error][:title].blank? or flash[:error][:text].blank?
   :javascript
     $(function(){
       startGritter("#{escape_javascript flash[:error][:title]}", "#{escape_javascript flash[:error][:text]}");

@@ -1,7 +1,7 @@
 - unless @current_portfolio.setup?
   %h2= t("portfolios.show.get_started")
   
-  %p= raw t("portfolios.show.not_setup")
+  %p= raw t("portfolios.show.not_setup", :example_url => showcase_path(:slug => User.find_by_login("marcgg").portfolio.slug))
   = render :partial => "/remote_accounts/new_forms"
     
 - else

@@ -45,13 +45,17 @@ en:
       new: Add a new photo account
       title: Photo Accounts
     new:
+      goto_instagram: Click here to give access to RLVNT to link your Instagram account.
+      goto_instagram_notes: You will be redirect to the Instagram website for login.
       title: Create a New Photo Account
       submit: Create
       flickr_title: Link Your Flickr Account
       facebook_title: Link Your Facebook Profile or Page
+      instagram_title: Link Your Instagram Account
       accounts:
         flickr: "Add a Flickr Account"
         facebook: "Add a Facebook Profile or Page"
+        instagram: Add an Instagram Account
     create:
       failure_title: Failed
       failure_text: Couldn't create this account
@@ -64,16 +68,18 @@ en:
     show:
       setup_ok: |
         Alright, your <strong>%{service}</strong> account <strong>%{name}</strong> has been 
-        linked properly to a Rlvnt. 
+        linked properly to your Rlvnt account. 
         You can add another one at any time in the 'Photo Account' section.<br /><br />
         Have fun playing around in the backoffice!
       setup_ok_advanced: |
         Cool, you have linked multiple photo accounts to your portfolio. 
         Let us know if you think we should support other services!
       not_setup: |
-        Welcome to Rlvnt! <br /><br />
+        Welcome to Rlvnt!  <br /><br />
+        We'll help you get a portfolio such as
+        <a href='%{example_url}' target='_blank'>this one</a> to feature your best pictures.<br /><br />
         To get started, you first need to link your Rlvnt account with your account on one of the supported photo services.
-        So far we support Flickr and Facebook.
+        So far we support Flickr, Instagram and Facebook.
       setup_button: Save
       left_to_do:
         title: Left to Do
