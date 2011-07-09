@@ -14,11 +14,11 @@
       %h1 &nbsp;
       - unless @current_user.nil?
         #logout
-          = t("logged_in", :name => current_user.login)
+          = raw sanitize t("logged_in", :name => current_user.login), :tags => %(strong)
           = link_to t("logout"), logout_path
           
       - if @current_portfolio and @current_portfolio.setup?
-        = link_to t("back.header.view_website"), showcase_path(:slug => @current_portfolio.slug), :id => "showcase-link"
+        = link_to t("back.header.view_website"), showcase_path(:slug => @current_portfolio.slug), :id => "showcase-link", :target => "_blank"
   
   - if @current_portfolio and @current_portfolio.setup?
     = render :partial => "/shared/nav"
@@ -36,5 +36,5 @@
         = link_to t("back.footer.terms"), terms_path
         = link_to t("back.footer.faq"), faq_path
       .extra-details
-        =raw t("back.footer.copyright")
+        =raw t("back.footer.copyright", :year => Time.now.year)
       

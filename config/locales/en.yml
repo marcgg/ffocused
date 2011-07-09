@@ -7,7 +7,7 @@ en:
   error: Error
   logout: Logout
   login: Login
-  logged_in: "Hey %{name}! "
+  logged_in: "Hey <strong>%{name}</strong>! "
   or: or
   delete: Delete
   back:
@@ -24,7 +24,7 @@ en:
       twitter: Twitter
       Terms: Terms
       faq: FAQ
-      copyright: "Copyright &copy 2011 RLVNT"
+      copyright: "Copyright &copy %{year} RLVNT"
     header:
       view_website: View Your Website
   
@@ -119,12 +119,10 @@ en:
           title: "Add a Category from %{name}'s Facebook Profile"
           no_albums: |
             It seems like there are no albums linked to this account.
-            Remember that only <strong>public</strong> albums will be fetched.
         instagram:
           title: "Add a Category From %{name}'s Recent Instagram Pictures"
       blurb: |
         Categories allow you to sort your photos. <br /><br /> 
-        Only public photos will be fetched.
         Each category must be linked to one of your photo accounts.
         Keep in mind that you can only display a maximum of <strong>15</strong> photos, so pick your best work!
       new_category: Create a New Category
