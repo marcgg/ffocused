@@ -5,6 +5,12 @@ class RemoteAccountsController < ApplicationController
     @remote_accounts = @current_portfolio.remote_accounts
   end
 
+  def destroy
+    @remote_account = @current_portfolio.remote_accounts.find(params[:id])
+    @remote_account.destroy
+    render :nothing => true
+  end
+
   def create
     # TODO: Use Factory Instead
     raise "Invalid Subclass : #{params[:type]}" unless params[:type] and RemoteAccount::AVAILABLE_SUBCLASSES.include?(params[:type])

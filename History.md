@@ -1,15 +1,15 @@
 
 v0.4.1 / 2011-07-10 
-===================
+-------------------
 
-  ** Pushing on Github is nice, but deploying is better **
+** Pushing on Github is nice, but deploying is better **
 
   * heroku configuration
 
 v0.4.0 / 2011-07-10 
-===================
+-------------------
 
-  ** Github-able version; Facebook works again; New Layout in progress **
+** Github-able version; Facebook works again; New Layout in progress **
 
   * preparing removing sensitive data
   * Implemented Oauth for Facebook
@@ -17,9 +17,9 @@ v0.4.0 / 2011-07-10
   * Updated some gems; CSS update
 
 v0.3.0 / 2011-06-23 
-===================
+-------------------
 
-  ** Handling Instagram **
+** Handling Instagram **
 
   * wording
   * added instagram image
@@ -27,10 +27,10 @@ v0.3.0 / 2011-06-23
   * instagram
 
 v0.2.0 / 2011-06-23 
-===================
+-------------------
 
-  ** CSS changes, better error handling, beta codes.**
-  ** More generic handling of Photo Accounts, draft for Facebook items **
+** CSS changes, better error handling, beta codes.**
+** More generic handling of Photo Accounts, draft for Facebook items **
 
   * minor updates related to facebook error handling
   * open security breach to debug something
@@ -52,6 +52,7 @@ v0.2.0 / 2011-06-23
   * category specific layout
 
 v0.1.0 / 2011-06-13
-===================
+-------------------
 
-  ** First Release **
+** First Release **
+

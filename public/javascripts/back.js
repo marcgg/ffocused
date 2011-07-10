@@ -18,17 +18,40 @@ function initRemoteAccounts(){
     $($this.attr("rel")).show();
     $this.addClass("selected");
   });
+  
+  $(".delete-remote-account").click(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.post($this.attr("href"), {_method: "DELETE"}, function(){
+      $($this.attr("rel")).slideUp("fast");
+    });
+  });
 }
 
 /* Themes */
 function initTheme(){
-  $("#portfolio_theme_id").change(function(e){
+  $("#use-css-editor").click(function(e){
+    e.preventDefault();
+    $("#theme-type-picker .selected").removeClass("selected");
+    $("#css-editor").show();
+    $("#portfolio_theme_id").val("");
+    $(this).addClass("selected");
+    $("#all-themes").hide();
+  });
+
+  $("#use-theme").click(function(e){
+    e.preventDefault();
+    $("#css-editor").hide();
+    $("#all-themes").show();
+    $("#theme-type-picker .selected").removeClass("selected");
+    $(this).addClass("selected");
+  });
+
+  $("#all-themes .theme .image").click(function(e){
     var $this = $(this);
-    if($this.val() == ""){
-      $("#css-editor").show();
-    }else{
-      $("#css-editor").hide();
-    }
+    $("#all-themes .selected").removeClass("selected");
+    $("#portfolio_theme_id").val($this.parent().attr("rel"));
+    $this.parent().addClass("selected");
   });
 }
 

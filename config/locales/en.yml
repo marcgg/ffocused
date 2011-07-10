@@ -7,6 +7,9 @@ en:
   logged_in: "Hey <strong>%{name}</strong>! "
   or: or
   delete: Delete
+  cancel: Cancel
+  by: "by %{name}"
+  
   back:
     title: "RLVNT Portfolio"
     nav:
@@ -25,6 +28,12 @@ en:
     header:
       view_website: View Your Website
   
+  user_sessions:
+    create:
+      error_title: Sorry
+      error_text: "This password / login combinaison isn't correct"
+      success_title: Welcome!
+      success_text: Nice to have you on board
   photos:
     edit:
       title: "Editing Photo: %{title}"
@@ -41,6 +50,10 @@ en:
     index:
       new: Add a new photo account
       title: Photo Accounts
+      add_category: Not linked to a category. You should do this now!
+      categories:
+        one: Linked to one category
+        other: "Linked to %{count} categories"
     new:
       goto_instagram: Click here to give access to RLVNT to link your Instagram account.
       goto_instagram_notes: You will be redirected to the Instagram website in order to login.
@@ -64,6 +77,8 @@ en:
   portfolios:
     theme:
       your_own: Use the CSS Editor
+      optimized_for: "Optimized for %{remote_accounts}"
+      used_by: "Examples:" 
     show:
       setup_ok: |
         Alright, your <strong>%{service}</strong> account <strong>%{name}</strong> has been 
@@ -95,6 +110,8 @@ en:
       wrong_email: This email doesn't seem to be linked to a valid Flickr account
     edit:
       theme:
+        use_editor: Use CSS Editor
+        use_theme: Use a Theme
         title: Theme
         creative: |
           Remember that once you use a theme on Rlvnt, it automatically goes under license

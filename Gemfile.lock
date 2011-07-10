@@ -99,7 +99,7 @@ GEM
       activesupport (= 3.0.6)
       rake (>= 0.8.7)
       thor (~> 0.14.4)
-    rake (0.8.7)
+    rake (0.9.2)
     rr (1.0.2)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
@@ -131,9 +131,10 @@ DEPENDENCIES
   haml (= 3.1.2)
   instagram (= 0.7)
   json (= 1.5.1)
-  koala (~> 1.1rc)
+  koala (= 1.1.0rc2)
   mongrel
   rails (= 3.0.6)
+  rake (= 0.9.2)
   rr
   rspec
   ruby-debug

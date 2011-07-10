@@ -9,9 +9,10 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = {:title => "Welcome!", :text => "Successfully logged in."}
+      flash[:notice] = {:title => t("user_sessions.create.success_title"), :text =>  t("user_sessions.create.success_text")}
       redirect_to portfolio_path(current_user.id)
     else
+      flash[:error] = {:title => t("user_sessions.create.error_title"), :text =>  t("user_sessions.create.error_text")}
       render :action => 'new'
     end
   end
