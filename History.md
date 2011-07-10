@@ -1,4 +1,11 @@
 
+v0.4.1 / 2011-07-10 
+===================
+
+  ** Pushing on Github is nice, but deploying is better **
+
+  * heroku configuration
+
 v0.4.0 / 2011-07-10 
 ===================
 
