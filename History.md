@@ -1,4 +1,14 @@
 
+v0.4.0 / 2011-07-10 
+===================
+
+  ** Github-able version; Facebook works again; New Layout in progress **
+
+  * preparing removing sensitive data
+  * Implemented Oauth for Facebook
+  * layout and wording
+  * Updated some gems; CSS update
+
 v0.3.0 / 2011-06-23 
 ===================
 
