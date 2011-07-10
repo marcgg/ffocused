@@ -1,4 +1,15 @@
 
+v0.5.0/ 2011-07-11 
+===================
+
+** New Themes select screen and minors UI changes **
+
+  * Merge branch 'development'
+  * minor js fixes; proper error message when login fails
+  * new themes select screen; changed some gems versions
+  * cancel buttons, cancel buttons everywhere
+  * delete remote accounts; wording & css; display category count next to each remoteaccount
+
 v0.4.1 / 2011-07-10 
 -------------------
 
