@@ -28,6 +28,12 @@ en:
     header:
       view_website: View Your Website
   
+  user_sessions:
+    create:
+      error_title: Sorry
+      error_text: "This password / login combinaison isn't correct"
+      success_title: Welcome!
+      success_text: Nice to have you on board
   photos:
     edit:
       title: "Editing Photo: %{title}"

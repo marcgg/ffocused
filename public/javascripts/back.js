@@ -31,6 +31,7 @@ function initRemoteAccounts(){
 /* Themes */
 function initTheme(){
   $("#use-css-editor").click(function(e){
+    e.preventDefault();
     $("#theme-type-picker .selected").removeClass("selected");
     $("#css-editor").show();
     $("#portfolio_theme_id").val("");
@@ -39,6 +40,7 @@ function initTheme(){
   });
 
   $("#use-theme").click(function(e){
+    e.preventDefault();
     $("#css-editor").hide();
     $("#all-themes").show();
     $("#theme-type-picker .selected").removeClass("selected");

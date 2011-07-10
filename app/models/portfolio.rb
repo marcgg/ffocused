@@ -6,6 +6,7 @@ class Portfolio < ActiveRecord::Base
   validates_presence_of :slug
   
   belongs_to :user
+
   has_many :remote_accounts, :dependent => :destroy
   has_many :categories, :order => "position ASC", :dependent => :destroy
   
