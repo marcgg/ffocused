@@ -18,6 +18,14 @@ function initRemoteAccounts(){
     $($this.attr("rel")).show();
     $this.addClass("selected");
   });
+  
+  $(".delete-remote-account").click(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.post($this.attr("href"), {_method: "DELETE"}, function(){
+      $($this.attr("rel")).slideUp("fast");
+    });
+  });
 }
 
 /* Themes */

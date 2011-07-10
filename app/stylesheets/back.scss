@@ -157,6 +157,7 @@ nav{
   float:right;
   margin-top: 7px;
   font-size: 0.9em;
+  @include text-shadow(#666 1px 1px 0, #777 1px 0px 0);
   a{
     color:#fff;
     text-decoration:underline;
@@ -245,6 +246,8 @@ textarea{
   border: 1px solid #C4CED5;
   padding: 3px 15px 3px 25px;
   color: #7a8c97;
+  text-decoration:none;
+  @include text-shadow(#fff 1px 1px 0, #ccc 1px 0px 0);
 }
 .plus-button:hover{
   border: 1px solid #7a8c97;
@@ -267,9 +270,20 @@ textarea{
   padding: 10px;
   .account-entry{
     margin: 10px 0px 0px 0px;
-    padding: 16px 0px 20px 60px;
+    padding: 7px 0px 20px 60px;
     font-size: 1.3em;
     color: #6A7D8A;
+    .details{
+      color: #999;
+      font-size: 0.7em;
+      margin-top: 5px;
+      a{ color: #6A7D8A; }
+    }
+    .delete{
+      display:inline-block;
+      float: right;
+      font-size: 0.7em;
+    }
   }
 }
 .account-entry-flickr{ background: url(/images/remote_accounts/flickr.png) no-repeat; }

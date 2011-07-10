@@ -7,6 +7,8 @@ en:
   logged_in: "Hey <strong>%{name}</strong>! "
   or: or
   delete: Delete
+  cancel: Cancel
+  
   back:
     title: "RLVNT Portfolio"
     nav:
@@ -41,6 +43,10 @@ en:
     index:
       new: Add a new photo account
       title: Photo Accounts
+      add_category: Not linked to a category. You should do this now!
+      categories:
+        one: Linked to one category
+        other: "Linked to %{count} categories"
     new:
       goto_instagram: Click here to give access to RLVNT to link your Instagram account.
       goto_instagram_notes: You will be redirected to the Instagram website in order to login.
