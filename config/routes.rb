@@ -6,13 +6,13 @@ Prtfl::Application.routes.draw do
   resources :beta_codes
   
   # FRONT
-  get "/p/:slug/about" => "front#about", :as => :about
-  get "/p/:slug(/:category_slug)" => "front#showcase", :as => :showcase
+  get "/p/:slug/about"            => "front#about",     :as => :about
+  get "/p/:slug(/:category_slug)" => "front#showcase",  :as => :showcase
   
   # USERS & SESSIONS
   resources :users
   resources :user_sessions
-  match "/login" => "user_sessions#new", :as => :login
+  match "/login"  => "user_sessions#new",     :as => :login
   match "/logout" => "user_sessions#destroy", :as => :logout
   
   # HOME
@@ -24,23 +24,24 @@ Prtfl::Application.routes.draw do
   end
 
   resources :categories do
-    post "order_photos", :on => :member
-    post "reset", :on => :member
-    post "refresh", :on => :member
-    get "fetch_form", :on => :collection
+    post "order_photos",  :on => :member
+    post "reset",         :on => :member
+    post "refresh",       :on => :member
+    get  "fetch_form",    :on => :collection
   end
   
   resources :remote_accounts
   
   resources :oauth do
-    get "instagram_connect", :on => :collection
+    get "instagram_connect",  :on => :collection
     get "instagram_callback", :on => :collection
+    get "facebook_callback",  :on => :collection
   end
   
   resources :photos
   
   # ADDITIONAL PAGES
-  match "/faq" => "faq#index", :as => :faq
-  match "/terms" => "home#terms", :as => :terms
-  match "/contact" => "home#contact", :as => :contact
+  match "/faq"      => "faq#index",     :as => :faq
+  match "/terms"    => "home#terms",    :as => :terms
+  match "/contact"  => "home#contact",  :as => :contact
 end

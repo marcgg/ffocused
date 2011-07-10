@@ -46,7 +46,9 @@ en:
       title: Photo Accounts
     new:
       goto_instagram: Click here to give access to RLVNT to link your Instagram account.
-      goto_instagram_notes: You will be redirect to the Instagram website for login.
+      goto_instagram_notes: You will be redirected to the Instagram website in order to login.
+      goto_facebook: Click here to give access to RLVNT to link your Facebook account.
+      goto_facebook_notes: You will be redirected to Facebook in order to login.
       title: Create a New Photo Account
       submit: Create
       flickr_title: Link Your Flickr Account

@@ -1,8 +1,4 @@
-= form_for RemoteAccount.new, :url => remote_accounts_path do |f|
-  = hidden_field_tag :type, "RemoteAccount::Facebook"
-  
-  = f.label :remote_profile_url
-  = f.text_field :remote_profile_url
-  
-  .submit-wrapper
-    = f.submit t("remote_accounts.new.submit")
+- oauth = Koala::Facebook::OAuth.new(FACEBOOK_APPLICATION_API_KEY, FACEBOOK_APPLICATION_SECRET, FACEBOOK_CALLBACK_URL)
+
+%p= link_to t("remote_accounts.new.goto_facebook"), oauth.url_for_oauth_code(:permissions => "user_photos")
+%p= t("remote_accounts.new.goto_facebook_notes")
