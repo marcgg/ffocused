@@ -5,13 +5,7 @@
     = render :partial => "form", :locals => {:f => f, :simple => false}
   
   - if params[:type] == "theme"
-    = f.label :theme_id
-    = f.select(:theme_id, options_for_select([[t("portfolios.theme.your_own"), ""]] + THEMES.map{|k,v| [v[:title], k]}, @current_portfolio.theme_id))
-  
-    #css-editor{:style => (@current_portfolio.theme_id.blank? ? "" : "display:none;")}
-      = f.label :css
-      = f.text_area :css, {:style => "height:300px; width:100%;"}
-      .sidenote=raw t("portfolios.edit.theme.creative")
-    
+    = render :partial => "theme", :locals => {:f => f}
+
   .submit-wrapper
     = f.submit t("portfolios.show.setup_button")

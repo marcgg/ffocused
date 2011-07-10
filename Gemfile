@@ -11,8 +11,9 @@ gem 'compass', '=0.11.4'
 gem 'authlogic', '=2.1.6'
 
 gem 'curb', '=0.7.12'
-gem "koala", "~> 1.1rc"
-gem "instagram", '=0.7'
+gem 'koala', '=1.1.0rc2'
+gem 'instagram', '=0.7'
+gem 'rake', '=0.9.2'
 
 group :test, :test do
   gem 'rspec'

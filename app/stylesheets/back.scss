@@ -437,5 +437,45 @@ table{
   }
 }
 
+/* Themes */
+#theme-type-picker{
+  text-align: center;
+  a{
+    display:block;
+    width: 220px;
+    float:left;
+    padding: 0px 20px 20px 20px;
+    font-size: 1.1em;
+  }
+  .selected{
+    font-weight:bold;
+  }
+  @include clearfix;
+}
 
+#all-themes{
+  @include clearfix;
+  .selected{
+    border: 2px solid #43a3fe !important;
+  }
+  .theme{
+    border: 2px solid #eee;
+    float: left;
+    margin: 10px 17px 10px 17px;
+    width: 220px;
+    height:300px;
+    @include border-radius(5px);
+    @include box-shadow(#999 2px 2px 5px);
+    img{
+      width:100%;
+    }
+    .info{
+      padding: 10px;
+      h4{
+        color: #678db4;
+        font-weight:bold;
+      }
+    }
+  }
+}
 

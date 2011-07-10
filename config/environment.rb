@@ -8,3 +8,4 @@ Prtfl::Application.initialize!
 
 # Bypass some Facebook nonsense
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+

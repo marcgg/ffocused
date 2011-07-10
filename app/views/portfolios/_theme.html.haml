@@ -1,0 +1,32 @@
+= f.hidden_field :theme_id
+
+#theme-type-picker
+  = link_to t("portfolios.edit.theme.use_editor"), "#", :id => "use-css-editor", :class => (@current_portfolio.theme_id.blank? ? "selected" : "")
+  = link_to t("portfolios.edit.theme.use_theme"), "#", :id => "use-theme", :class => (@current_portfolio.theme_id.blank? ? "" : "selected")
+
+
+#css-editor{:style => (@current_portfolio.theme_id.blank? ? "" : "display:none;")}
+  = f.label :css
+  = f.text_area :css, {:style => "height:300px; width:100%;"}
+  .sidenote= raw t("portfolios.edit.theme.creative")
+
+#all-themes{:style => (@current_portfolio.theme_id.blank? ? "display:none;" : "")}
+  - i = 0
+  - THEMES.each do |k, v|
+    - if i == 0
+      .clearfix
+    .theme{:class => (@current_portfolio.theme_id == k ? "selected" : ""), :rel => k}
+      .image= image_tag "themes/#{v[:code]}.jpg"
+      .info
+        %h4
+          = v[:title]
+          = raw t("by", :name => v[:user])
+        .optimized= t(".optimized_for", :remote_accounts => v[:remote_accounts].join(", "))
+        - used_by = Portfolio.all(:conditions => {:theme_id => k}, :limit => 3)
+        .used
+          = t(".used_by")
+          = raw used_by.map{|p| link_to(p.title[0..15], showcase_path(:slug => p.slug)) }.join(", ")
+    - i += 1
+
+
+

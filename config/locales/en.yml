@@ -8,6 +8,7 @@ en:
   or: or
   delete: Delete
   cancel: Cancel
+  by: "by %{name}"
   
   back:
     title: "RLVNT Portfolio"
@@ -70,6 +71,8 @@ en:
   portfolios:
     theme:
       your_own: Use the CSS Editor
+      optimized_for: "Optimized for %{remote_accounts}"
+      used_by: "Examples:" 
     show:
       setup_ok: |
         Alright, your <strong>%{service}</strong> account <strong>%{name}</strong> has been 
@@ -101,6 +104,8 @@ en:
       wrong_email: This email doesn't seem to be linked to a valid Flickr account
     edit:
       theme:
+        use_editor: Use CSS Editor
+        use_theme: Use a Theme
         title: Theme
         creative: |
           Remember that once you use a theme on Rlvnt, it automatically goes under license
