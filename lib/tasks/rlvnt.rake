@@ -22,6 +22,6 @@ namespace :ffocused do
 
   desc "Set all photos as not deleted"
   task :set_all_as_activated => :environment do
-    Photo.update_all("deleted=0")
+    Photo.update_all("deleted=true")
   end
 end
