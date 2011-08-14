@@ -8,7 +8,7 @@
   - else
     = stylesheet_link_tag "themes/#{@portfolio.theme[:code]}"
 
-%body{:id => (@category ? "category-#{@category.id}" : ""), :class => (@category ? "account-#{@category.remote_account.public_name}" : "")}
+%body{:id => (!@category.nil? ? "category-#{@category.id}" : ""), :class => (!@category.nil? ? "account-#{@category.remote_account.public_name}" : "")}
   %header
     %h1= @portfolio.title
     %p= @portfolio.description
