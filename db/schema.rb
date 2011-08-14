@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110622223854) do
+ActiveRecord::Schema.define(:version => 20110814141804) do
 
   create_table "beta_codes", :force => true do |t|
     t.string   "code"

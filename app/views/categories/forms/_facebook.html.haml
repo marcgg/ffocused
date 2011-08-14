@@ -5,16 +5,16 @@
   %p= t("categories.index.add_category.facebook.bug")
   = debug accounts
 
-- else  
+- else
   - if accounts.empty?
     %p= t("categories.index.add_category.facebook.no_albums")
-  
+
   - else
     - form_for Category.new do |f|
-  
+
       = f.hidden_field :remote_account_id, :value => remote_account.id
       = hidden_field_tag :type, "Category::Facebook"
-  
+
       = f.label :title
       = f.text_field :title
 
