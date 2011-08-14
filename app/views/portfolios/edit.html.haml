@@ -1,9 +1,9 @@
 %h2= t("portfolios.edit.#{params[:type]}.title")
 
 - form_for @current_portfolio do |f|
-  - if params[:type] == "settings" 
+  - if params[:type] == "settings"
     = render :partial => "form", :locals => {:f => f, :simple => false}
-  
+
   - if params[:type] == "theme"
     = render :partial => "theme", :locals => {:f => f}
 

@@ -9,7 +9,7 @@ en:
   delete: Delete
   cancel: Cancel
   by: "by %{name}"
-  
+
   back:
     title: "RLVNT Portfolio"
     nav:
@@ -27,7 +27,7 @@ en:
       copyright: "Copyright &copy %{year} RLVNT"
     header:
       view_website: View Your Website
-  
+
   user_sessions:
     create:
       error_title: Sorry
@@ -38,14 +38,14 @@ en:
     edit:
       title: "Editing Photo: %{title}"
       back: "<< Back to %{category}"
-  
+
   users:
     new:
       title: Signup!
       go: "Let's go"
     check_beta_code:
       invalid: Your invitation code is invalid
-  
+
   remote_accounts:
     index:
       new: Add a new photo account
@@ -73,20 +73,20 @@ en:
       failure_text: Couldn't create this account
       success_title: Created!
       success_text: Your photo account has been created!
-      
+
   portfolios:
     theme:
       your_own: Use the CSS Editor
       optimized_for: "Optimized for %{remote_accounts}"
-      used_by: "Examples:" 
+      used_by: "Examples:"
     show:
       setup_ok: |
-        Alright, your <strong>%{service}</strong> account <strong>%{name}</strong> has been 
-        linked properly to your Rlvnt account. 
+        Alright, your <strong>%{service}</strong> account <strong>%{name}</strong> has been
+        linked properly to your Rlvnt account.
         You can add another one at any time in the 'Photo Account' section.<br /><br />
         Have fun playing around in the backoffice!
       setup_ok_advanced: |
-        Cool, you have linked multiple photo accounts to your portfolio. 
+        Cool, you have linked multiple photo accounts to your portfolio.
         Let us know if you think we should support other services!
       not_setup: |
         Welcome to Rlvnt!  <br /><br />
@@ -98,7 +98,7 @@ en:
       left_to_do:
         title: Left to Do
         intro: "Your portfolio is not yet fully setup. Here's what you need to do:"
-        category: 
+        category:
           text: to showcase your best pictures.
           link: Create a category
         theme:
@@ -120,7 +120,7 @@ en:
           If you are not ok with this, please contact us.
       settings:
         title: Settings
-        
+
   categories:
     refresh:
       title: "Refreshed!"
@@ -144,11 +144,11 @@ en:
         instagram:
           title: "Add a Category From %{name}'s Recent Instagram Pictures"
       blurb: |
-        Categories allow you to sort your photos. <br /><br /> 
+        Categories allow you to sort your photos. <br /><br />
         Each category must be linked to one of your photo accounts.
         Keep in mind that you can only display a maximum of <strong>15</strong> photos, so pick your best work!
       new_category: Create a New Category
-      all_categories: Current Categories
+      all_categories: Manage Categories
       first_time: Please go ahead and create your first category!
     show:
       refresh: "Refresh this category, fetching any new content added while preserving the current data."
@@ -158,8 +158,8 @@ en:
       back: "<< Back to Categories"
       blurb: "Only the first 15 will be displayed on your portfolio. Drag & drop the photos to reorder them."
       reset: |
-        Reset all photos in this category. 
-        This will fetch all the pictures again from the linked photo account, discarding the titles, 
+        Reset all photos in this category.
+        This will fetch all the pictures again from the linked photo account, discarding the titles,
         descriptions and order you might have already set.
         Be careful, this action is not reversible.
       reset_button: "Reset Now!"
@@ -175,7 +175,7 @@ en:
       error_text: "Sorry, the data you entered is invalid"
       success_title: Updated!
       success_text: Your changes have been made!
-      
+
   activerecord:
     attributes:
       portfolio:
@@ -194,4 +194,4 @@ en:
       remote_account:
         remote_user_email: Email Associated to the Account
         remote_profile_url: Your profile URL
-        
+

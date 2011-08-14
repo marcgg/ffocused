@@ -4,23 +4,24 @@ Prtfl::Application.routes.draw do
   # ADMIN
   match "/admin" => "admin#index"
   resources :beta_codes
-  
+
   # FRONT
   get "/p/:slug/about"            => "front#about",     :as => :about
   get "/p/:slug(/:category_slug)" => "front#showcase",  :as => :showcase
-  
+
   # USERS & SESSIONS
   resources :users
   resources :user_sessions
   match "/login"  => "user_sessions#new",     :as => :login
   match "/logout" => "user_sessions#destroy", :as => :logout
-  
+
   # HOME
   root :to => "home#index"
-  
+
   # PORTFOLIO
   resources :portfolios do
-    post "order_categories", :on => :collection
+    post "order_categories",  :on => :collection
+    get  "not_setup",         :on => :member
   end
 
   resources :categories do
@@ -29,17 +30,17 @@ Prtfl::Application.routes.draw do
     post "refresh",       :on => :member
     get  "fetch_form",    :on => :collection
   end
-  
+
   resources :remote_accounts
-  
+
   resources :oauth do
     get "instagram_connect",  :on => :collection
     get "instagram_callback", :on => :collection
     get "facebook_callback",  :on => :collection
   end
-  
+
   resources :photos
-  
+
   # ADDITIONAL PAGES
   match "/faq"      => "faq#index",     :as => :faq
   match "/terms"    => "home#terms",    :as => :terms
