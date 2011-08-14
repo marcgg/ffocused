@@ -5,10 +5,6 @@ Prtfl::Application.routes.draw do
   match "/admin" => "admin#index"
   resources :beta_codes
 
-  # FRONT
-  get "/p/:slug/about"            => "front#about",     :as => :about
-  get "/p/:slug(/:category_slug)" => "front#showcase",  :as => :showcase
-
   # USERS & SESSIONS
   resources :users
   resources :user_sessions
@@ -45,4 +41,8 @@ Prtfl::Application.routes.draw do
   match "/faq"      => "faq#index",     :as => :faq
   match "/terms"    => "home#terms",    :as => :terms
   match "/contact"  => "home#contact",  :as => :contact
+
+  # FRONT
+  get "/:slug/about"            => "front#about",     :as => :about
+  get "/:slug(/:category_slug)" => "front#showcase",  :as => :showcase
 end
