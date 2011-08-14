@@ -1,4 +1,14 @@
 
+v0.6.1 / 2011-08-14
+===================
+
+  ** Fixed integration issues with heroku **
+
+  * problem with heroku and postgres
+  * fixed rake task for set photos as active
+  * do not crash if there is no remote_account
+  * check .nil instead of just the object (problems with heroku apparently)
+
 v0.6.0 / 2011-08-14
 ===================
 
