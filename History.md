@@ -1,5 +1,21 @@
 
-v0.5.0/ 2011-07-11 
+v0.6.0 / 2011-08-14
+===================
+
+  ** Better URL for Portfolios; Fixed refresh bug; Removed flickr tags;
+CSS fixes & front's DOM changes for better templating **
+
+  * Merge branch 'development'
+  * misc minor CSS fixes
+  * ability to request beta codes
+  * Removed rlvnt references except logo (issue #5) + improved DOM for front layout + refacto for photos named_scopes
+  * [Issue #4] Better URL for portfolios
+  * [Issue #1] Do not delete photos, keep them to avoid refreshing them by mistake
+  * removed flickr submodels; we do not handle flickr tags anymore (too error prone)
+  * Add type of account in front layout
+  * New way to handle portfolios that are not setup
+
+v0.5.0/ 2011-07-11
 ===================
 
 ** New Themes select screen and minors UI changes **
@@ -10,14 +26,14 @@ v0.5.0/ 2011-07-11
   * cancel buttons, cancel buttons everywhere
   * delete remote accounts; wording & css; display category count next to each remoteaccount
 
-v0.4.1 / 2011-07-10 
+v0.4.1 / 2011-07-10
 -------------------
 
 ** Pushing on Github is nice, but deploying is better **
 
   * heroku configuration
 
-v0.4.0 / 2011-07-10 
+v0.4.0 / 2011-07-10
 -------------------
 
 ** Github-able version; Facebook works again; New Layout in progress **
@@ -27,7 +43,7 @@ v0.4.0 / 2011-07-10
   * layout and wording
   * Updated some gems; CSS update
 
-v0.3.0 / 2011-06-23 
+v0.3.0 / 2011-06-23
 -------------------
 
 ** Handling Instagram **
@@ -37,7 +53,7 @@ v0.3.0 / 2011-06-23
   * bad callback url
   * instagram
 
-v0.2.0 / 2011-06-23 
+v0.2.0 / 2011-06-23
 -------------------
 
 ** CSS changes, better error handling, beta codes.**
