@@ -11,4 +11,5 @@ class Photo < ActiveRecord::Base
   def mark_as_destroyed
     update_attribute(:deleted, true)
   end
+
 end

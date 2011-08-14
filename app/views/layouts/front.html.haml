@@ -8,7 +8,7 @@
   - else
     = stylesheet_link_tag "themes/#{@portfolio.theme[:code]}"
 
-%body{:id => (!@category.nil? ? "category-#{@category.id}" : ""), :class => (!@category.nil? ? "account-#{@category.remote_account.public_name}" : "")}
+%body{:id => (@category ? "category-#{@category.id}" : ""), :class => ((@category and @category.remote_account) ? "account-#{@category.remote_account.public_name}" : "")}
   %header
     %h1= @portfolio.title
     %p= @portfolio.description
@@ -36,4 +36,4 @@
         Original theme by
         = raw @portfolio.theme[:user]
         under license
-        <a href='http://creativecommons.org/licenses/by-nc/3.0/'>Creative Commons "Attribution Non Commercial"</a>
+        = link_to "Creative Commons 'Attribution Non Commercial'", "http://creativecommons.org/licenses/by-nc/3.0/"
