@@ -27,7 +27,7 @@ a:hover{
 }
 
 p{
-  color:#777; 
+  color:#777;
   padding: 15px 20px;
   line-height:1.2em;
   a{
@@ -37,13 +37,21 @@ p{
     text-decoration:none;
   }
 }
+.help{
+  border-bottom: 1px dashed #ddd;
+  margin: 0px 20px 10px 10px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 
 strong{
   font-weight:bold;
 }
+
 h2{
   font-size: 1.3em;
   @include border-radius(5px 5px 0px 0px);
+  @include linear-gradient(color-stops(#fff, #f3f3f3));
   margin: 0px 0px 10px 0px;
   background-color:#fefefe;
   border-bottom:1px solid #C6CACE;
@@ -58,7 +66,16 @@ h3{
   padding: 10px 0px 10px 20px;
   border-bottom: 1px solid #d2d7dc;
   border-top: 1px solid #c6ccd1;
+  @include text-shadow(#eee 1px 1px 0);
 }
+h4{
+  @include text-shadow(#fff 1px 1px 0);
+  font-size: 1.1em;
+  color: #678db4;
+  font-weight:bold;
+  padding: 10px 0px 0px 20px;
+}
+
 ul{
   list-style-type:none;
 }
@@ -234,25 +251,32 @@ textarea{
     border: 1px solid #0052e2;
     background: url(/images/button_bg.jpg) repeat-x;
     color: #fff;
-    padding: 2px 15px;
+    padding: 4px 15px;
     @include border-radius(5px);
     float:right;
   }
   @include clearfix;
+  a{
+    font-size: 0.9em;
+  }
 }
 .plus-button{
   @include border-radius(5px);
-  background:url(/images/button_plus.png) no-repeat;
-  border: 1px solid #C4CED5;
-  padding: 3px 15px 3px 25px;
-  color: #7a8c97;
+  border: 1px solid #b8c9d9;
+  padding: 8px 0px;
+  color: #6d8fae;
   text-decoration:none;
   @include text-shadow(#fff 1px 1px 0, #ccc 1px 0px 0);
+  background-color: #e5ecf4;
+  display:block !important;
+  text-align:center;
+  @include box-shadow(#fff 1px 1px 1px 0px inset);
 }
 .plus-button:hover{
   border: 1px solid #7a8c97;
   text-decoration:none;
 }
+
 .form-error{
   color:#FF3333;
   float:right;
@@ -317,8 +341,9 @@ textarea{
   }
 }
 #new-category{
-  background-color:#eceff2;
-  border-bottom: 1px solid #d2d7dc;
+  background-color:#e5ecf4;
+  border-bottom: 1px solid #bac8d6;
+  border-top: 1px solid #bac8d6;
 }
 .bottom-reset{
   color:#999;
@@ -329,7 +354,7 @@ textarea{
   text-align:justify;
   line-height:1.2em;
   form{
-   padding: 10px 0px; 
+   padding: 10px 0px;
   }
   input{
     border: 1px solid #ccc;
@@ -380,7 +405,7 @@ ul{
 
 /* Todo entries */
 #todos{
-  color:#777; 
+  color:#777;
   margin-bottom: 30px;
   a{
     text-decoration:underline;
@@ -391,7 +416,6 @@ ul{
   }
   .ticked{
     background: url(/images/tick.jpg) no-repeat 20px 1px;
-    text-decoration:line-through;
   }
 }
 

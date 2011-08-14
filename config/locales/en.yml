@@ -9,6 +9,7 @@ en:
   delete: Delete
   cancel: Cancel
   by: "by %{name}"
+  what_is_this: "What is this?"
 
   back:
     nav:
@@ -47,6 +48,10 @@ en:
 
   remote_accounts:
     index:
+      help : |
+        Photos account are requested to create a category. 
+        If you don’t have any photos account linked yet, pick one of the services available below and follow the step.
+        You will then be able to create categories using this account.
       new: Add a new photo account
       title: Photo Accounts
       add_category: Not linked to a category. You should do this now!
@@ -106,7 +111,7 @@ en:
         other_category: "Create another category, an empty portfolio is a sad portfolio."
     update:
       notice_text: Settings have been updated.
-      wrong_email: This email doesn't seem to be linked to a valid Flickr account
+      wrong_email: "This email doesn't seem to be linked to a valid Flickr account"
     edit:
       theme:
         use_editor: Use CSS Editor
@@ -178,9 +183,9 @@ en:
   activerecord:
     attributes:
       portfolio:
-        title: Your Portfolio's Title*
-        description: Description used in the 'about' page*
-        flickr_user_email: Email used on Flickr*
+        title: "Your Portfolio's Title*"
+        description: "Description used in the 'about' page*"
+        flickr_user_email: "Email used on Flickr*"
         slug: Slug*
       category:
         title: Title*

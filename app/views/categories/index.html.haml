@@ -1,6 +1,6 @@
 %h2= t("categories.index.all_categories")
 
-%p=raw t("categories.index.blurb")
+%p.help=raw t("categories.index.blurb")
 
 - if @categories.empty?
   %p= t("categories.index.first_time")
@@ -8,18 +8,18 @@
   %p= link_to t("categories.index.new_category"), "#", :class => "show-rel hide-self plus-button", :rel => "#new-category"
 
 = render :partial => "new"
-      
+
 - unless @categories.empty?
   %ul#categories.sortable{:rel => order_categories_portfolios_path}
     - @categories.each do |category|
       %li.category{:rel => category.id, :id => "entry-#{category.id}"}
         - unless category.photos.empty?
           = image_tag category.photos.find(:first).small_photo_url
-        
+
         .title
           = link_to category.title, category_path(category)
           , #{category.photos.count} Photos
           #actions
             = link_to "Delete", category_path(category), :class => "delete action", :rel => "#entry-#{category.id}"
             = link_to "Edit", edit_category_path(category), :class => "edit action"
-                  
+

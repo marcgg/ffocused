@@ -1,4 +1,4 @@
-%h3= t("categories.index.add_category.flickr.title", :name => remote_account.remote_user_name.capitalize)
+%h4= t("categories.index.add_category.flickr.title", :name => remote_account.remote_user_name.capitalize)
 - form_for Category.new do |f|
 
   = f.hidden_field :remote_account_id, :value => remote_account.id
