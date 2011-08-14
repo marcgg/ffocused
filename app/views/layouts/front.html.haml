@@ -7,32 +7,32 @@
       = @portfolio.css
   - else
     = stylesheet_link_tag "themes/#{@portfolio.theme[:code]}"
-    
-%body{:id => @category.blank? ? "" : "category-#{@category.id}"}
+
+%body{:id => (@category ? "category-#{@category.id}" : ""), :class => (@category ? "account-#{@category.remote_account.public_name}" : "")}
   %header
     %h1= @portfolio.title
     %p= @portfolio.description
 
   #nav-top= render :partial => "/front/nav"
-      
-  #content 
-    = yield 
+
+  #content
+    = yield
 
   #nav-bottom= render :partial => "/front/nav"
 
   %footer
     = @portfolio.footer
-    
-  / 
+
+  /
     If really necessary, removing credits can be done by contacting us directly.
     In the meantime, do not remove credits using CSS or face our wrath.
     Feel free to style it, but please be nice and keep it visible somehow.
-    
+
   #footest
-    %span.rlvnt 
+    %span.rlvnt
       Portfolio powered by RLVNT
     - unless @portfolio.theme_id.blank?
       %span.theme
-        Original theme by 
+        Original theme by
         = raw @portfolio.theme[:user]
         under license Creative Commons

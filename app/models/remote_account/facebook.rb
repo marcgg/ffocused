@@ -1,4 +1,9 @@
-class RemoteAccount::Facebook < RemoteAccount  
+class RemoteAccount::Facebook < RemoteAccount
+
+  def public_name
+    "facebook"
+  end
+
   def facebook_albums
     begin
       graph = Koala::Facebook::GraphAPI.new(self.access_token)
