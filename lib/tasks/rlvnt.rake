@@ -1,4 +1,4 @@
-namespace :rlvnt do  
+namespace :ffocused do
   desc "Simple display of DB content"
   task :show_base => :environment do
     puts "========= USERS"
@@ -6,14 +6,14 @@ namespace :rlvnt do
     puts "\n========= PORTFOLIOS"
     puts Portfolio.all.to_yaml
   end
-  
+
   desc "Set some people as admins"
   task :set_me_as_admin => :environment do
     puts "Setting marcgg & kevintunc as admin"
     User.first(:conditions => {:login => "marcgg"}).update_attribute(:is_admin, true)
-    User.first(:conditions => {:login => "kevintunc"}).update_attribute(:is_admin, true)
+    User.first(:conditions => {:login => "kevintunc"}).update_attribute(:is_admin, true) unless User.count == 1 # Local dev
   end
-  
+
   desc "Getting ready for Heroku"
   task :heroku_vars => :environment do
     puts "Reference here: http://devcenter.heroku.com/articles/config-vars"

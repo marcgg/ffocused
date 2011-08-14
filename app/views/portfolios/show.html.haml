@@ -1,30 +1,23 @@
-- unless @current_portfolio.setup?
-  %h2= t("portfolios.show.get_started")
-  
-  %p= raw t("portfolios.show.not_setup", :example_url => showcase_path(:slug => User.find_by_login("marcgg").portfolio.slug))
-  = render :partial => "/remote_accounts/new_forms"
-    
+%h2= t("portfolios.show.welcome")
+- if @current_portfolio.remote_accounts.size > 1
+  %p= raw t("portfolios.show.setup_ok_advanced")
 - else
-  %h2= t("portfolios.show.welcome")
-  - if @current_portfolio.remote_accounts.size > 1
-    %p= raw t("portfolios.show.setup_ok_advanced")
-  - else
-    %p= raw t("portfolios.show.setup_ok", 
-            :name => @current_portfolio.remote_accounts.last.remote_user_name,
-            :service => @current_portfolio.remote_accounts.last.class_name.capitalize)
-  
-  - if @current_portfolio.categories.size < 2 or (@current_portfolio.css.blank? and @current_portfolio.theme_id.blank?)
-    %h3= t("portfolios.show.left_to_do.title")
-    %p= t("portfolios.show.left_to_do.intro")
-  
-    #todos
-      .todo{:class => @current_portfolio.categories.empty? ? "" : "ticked"}
-        = link_to t("portfolios.show.left_to_do.category.link"), categories_path
-        = t("portfolios.show.left_to_do.category.text")
-    
-      .todo{:class => (@current_portfolio.css.blank? and @current_portfolio.theme_id.blank?) ? "" : "ticked"}
-        = link_to t("portfolios.show.left_to_do.theme.link"), edit_portfolio_path(@current_portfolio, :type => "theme")
-        = t("portfolios.show.left_to_do.theme.text")
-  
-      .todo{:class =>  @current_portfolio.categories.size < 2 ? "" : "ticked"}
-        = t("portfolios.show.left_to_do.other_category")
+  %p= raw t("portfolios.show.setup_ok",
+          :name => @current_portfolio.remote_accounts.last.remote_user_name,
+          :service => @current_portfolio.remote_accounts.last.class_name.capitalize)
+
+- if @current_portfolio.categories.size < 2 or (@current_portfolio.css.blank? and @current_portfolio.theme_id.blank?)
+  %h3= t("portfolios.show.left_to_do.title")
+  %p= t("portfolios.show.left_to_do.intro")
+
+  #todos
+    .todo{:class => @current_portfolio.categories.empty? ? "" : "ticked"}
+      = link_to t("portfolios.show.left_to_do.category.link"), categories_path
+      = t("portfolios.show.left_to_do.category.text")
+
+    .todo{:class => (@current_portfolio.css.blank? and @current_portfolio.theme_id.blank?) ? "" : "ticked"}
+      = link_to t("portfolios.show.left_to_do.theme.link"), edit_portfolio_path(@current_portfolio, :type => "theme")
+      = t("portfolios.show.left_to_do.theme.text")
+
+    .todo{:class =>  @current_portfolio.categories.size < 2 ? "" : "ticked"}
+      = t("portfolios.show.left_to_do.other_category")

@@ -1,6 +1,7 @@
 class RemoteAccountsController < ApplicationController
   layout "back"
-  
+  skip_before_filter :ensure_portfolio_setup, :only => [:create]
+
   def index
     @remote_accounts = @current_portfolio.remote_accounts
   end
@@ -14,10 +15,10 @@ class RemoteAccountsController < ApplicationController
   def create
     # TODO: Use Factory Instead
     raise "Invalid Subclass : #{params[:type]}" unless params[:type] and RemoteAccount::AVAILABLE_SUBCLASSES.include?(params[:type])
-    
+
     params[:remote_account].merge!({:portfolio_id => @current_portfolio.id})
     @remote_account = params[:type].constantize.create(params[:remote_account])
-    
+
     if @remote_account.errors.empty?
       flash[:notice] = {:title => t("remote_accounts.create.success_title"), :text => t("remote_accounts.create.success_text")}
       (@current_portfolio.remote_accounts.size == 1) ? redirect_to(portfolio_path @current_portfolio ) : redirect_to(remote_accounts_path)
@@ -26,5 +27,5 @@ class RemoteAccountsController < ApplicationController
       redirect_to new_remote_account_path
     end
   end
-  
+
 end

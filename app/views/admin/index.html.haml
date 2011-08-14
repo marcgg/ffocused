@@ -1,9 +1,4 @@
 %h2 Users
-= form_for BetaCode.new do |f|
-  = f.label :code
-  = f.text_field :code
-  = f.submit
-
 %table#users
   %tr
     %th ID
@@ -12,7 +7,7 @@
     %th Title
     %th Cats/RA
     %th Link
-    
+
   - @users.each do |user|
     %tr
       %td= user.id
@@ -22,17 +17,38 @@
       %td= "#{user.portfolio.categories.count} / #{user.portfolio.remote_accounts.count}"
       %td= link_to user.portfolio.slug, showcase_path(:slug => user.portfolio.slug)
 
+%h2 Future Users
+%table#future-users
+  %tr
+    %th ID
+    %th Email
+    %th Handled?
+    %th
+  - @future_users.each do |future_user|
+    %tr
+      %td= future_user.id
+      %td= future_user.email
+      %td{:style => (future_user.handled ? "color:green" : "color:red")}
+        = future_user.handled ? "Handled" : "Not Handled"
+      %td
+        = link_to "Handle Now", handle_future_user_path(future_user)
+
+%h2 Beta Codes
+= form_for BetaCode.new do |f|
+  = f.label :code
+  = f.text_field :code
+  = f.submit
+
 %table#beta-codes
   %tr
     %th ID
     %th Code
     %th Used?
-    
+
   - @beta_codes.each do |beta_code|
     %tr
       %td= beta_code.id
       %td= beta_code.code
       %td{:style => (beta_code.used ? "color:red" : "color:green")}
         = beta_code.used ? "Used" : "Not Used"
-    
-    
+

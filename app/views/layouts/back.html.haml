@@ -3,9 +3,9 @@
 %head
   %title= t("app_name")
   = stylesheet_link_tag "compiled/back", "jquery.gritter"
-  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "jquery.gritter.min.js", "jquery-ui-1.8.11.custom.min.js", "back.js" 
+  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "jquery.gritter.min.js", "jquery-ui-1.8.11.custom.min.js", "back.js"
 
-  = csrf_meta_tag 
+  = csrf_meta_tag
 
 %body
   = render :partial => "/shared/errors"
@@ -16,16 +16,18 @@
         #logout
           = raw sanitize t("logged_in", :name => current_user.login), :tags => %(strong)
           = link_to t("logout"), logout_path
-          
+
       - if @current_portfolio and @current_portfolio.setup?
         = link_to t("back.header.view_website"), showcase_path(:slug => @current_portfolio.slug), :id => "showcase-link", :target => "_blank"
-  
+
   - if @current_portfolio and @current_portfolio.setup?
     = render :partial => "/shared/nav"
-    
-  #content-wrapper 
-    #content
-      = yield 
+
+  - if controller.controller_name == "admin"
+    #admin= yield
+  -else
+    #content-wrapper
+      #content= yield
 
   %footer
     .grid
@@ -37,4 +39,4 @@
         = link_to t("back.footer.faq"), faq_path
       .extra-details
         =raw t("back.footer.copyright", :year => Time.now.year)
-      
+

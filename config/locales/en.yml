@@ -1,5 +1,5 @@
 en:
-  app_name: Rlvnt - Showcase Your Best Photos From Flickr
+  app_name: f/Focused - Showcase Your Best Photos
   success: Success!
   error: Error
   logout: Logout
@@ -9,9 +9,9 @@ en:
   delete: Delete
   cancel: Cancel
   by: "by %{name}"
-  
+  what_is_this: "What is this?"
+
   back:
-    title: "RLVNT Portfolio"
     nav:
       categories: Categories
       home: Home
@@ -24,10 +24,10 @@ en:
       twitter: Twitter
       Terms: Terms
       faq: FAQ
-      copyright: "Copyright &copy %{year} RLVNT"
+      copyright: "Copyright &copy %{year} fFocused"
     header:
       view_website: View Your Website
-  
+
   user_sessions:
     create:
       error_title: Sorry
@@ -38,16 +38,20 @@ en:
     edit:
       title: "Editing Photo: %{title}"
       back: "<< Back to %{category}"
-  
+
   users:
     new:
       title: Signup!
       go: "Let's go"
     check_beta_code:
       invalid: Your invitation code is invalid
-  
+
   remote_accounts:
     index:
+      help : |
+        Photos account are requested to create a category. 
+        If you don’t have any photos account linked yet, pick one of the services available below and follow the step.
+        You will then be able to create categories using this account.
       new: Add a new photo account
       title: Photo Accounts
       add_category: Not linked to a category. You should do this now!
@@ -73,32 +77,32 @@ en:
       failure_text: Couldn't create this account
       success_title: Created!
       success_text: Your photo account has been created!
-      
+
   portfolios:
     theme:
       your_own: Use the CSS Editor
       optimized_for: "Optimized for %{remote_accounts}"
-      used_by: "Examples:" 
+      used_by: "Examples:"
     show:
       setup_ok: |
-        Alright, your <strong>%{service}</strong> account <strong>%{name}</strong> has been 
-        linked properly to your Rlvnt account. 
+        Alright, your <strong>%{service}</strong> account <strong>%{name}</strong> has been
+        linked properly to your fFocused account.
         You can add another one at any time in the 'Photo Account' section.<br /><br />
         Have fun playing around in the backoffice!
       setup_ok_advanced: |
-        Cool, you have linked multiple photo accounts to your portfolio. 
+        Cool, you have linked multiple photo accounts to your portfolio.
         Let us know if you think we should support other services!
       not_setup: |
-        Welcome to Rlvnt!  <br /><br />
+        Welcome to fFocused!  <br /><br />
         We'll help you get a portfolio such as
         <a href='%{example_url}' target='_blank'>this one</a> to feature your best pictures.<br /><br />
-        To get started, you first need to link your Rlvnt account with your account on one of the supported photo services.
+        To get started, you first need to link your fFocused account with your account on one of the supported photo services.
         So far we support Flickr, Instagram and Facebook.
       setup_button: Save
       left_to_do:
         title: Left to Do
         intro: "Your portfolio is not yet fully setup. Here's what you need to do:"
-        category: 
+        category:
           text: to showcase your best pictures.
           link: Create a category
         theme:
@@ -107,20 +111,20 @@ en:
         other_category: "Create another category, an empty portfolio is a sad portfolio."
     update:
       notice_text: Settings have been updated.
-      wrong_email: This email doesn't seem to be linked to a valid Flickr account
+      wrong_email: "This email doesn't seem to be linked to a valid Flickr account"
     edit:
       theme:
         use_editor: Use CSS Editor
         use_theme: Use a Theme
         title: Theme
         creative: |
-          Remember that once you use a theme on Rlvnt, it automatically goes under license
+          Remember that once you use a theme on fFocused, it automatically goes under license
           <a href='http://creativecommons.org/licenses/by-nc/3.0/'>Creative Commons "Attribution Non Commercial"</a>.
           This will allow other people to potentially use your template for their own portfolio.
           If you are not ok with this, please contact us.
       settings:
         title: Settings
-        
+
   categories:
     refresh:
       title: "Refreshed!"
@@ -144,11 +148,11 @@ en:
         instagram:
           title: "Add a Category From %{name}'s Recent Instagram Pictures"
       blurb: |
-        Categories allow you to sort your photos. <br /><br /> 
+        Categories allow you to sort your photos. <br /><br />
         Each category must be linked to one of your photo accounts.
         Keep in mind that you can only display a maximum of <strong>15</strong> photos, so pick your best work!
       new_category: Create a New Category
-      all_categories: Current Categories
+      all_categories: Manage Categories
       first_time: Please go ahead and create your first category!
     show:
       refresh: "Refresh this category, fetching any new content added while preserving the current data."
@@ -158,8 +162,8 @@ en:
       back: "<< Back to Categories"
       blurb: "Only the first 15 will be displayed on your portfolio. Drag & drop the photos to reorder them."
       reset: |
-        Reset all photos in this category. 
-        This will fetch all the pictures again from the linked photo account, discarding the titles, 
+        Reset all photos in this category.
+        This will fetch all the pictures again from the linked photo account, discarding the titles,
         descriptions and order you might have already set.
         Be careful, this action is not reversible.
       reset_button: "Reset Now!"
@@ -175,13 +179,13 @@ en:
       error_text: "Sorry, the data you entered is invalid"
       success_title: Updated!
       success_text: Your changes have been made!
-      
+
   activerecord:
     attributes:
       portfolio:
-        title: Your Portfolio's Title*
-        description: Description used in the 'about' page*
-        flickr_user_email: Email used on Flickr*
+        title: "Your Portfolio's Title*"
+        description: "Description used in the 'about' page*"
+        flickr_user_email: "Email used on Flickr*"
         slug: Slug*
       category:
         title: Title*
@@ -194,4 +198,4 @@ en:
       remote_account:
         remote_user_email: Email Associated to the Account
         remote_profile_url: Your profile URL
-        
+

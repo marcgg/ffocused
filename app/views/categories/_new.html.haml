@@ -1,8 +1,8 @@
 #new-category{:style => (@categories.empty? ? "" : "display:none")}
   #all-get-category-form
-    %h3= t("categories.index.choose_account")
-    - @remote_accounts.each do |account| 
+    %h4= t("categories.index.choose_account")
+    - @remote_accounts.each do |account|
       = link_to account.remote_user_name, fetch_form_categories_path(:remote_account_id => account.id), :class => "get-new-category-form account-entry-#{account.class_name}"
-  
+
   #new-category-form
-    
+

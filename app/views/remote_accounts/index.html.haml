@@ -1,17 +1,19 @@
 %h2= t("remote_accounts.index.title")
+%h4= t("what_is_this")
+%p.help= t(".help")
 
 #all-accounts
   = link_to t("remote_accounts.index.new"), new_remote_account_path, :class => "plus-button"
-  
+
   - @remote_accounts.each do |account|
     .account-entry{:class => "account-entry-#{account.class_name}", :id => "account-#{account.id}"}
       = link_to t("delete"), remote_account_path(account), :class => "delete delete-remote-account", :rel => "#account-#{account.id}"
       = account.remote_user_name
-      
+
       .details
         - if account.categories.empty?
           = link_to t("remote_accounts.index.add_category"), categories_path
         - else
           = t("remote_accounts.index.categories", :count => account.categories.count)
-      
-      
+
+

@@ -1,9 +1,9 @@
 %h2= t("categories.show.title", :title => @category.title)
 = link_to t("categories.show.back"), categories_path, :class => "back-link"
 %p= t("categories.show.blurb")
-    
+
 %ul#photos.sortable{:rel => order_photos_category_path(@category)}
-  - @category.photos.each do |photo|
+  - @category.photos.activated.each do |photo|
     %li.photo{:rel => photo.id, :id => "entry-#{photo.id}"}
       = image_tag photo.small_photo_url
       .title
@@ -16,7 +16,7 @@
   = t("categories.show.refresh")
   = form_tag refresh_category_path(@category), :id => "reset-category" do
     = submit_tag t("categories.show.refresh_button")
-    
+
 .bottom-reset
   = t("categories.show.reset")
   = form_tag reset_category_path(@category), :id => "reset-category" do

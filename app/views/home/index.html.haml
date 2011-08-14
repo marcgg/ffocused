@@ -5,4 +5,8 @@
   #login= link_to t("login"), "/login"
   or
   #register= link_to "Create an account", new_user_path
-  
+
+- form_for FutureUser.new do |f|
+  = f.label :email
+  = f.text_field :email
+  = f.submit "request beta"

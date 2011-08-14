@@ -1,16 +1,16 @@
 - if @category.nil?
   #error-404
     This category doesn't exist, sorry.
-    
+
 - else
   #main-content
     #category-description
       %h2.name= @category.title
       .description= @category.description
-    
+
     #photos
-      - @category.photos.all(:limit => 15).each do |photo|
-        .photo{:id => "photo-#{photo.flickr_id}"}
+      - @category.photos.activated.ordered.limited.each_with_index do |photo, i|
+        .photo{:id => "photo-#{photo.id}", :class => "photo-order-#{i} #{cycle("photo-order-even", "photo-order-odd")}"}
           .image-wrapper= image_tag photo.large_photo_url
           .description-wrapper
             - unless photo.title.blank?

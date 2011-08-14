@@ -1,6 +1,11 @@
 class PortfoliosController < ApplicationController
   layout "back"
-  
+
+  skip_before_filter :ensure_portfolio_setup, :only => [:not_setup]
+
+  def not_setup
+  end
+
   def order_categories
     params[:item_ids].each_with_index do |item_id, i|
       @current_portfolio.categories.find(item_id).update_attribute(:position, i)
