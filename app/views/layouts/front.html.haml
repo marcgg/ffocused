@@ -29,10 +29,11 @@
     Feel free to style it, but please be nice and keep it visible somehow.
 
   #footest
-    %span.rlvnt
-      Portfolio powered by RLVNT
+    %span.ffocused
+      = link_to "Portfolio powered by f/Focused", "http://ffocused.com"
     - unless @portfolio.theme_id.blank?
       %span.theme
         Original theme by
         = raw @portfolio.theme[:user]
-        under license Creative Commons
+        under license
+        <a href='http://creativecommons.org/licenses/by-nc/3.0/'>Creative Commons "Attribution Non Commercial"</a>

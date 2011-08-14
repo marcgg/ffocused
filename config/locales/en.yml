@@ -1,5 +1,5 @@
 en:
-  app_name: Rlvnt - Showcase Your Best Photos From Flickr
+  app_name: f/Focused - Showcase Your Best Photos
   success: Success!
   error: Error
   logout: Logout
@@ -11,7 +11,6 @@ en:
   by: "by %{name}"
 
   back:
-    title: "RLVNT Portfolio"
     nav:
       categories: Categories
       home: Home
@@ -24,7 +23,7 @@ en:
       twitter: Twitter
       Terms: Terms
       faq: FAQ
-      copyright: "Copyright &copy %{year} RLVNT"
+      copyright: "Copyright &copy %{year} fFocused"
     header:
       view_website: View Your Website
 
@@ -82,17 +81,17 @@ en:
     show:
       setup_ok: |
         Alright, your <strong>%{service}</strong> account <strong>%{name}</strong> has been
-        linked properly to your Rlvnt account.
+        linked properly to your fFocused account.
         You can add another one at any time in the 'Photo Account' section.<br /><br />
         Have fun playing around in the backoffice!
       setup_ok_advanced: |
         Cool, you have linked multiple photo accounts to your portfolio.
         Let us know if you think we should support other services!
       not_setup: |
-        Welcome to Rlvnt!  <br /><br />
+        Welcome to fFocused!  <br /><br />
         We'll help you get a portfolio such as
         <a href='%{example_url}' target='_blank'>this one</a> to feature your best pictures.<br /><br />
-        To get started, you first need to link your Rlvnt account with your account on one of the supported photo services.
+        To get started, you first need to link your fFocused account with your account on one of the supported photo services.
         So far we support Flickr, Instagram and Facebook.
       setup_button: Save
       left_to_do:
@@ -114,7 +113,7 @@ en:
         use_theme: Use a Theme
         title: Theme
         creative: |
-          Remember that once you use a theme on Rlvnt, it automatically goes under license
+          Remember that once you use a theme on fFocused, it automatically goes under license
           <a href='http://creativecommons.org/licenses/by-nc/3.0/'>Creative Commons "Attribution Non Commercial"</a>.
           This will allow other people to potentially use your template for their own portfolio.
           If you are not ok with this, please contact us.
