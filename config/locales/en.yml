@@ -93,9 +93,8 @@ en:
         Cool, you have linked multiple photo accounts to your portfolio.
         Let us know if you think we should support other services!
       not_setup: |
-        Welcome to fFocused!  <br /><br />
-        We'll help you get a portfolio such as
-        <a href='%{example_url}' target='_blank'>this one</a> to feature your best pictures.<br /><br />
+        Welcome to f/Focused!  <br /><br />
+        We'll help you get a portfolio such as to feature your best pictures.<br /><br />
         To get started, you first need to link your fFocused account with your account on one of the supported photo services.
         So far we support Flickr, Instagram and Facebook.
       setup_button: Save
