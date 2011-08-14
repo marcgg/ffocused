@@ -337,6 +337,7 @@ textarea{
     @include border-radius(5px);
   }
 }
+
 /* Lists */
 ul{
   margin: 20px 20px 40px 20px;
@@ -395,13 +396,24 @@ ul{
 }
 
 /* Admin */
-table{
-  th{
-    background-color:#333;
-    color:#fff;
+#admin{
+  table{
+    margin: auto;
+    th{
+      background-color:#333;
+      color:#fff;
+    }
+    td, th{
+      padding: 5px 10px;
+    }
   }
-  td, th{
-    padding: 5px 10px;
+  form{
+    width: 400px;
+    margin: auto;
+    padding-top: 0px !important;
+  }
+  h2{
+    margin-top: 30px;
   }
 }
 

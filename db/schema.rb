@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110814142748) do
+ActiveRecord::Schema.define(:version => 20110814154312) do
 
   create_table "beta_codes", :force => true do |t|
     t.string   "code"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(:version => 20110814142748) do
     t.string   "flickr_set_id"
     t.integer  "remote_account_id"
     t.string   "facebook_album_id"
+  end
+
+  create_table "future_users", :force => true do |t|
+    t.string   "email"
+    t.boolean  "handled",    :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "photos", :force => true do |t|

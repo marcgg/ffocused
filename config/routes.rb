@@ -35,6 +35,10 @@ Prtfl::Application.routes.draw do
     get "facebook_callback",  :on => :collection
   end
 
+  resources :future_users do
+    get "handle", :on => :member
+  end
+
   resources :photos
 
   # ADDITIONAL PAGES
