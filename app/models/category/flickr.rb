@@ -16,7 +16,7 @@ class Category::Flickr < Category
       large_photo_url = Fetchers::Flickr::Photo.create_url_from_json(photo, "b")
       small_photo_url = Fetchers::Flickr::Photo.create_url_from_json(photo, "s")
       Photo.create(
-        :position => i, 
+        :position => i,
         :flickr_photo_id => flickr_photo_id,
         :large_photo_url => large_photo_url,
         :small_photo_url => small_photo_url,

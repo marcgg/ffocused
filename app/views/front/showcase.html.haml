@@ -1,15 +1,15 @@
 - if @category.nil?
   #error-404
     This category doesn't exist, sorry.
-    
+
 - else
   #main-content
     #category-description
       %h2.name= @category.title
       .description= @category.description
-    
+
     #photos
-      - @category.photos.all(:limit => 15).each do |photo|
+      - @category.photos.activated(:limit => 15).each do |photo|
         .photo{:id => "photo-#{photo.flickr_id}"}
           .image-wrapper= image_tag photo.large_photo_url
           .description-wrapper
