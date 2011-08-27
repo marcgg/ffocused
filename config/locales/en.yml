@@ -50,8 +50,8 @@ en:
     expired:
       title: Photo Account Expired
       help: |
-        It seems that we are not able to use this photo account because we do not the authorization to access
-        to it anymore.<br /><br />
+        It seems that we are not able to use this photo account because we do not
+        have the authorization to access it anymore.<br /><br />
 
         This can be due to the fact that you didn't connect for a while or maybe
         because you revoked the rights you granted to the ffocused application.<br /><br />
@@ -61,7 +61,7 @@ en:
 
     index:
       help : |
-        Photos account are requested to create a category. 
+        Photos account are requested to create a category.
         If you don’t have any photos account linked yet, pick one of the services available below and follow the step.
         You will then be able to create categories using this account.
       new: Add a new photo account
@@ -71,9 +71,9 @@ en:
         one: Linked to one category
         other: "Linked to %{count} categories"
     new:
-      goto_instagram: Click here to give access to RLVNT to link your Instagram account.
+      goto_instagram: Click here to give access to fFocused to link your Instagram account.
       goto_instagram_notes: You will be redirected to the Instagram website in order to login.
-      goto_facebook: Click here to give access to RLVNT to link your Facebook account.
+      goto_facebook: Click here to give access to fFocused to link your Facebook account.
       goto_facebook_notes: |
         You will be redirected to Facebook in order to login. We will ask you for "offline access" permissions
         in order to save you some time and not have to reconnect to Facebook every time you
@@ -193,6 +193,11 @@ en:
       error_text: "Sorry, the data you entered is invalid"
       success_title: Updated!
       success_text: Your changes have been made!
+    expired:
+      blurb: |
+        Sorry, our credential to use this photo account expired. Please click the link below
+        for information on how to fix this. Don't worry, this is normal.
+      refresh_account: "Click here to refresh your photo account"
 
   activerecord:
     attributes:
