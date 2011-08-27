@@ -11,7 +11,8 @@
 %body{:id => (@category ? "category-#{@category.id}" : ""), :class => ((@category and @category.remote_account) ? "account-#{@category.remote_account.public_name}" : "")}
   %header
     %h1= @portfolio.title
-    %p= @portfolio.description
+    - unless @portfolio.description.blank?
+      %p= @portfolio.description
 
   #nav-top= render :partial => "/front/nav"
 
@@ -20,8 +21,9 @@
 
   #nav-bottom= render :partial => "/front/nav"
 
-  %footer
-    = @portfolio.footer
+  - unless @portfolio.footer.blank?
+    %footer
+      = @portfolio.footer
 
   /
     If really necessary, removing credits can be done by contacting us directly.
