@@ -1,0 +1,194 @@
+:plain
+  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+  <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+  <script src="http://alexgorbatchev.com.s3.amazonaws.com/pub/sh/3.0.83/scripts/shBrushCss.js" type="text/javascript"/></script>
+
+#faq
+  - if I18n.locale == :en
+    %h2 How to Create a Theme?
+    %p
+      fFocused gives you full control over the page appearance thanks to
+      its CSS editor. If you want to create your own, simply go to the
+      = link_to "themes section", edit_portfolio_path(@current_portfolio, :type => "theme")
+
+    %h4 License
+    %p
+      Before you get started, remember that once you use a theme on fFocused,
+      %strong it automatically goes under license Creative Commons
+      "Attribution Non Commercial".
+    %p
+      This will allow other people to potentially use your template for their own portfolio.
+      If you are not ok with this, please contact us.
+
+    %h4 The CSS Editor
+    %p
+      The editor is accessible by going to the
+      = link_to "themes section", edit_portfolio_path(@current_portfolio, :type => "theme")
+      and then clicking on "use your own". Then you simply need to paste your CSS in the dedicated field and save.
+
+    %h4 Organisation of the Page
+    %p
+      The HTML is thought to be as flexible as possible when it comes to layout.
+      We're not going to go into details of all the sections, but here's a couple of situations
+      that you might want to explore.
+
+    %h5 Service Specific Layout
+    %p
+      Let's say you want a layout for Facebook and one for Instagram to cater to the specificities
+      of both services? Simply scope using:
+
+    :plain
+      <pre class ="brush: css">
+        .account-facebook{color: red;}
+        .account-instagram, .account-flickr{color: yellow;}
+      </pre>
+
+    %h5 Category Specific Layout
+    %p
+      It is possible to have a different layout per category scoping using the category's ID.
+    :plain
+      <pre class ="brush: css">
+        #category-5{
+          font-size: 2em;
+        }
+      </pre>
+
+
+    %h4 Commented Example
+    %p
+      Here is a large example of theme that you could base your work on. You can
+      also look at other themes and get ideas from here! If you want something specific added to
+      the HTML that could be missing, feel free to contact us and we'll figure it out.
+
+    :plain
+      <pre class ="brush: css">
+        /* RESET */
+        /*
+            To avoid cross browser issues, we use a reset CSS.
+            Do not forget to also reset so that HTML5 works 
+            as well in older browsers.
+        */
+        article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          outline: 0;
+          display: block;
+        }
+
+        /* PORTFOLIO CONTENT */
+        body{
+          font-family: "Helvetica", "Arial";
+          font-size: 16px;
+        }
+        a{
+          color:#222;
+          text-decoration:none;
+        }
+        a:hover{
+          background-color: yellow;
+        }
+        /* Header */
+        h1{
+          font-size: 4em;
+          font-weight:bold;
+          text-align:center;
+          margin:20px 0px;
+        }
+
+        /*
+          We do not display the portfolio's description.
+          It is also possible to do so by removing the
+          description from the settings page, but
+          sometimes you want to keep it there.
+        */
+        header p{
+          display:none;
+        }
+
+        /* Navigation */
+        nav{
+          text-align:center;
+          border-bottom:1px solid #ccc;
+          margin-bottom: 20px;
+          padding-bottom:5px;
+        }
+        /* Most elements are wrapped in containers to be able to get more control over styling */
+        nav .nav-link-wrapper{
+          display: inline-block;
+        }
+
+        /* Selected nav items are different*/
+        nav .selected a{
+          background-color: yellow;
+        }
+
+        /* Content */
+        #content{
+          margin:auto;
+          width: 1034px;
+        }
+        /* The DOM is semantic, meaning that we respect the h1..hn logic as well as HTML5 elements */
+        h2{
+          font-size:2em;
+        }
+        #category-description .description{
+          font-style:italic;
+          margin-bottom: 30px;
+        }
+
+        /*
+          The way photos are displayed is really important!
+          Keep in mind that some services provide all kinds of image sizes.
+          Also you may have vertical or horizontal pictures. A good theme handle all cases
+        */
+        .photo{
+          background-color: #000;
+          border: 5px solid #000;
+          margin: 20px 0px;
+          line-height:0px;
+        }
+        .photo img{
+          display:block;
+          margin: auto;
+        }
+        .image-wrapper{
+          text-align:center;
+        }
+        .description-wrapper{
+          border-top: 5px solid #000;
+          padding: 20px;
+          background-color:#000;
+        }
+        .description-wrapper *{
+          color:#fff;
+        }
+        .description-wrapper p{
+          margin-top: 30px;
+          font-size: 0.9em;
+        }
+
+        /* Footer */
+        /*
+          Footer's HTML is also managable from the settings interface
+        */
+        footer, #footest{
+          width: 1024px;
+          text-align:right;
+          margin: auto;
+        }
+        footer{
+          margin-top:40px;
+        }
+        #footest{
+          margin-bottom:40px;
+        }
+        #footest .ffocused{
+          display:inline-block;
+          margin-right: 20px;
+        }
+      </pre>
+
+:javascript
+  SyntaxHighlighter.all()

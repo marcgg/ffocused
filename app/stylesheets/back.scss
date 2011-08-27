@@ -475,6 +475,20 @@ ul{
     font-size: 1.2em;
     color:#6a7d8a;
   }
+  h5{
+    color:#6a7d8a;
+    padding: 20px 40px 0px 40px;
+  }
+}
+.syntaxhighlighter{
+  font-family: "Courier New";
+  margin: 10px 20px;
+  .toolbar{
+    display:none;
+  }
+  code{
+    padding-left: 10px;
+  }
 }
 
 /* Themes */

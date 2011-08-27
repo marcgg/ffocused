@@ -44,9 +44,10 @@ Prtfl::Application.routes.draw do
   resources :photos
 
   # ADDITIONAL PAGES
-  match "/faq"      => "faq#index",     :as => :faq
-  match "/terms"    => "home#terms",    :as => :terms
-  match "/contact"  => "home#contact",  :as => :contact
+  match "/faq"      => "faq#index",       :as => :faq
+  match "/terms"    => "home#terms",      :as => :terms
+  match "/contact"  => "home#contact",    :as => :contact
+  match "/how_to/themes" => "faq#themes", :as => :themes_tutorial
 
   # FRONT
   get "/:slug/about"            => "front#about",     :as => :about

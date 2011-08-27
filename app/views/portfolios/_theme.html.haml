@@ -9,6 +9,7 @@
   = f.label :css
   = f.text_area :css, {:style => "height:300px; width:100%;"}
   .sidenote= raw t("portfolios.edit.theme.creative")
+  .sidenote= link_to t("portfolios.edit.theme.how_to_themes"), themes_tutorial_path
 
 #all-themes{:style => (@current_portfolio.theme_id.blank? ? "display:none;" : "")}
   - i = 0
@@ -29,4 +30,7 @@
         .preview
           = link_to t(".preview"), showcase_path(:slug => @current_portfolio.slug, :theme_id => k), :target => "_blank"
     - i += 1
+
+  %p= link_to t("portfolios.edit.theme.themes_tutorial"), themes_tutorial_path
+
 
