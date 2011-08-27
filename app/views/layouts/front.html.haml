@@ -46,3 +46,6 @@
         = link_to "Creative Commons 'Attribution Non Commercial'", "http://creativecommons.org/licenses/by-nc/3.0/"
 
   = render :partial => "/shared/google_analytics"
+
+  - unless @portfolio.google_analytics_code.blank?
+    = render :partial => "/shared/google_analytics", :locals => {:code => @portfolio.google_analytics_code}

@@ -1,10 +1,11 @@
 - # TODO: Extract for easier integration by other developers
+- code = GOOGLE_ANALYTICS if local_assigns[:code].nil?
 
 :plain
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-25132842-1']);
+    _gaq.push(['_setAccount', '#{code}']);
     _gaq.push(['_trackPageview']);
 
     (function() {
