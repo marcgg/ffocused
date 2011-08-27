@@ -1,15 +1,18 @@
 class RemoteAccountsController < ApplicationController
   layout "back"
   skip_before_filter :ensure_portfolio_setup, :only => [:create]
+  before_filter :find_remote_account, :only => [:destroy, :expired]
 
   def index
     @remote_accounts = @current_portfolio.remote_accounts
   end
 
   def destroy
-    @remote_account = @current_portfolio.remote_accounts.find(params[:id])
     @remote_account.destroy
     render :nothing => true
+  end
+
+  def expired
   end
 
   def create
@@ -28,4 +31,8 @@ class RemoteAccountsController < ApplicationController
     end
   end
 
+  protected
+  def find_remote_account
+    @remote_account = @current_portfolio.remote_accounts.find(params[:id])
+  end
 end

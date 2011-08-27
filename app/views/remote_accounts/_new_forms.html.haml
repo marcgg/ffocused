@@ -1,7 +1,7 @@
 #choose-account
   - RemoteAccount::AVAILABLE_ACCOUNTS.each do |account|
     = link_to t("remote_accounts.new.accounts.#{account}"), "#", :rel => "#account-#{account}", :class => "account-entry-#{account}"
-    
+
 #all-accounts-forms
   - RemoteAccount::AVAILABLE_ACCOUNTS.each do |account|
     .account{:id => "account-#{account}", :style => "display:none;"}

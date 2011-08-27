@@ -1,6 +1,6 @@
 - oauth = Koala::Facebook::OAuth.new(FACEBOOK_APPLICATION_API_KEY, FACEBOOK_APPLICATION_SECRET, FACEBOOK_CALLBACK_URL)
 
-%p= link_to t("remote_accounts.new.goto_facebook"), oauth.url_for_oauth_code(:permissions => "user_photos")
+%p= link_to t("remote_accounts.new.goto_facebook"), oauth.url_for_oauth_code(:permissions => "user_photos,offline_access")
 %p= t("remote_accounts.new.goto_facebook_notes")
 
 %p= link_to t("cancel"), ""
