@@ -1,0 +1,240 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/reset/utilities";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+
+@include reset-html5;
+
+/* Generalities */
+body{
+  font-family: "Lucida Grande", "Lucida", "Arial";
+  background-color: #fff;
+  font-size: 11px;
+  color: #656363;
+}
+
+.container{
+  width: 960px;
+  margin: auto;
+}
+
+header{
+  border-bottom: 1px solid #3483c5;
+  padding: 20px 10px;
+}
+
+h1{
+  line-height:1000px;
+  overflow: hidden;
+  width: 130px;
+  height: 29px;
+  background: url(/images/home/logo.png);
+}
+
+.baseline{
+  margin-top: 3px;
+  font-size: 0.95em;
+}
+
+#top-action{
+  margin-top: 15px;
+  width: 300px;
+  float: right;
+  *{
+    float:right;
+  }
+  a{
+    color: #618bbc;
+    text-decoration: none;
+  }
+}
+#account-actions{
+  a{
+    display: inline-block;
+    margin-left: 30px;
+    padding: 4px 0;
+  }
+}
+
+#main-visual{
+  background: url("/images/home/centerpiece.png") no-repeat scroll center 110px #3FA8F9;
+  border-bottom: 1px solid #70BEFB;
+  border-top: 1px solid #70BEFB;
+  color: #FFFFFF;
+  height: 360px;
+  text-align: center;
+  h2{
+    font-size: 2em;
+    padding: 20px 0px 10px 0px;
+    @include text-shadow(#3b6290 1px 1px 0);
+  }
+  p{
+    @include text-shadow(#2886e8 1px 1px 0);
+    font-size: 1.05em;
+    width: 650px;
+    margin: auto;
+    line-height: 1.4em;
+    letter-spacing: 0.07em;
+  }
+}
+
+#request-invite{
+  background-color: #f3f9fd;
+  padding: 10px 0px;
+  text-align:center;
+  @include clearfix;
+  border-top: 1px solid #3483c5;
+  border-bottom: 1px solid #f5fafc;
+}
+
+#request-data{
+  margin: auto;
+  width: 500px;
+  h3{
+    font-size: 1.3em;
+    @include text-shadow(#fff 1px 1px 0);
+  }
+  p{
+    @include text-shadow(#fff 1px 1px 0);
+  }
+  form{
+    float: right
+  }
+  .wrapper{
+    text-align: right;
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #bdc7d8;
+    float:left;
+  }
+}
+
+#features{
+  border-top: 1px solid #cddbe8;
+  padding: 20px 0px;
+  @include clearfix;
+  .feature{
+    width: 230px;
+    float:left;
+    h3{
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 5px;
+      padding: 4px 25px;
+    }
+    p{
+      line-height:1.3em;
+    }
+  }
+  .not-last{
+    margin-right: 10px;
+  }
+  .take h3{background:url(/images/home/icn_takepictures.png) no-repeat;}
+  .link h3{background:url(/images/home/icn_linkaccounts.png) no-repeat;}
+  .select h3{background:url(/images/home/icn_select.png) no-repeat;}
+  .customize h3{background:url(/images/home/icn_customize.png) no-repeat;}
+}
+
+.dash-separator{
+  height: 5px;
+  margin: auto;
+  background: url(/images/home/dash_fading.jpg) no-repeat center center;
+}
+
+#examples{
+  padding: 20px 0px;
+  @include clearfix;
+  .example{
+    float:left;
+    width: 305px;
+  }
+  .not-last{
+    margin-right: 20px;
+  }
+  .img-wrapper{
+    border: 1px solid #bdc8d2;
+    padding: 3px;
+  }
+  h3{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 5px 0px;
+  }
+  p{
+    line-height:1.3em;
+  }
+
+}
+
+footer{
+  background-color:#1b1b1b;
+  font-size: 1.1em;
+  border-top: 3px solid #171717;
+  padding: 30px 10px 40px 10px;
+  color: #575757;
+  a{
+    color:#959595;
+  }
+  .credits, .copyright{
+    text-align: center;
+    margin-top: 10px;
+  }
+  .copyright{
+    color: #fdfdfd;
+  }
+  .credits{
+    font-size: 0.9em;
+  }
+  #footer-items{
+    @include clearfix;
+    .footer-item{
+      width: 230px;
+      float:left;
+      a{
+        display:block;
+        text-decoration: none;
+        margin-top: 5px;
+      }
+      h3{
+        margin-bottom: 5px;
+        font-size: 1.1em;
+        color: #fff;
+      }
+    }
+    margin-bottom: 20px;
+  }
+}
+
+.button-fat{
+  background: url(/images/home/button_fat.jpg);
+  padding: 6px 0px;
+  text-align:center;
+  border: 0px;
+  @include text-shadow(#da3a0b 1px 1px 0);
+  color: #fff;
+  width: 79px;
+}
+
+.button-medium{
+  display:inline-block;
+  height: 13px;
+  width: 122px;
+  background: url(/images/home/button_medium.jpg);
+  color: #fff !important;
+  text-decoration: none;
+  padding: 4px 0px;
+  text-align: center;
+}
+
+#email-input{
+  @include border-radius(2px 0px 0px 2px);
+  border: 1px solid #B8C3CB;
+  color: #656565;
+  margin-right: -4px;
+  padding: 6px;
+}

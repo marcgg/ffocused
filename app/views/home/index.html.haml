@@ -1,12 +1,58 @@
-- if current_user
-  #logout= link_to t("logout"), "/logout"
-  #account= link_to t("account"), portfolio_path(current_user.portfolio)
-- else
-  #login= link_to t("login"), "/login"
-  or
-  #register= link_to "Create an account", new_user_path
+#main-visual
+  %h2 Showcase Your Best Pictures
+  %p
+    Here at ffocused, we believe that a portfolio should display only your most stunning work, 
+    with no clutter & in a layout designed for your photos.
 
-- form_for FutureUser.new do |f|
-  = f.label :email
-  = f.text_field :email
-  = f.submit "request beta"
+#request-invite
+  #request-data
+    .wrapper
+      %h3 Request Invite
+      %p Get early access, like a boss
+    - form_for FutureUser.new do |f|
+      = f.text_field :email, :id => "email-input"
+      = f.submit "Invite Me!", :class => "button-fat"
+
+#features
+  .container
+    .feature.not-last.take
+      %h3 Take Pictures
+      %p
+        Grab your camera, go outside and shoot something impressive.
+        It could be your mom, your dog or your last trip. Go ahead, we’ll be waiting right here.
+
+    .feature.not-last.link
+      %h3 Link your Accounts
+      %p
+        No need to reupload your photos, simply link the services where you store your photos.
+        We currently support Flickr, Instagram and Facebook.
+
+    .feature.not-last.select
+      %h3 Select
+      %p
+        Create a category and select what pictures you want to showcase.
+        Add titles, descriptions and set the right order.
+
+    .feature.customize
+      %h3 Customize
+      %p
+        Select a theme from our growing selection.
+        If you know CSS, you can also customize every layout aspect of your portfolio.
+
+.dash-separator
+
+#examples.container
+  .example.not-last
+    .img-wrapper= image_tag "home/guillaumeflandre.jpg"
+    %h3 Guillaume Flandre
+    %p Blah
+
+  .example.not-last
+    .img-wrapper= image_tag "home/marcgg.jpg"
+    %h3 Marc G Gauthier
+    %p Blah
+
+  .example
+    .img-wrapper= image_tag "home/kevintunc.jpg"
+    %h3 Kevin Tunc
+    %p Blah

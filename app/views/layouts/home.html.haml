@@ -2,8 +2,54 @@
 %html
 %head
   %title= t("app_name")
+  = stylesheet_link_tag "compiled/home"
+
 %body
-  SITE COMMERCIAL
+  %header
+    .container
+      #top-action
+        #account-actions
+          - if current_user
+            #logout= link_to t("logout"), "/logout"
+            #account= link_to t("account"), portfolio_path(current_user.portfolio)
+          - else
+            #login= link_to t("login"), "/login"
+        = link_to "Request invite code", "#", :class => "button-medium"
+
+      %h1 ffocused
+      %p.baseline Your best shots. Full size. No clutter.
+
   = yield
+
+  %footer
+    .container
+      #footer-items
+        .footer-item
+          %h3 Login
+          = link_to "- Request an invite code", "#"
+          = link_to "- Login", "/login"
+        .footer-item
+          %h3 Services Supported
+          = link_to "- Flickr", "http://flickr.com"
+          = link_to "- Facebook", "http://facebook.com"
+          = link_to "- Instagram", "http://instagr.am"
+        .footer-item
+          %h3 Find Us
+          = link_to "- Twitter", "http://twitter.com/ffocusedapp"
+          = link_to "- Github", "http://github.com/marcgg/ffocused"
+        .footer-item
+          %h3 Find Us
+          = link_to "- Twitter", "http://twitter.com/ffocusedapp"
+          = link_to "- Github", "http://github.com/marcgg/ffocused"
+
+    .copyright.container
+      ffocused is an open source project, feel free to 
+      = link_to "contribute", "http://github.com/marcgg/ffocused"
+    .credits.container
+      This is a free service created by 
+      = link_to "Marc G Gauthier", "http://twitter.com/marcgg"
+      and
+      = link_to "Kevin Tunc", "http://twitter.com/kevintunc"
+      = "."
 
   = render :partial => "/shared/google_analytics"
