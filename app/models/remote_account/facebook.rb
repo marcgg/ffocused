@@ -4,6 +4,16 @@ class RemoteAccount::Facebook < RemoteAccount
     "facebook"
   end
 
+  def still_valid?
+    begin
+      graph = Koala::Facebook::GraphAPI.new(self.access_token)
+      res = graph.get_object("me")
+      return res["id"].to_s == remote_user_id.to_s
+    rescue Exception => e
+      return false
+    end
+  end
+
   def facebook_albums
     begin
       graph = Koala::Facebook::GraphAPI.new(self.access_token)

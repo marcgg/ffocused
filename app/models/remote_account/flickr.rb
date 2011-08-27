@@ -1,6 +1,11 @@
 class RemoteAccount::Flickr < RemoteAccount
   validate :check_and_save_flickr_user_id, :if => Proc.new{|ra| ra.remote_user_id.blank?}
 
+  def still_valid?
+    # We do not require authentication for Flickr
+    true
+  end
+
   def public_name
     "flickr"
   end

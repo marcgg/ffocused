@@ -53,9 +53,13 @@ class CategoriesController < ApplicationController
 
   def refresh
     @category = @current_portfolio.categories.find(params[:id])
-    @category.refresh
-    flash[:notice] = {:title => t("categories.refresh.title"), :text => t("categories.refresh.text")}
-    redirect_to category_path(@category)
+    if @category.remote_account.still_valid?
+      @category.refresh
+      flash[:notice] = {:title => t("categories.refresh.title"), :text => t("categories.refresh.text")}
+      redirect_to category_path(@category)
+    else
+      redirect_to expired_remote_account_path(@category.remote_account)
+    end
   end
 
   def create

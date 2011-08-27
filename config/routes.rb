@@ -27,7 +27,9 @@ Prtfl::Application.routes.draw do
     get  "fetch_form",    :on => :collection
   end
 
-  resources :remote_accounts
+  resources :remote_accounts do
+    get "expired", :on => :member
+  end
 
   resources :oauth do
     get "instagram_connect",  :on => :collection
