@@ -3,12 +3,17 @@
 %head
   %title= @portfolio.title
   - if @portfolio.theme_id.blank?
-    %style{:media => "screen", :rel => "stylesheet", :type => "text/css" }
-      = @portfolio.css
+    %style{:media => "screen", :rel => "stylesheet", :type => "text/css"}= @portfolio.css
   - else
     = stylesheet_link_tag "themes/#{@portfolio.theme[:code]}"
+  = stylesheet_link_tag "compiled/shared_front"
 
 %body{:id => (@category ? "category-#{@category.id}" : ""), :class => ((@category and @category.remote_account) ? "account-#{@category.remote_account.public_name}" : "")}
+
+  - if params[:theme_id]
+    #previewing
+      You are currently previewing the theme #{THEMES[params[:theme_id].to_i][:title]}
+
   %header
     %h1= @portfolio.title
     - unless @portfolio.description.blank?

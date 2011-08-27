@@ -5,6 +5,7 @@ class FrontController < ApplicationController
 
   def showcase
     @category = params[:category_slug].blank? ? @portfolio.categories.first : Category.find_by_slug(params[:category_slug])
+    @portfolio.theme_id = params[:theme_id] if params[:theme_id]
   end
 
   def about

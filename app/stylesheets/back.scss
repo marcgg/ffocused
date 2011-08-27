@@ -75,6 +75,10 @@ h4{
   font-weight:bold;
   padding: 10px 0px 0px 20px;
 }
+h5{
+  font-weight:bold;
+  margin: 5px 0px;
+}
 
 ul{
   list-style-type:none;
@@ -499,7 +503,7 @@ ul{
     float: left;
     margin: 10px 17px 10px 17px;
     width: 220px;
-    height:300px;
+    height:330px;
     @include border-radius(5px);
     @include box-shadow(#999 2px 2px 5px);
     img{
@@ -511,6 +515,11 @@ ul{
         color: #678db4;
         font-weight:bold;
       }
+    }
+    .preview{
+      margin-top: 5px;
+      padding: 5px 0px;
+      border-top: 1px dotted #ccc;
     }
   }
 }

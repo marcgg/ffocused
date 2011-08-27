@@ -16,8 +16,8 @@ Prtfl::Application.routes.draw do
 
   # PORTFOLIO
   resources :portfolios do
-    post "order_categories",  :on => :collection
-    get  "not_setup",         :on => :member
+    post "order_categories",        :on => :collection
+    get  "not_setup",               :on => :member
   end
 
   resources :categories do
