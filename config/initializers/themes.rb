@@ -11,7 +11,19 @@ THEMES = {
     :user => "<a href='http://twitter.com/marcgg'>@marcgg</a>",
     :remote_accounts => ["Flickr"]
   },
+  3 => {
+    :title => "On my way up",
+    :code => "onmywayup",
+    :user => "<a href='http://twitter.com/kevintunc'>@kevintunc</a>",
+    :remote_accounts => ["Flickr"]
+  },
   4 => {
+    :title => "Milk and Honey",
+    :code => "milkandhoney",
+    :user => "<a href='http://twitter.com/kevintunc'>@kevintunc</a>",
+    :remote_accounts => ["Flickr"]
+  },
+  5 => {
     :title => "Simple Instagram",
     :code => "simple_instagram",
     :user => "<a href='http://twitter.com/marcgg'>@marcgg</a>",
