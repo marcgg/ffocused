@@ -1,4 +1,22 @@
 
+v0.7.0 / 2011-08-27
+===================
+
+  ** Do not fail when tokens expire; Google Analytics hardcoded **
+
+  * Merge branch 'development'
+  * handling expiration on a create category level
+  * Merge branch 'development'
+  * oops, bad var name
+  * Merge branch 'development'
+  * use public name and not class name
+  * Merge branch 'development'
+  * check instagram account expiration (issue #9)
+  * Merge branch 'development'
+  * Added a scenario to refresh Facebook access tokens
+  * Removed hardcoded example link on not_setup action
+  * added google analytics + fixed bug that would prevent /about to display correctly
+
 v0.6.1 / 2011-08-14
 ===================
 
