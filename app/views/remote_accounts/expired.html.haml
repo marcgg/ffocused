@@ -1,4 +1,4 @@
 %h2= t(".title")
 %p.help=raw t(".help")
-= render :partial => "/remote_accounts/forms/#{@remote_account.class_name}"
+= render :partial => "/remote_accounts/forms/#{@remote_account.public_name}"
 
