@@ -1,7 +1,8 @@
 class CategoriesController < ApplicationController
   layout 'back'
 
-  before_filter :find_category, :only => [:edit, :destroy, :update]
+  before_filter :find_category, :only => [:edit, :destroy, :update, :refresh, :reset]
+  before_filter :use_valid_remote_account, :only => [:refresh, :reset]
 
   def index
     @categories = @current_portfolio.categories
@@ -13,7 +14,11 @@ class CategoriesController < ApplicationController
 
   def fetch_form
     remote_account = @current_portfolio.remote_accounts.find(params[:remote_account_id])
-    render :partial => "/categories/forms/#{remote_account.class_name}", :locals => {:remote_account => remote_account}
+    unless remote_account.still_valid?
+      render :partial => "/categories/forms/expired", :locals => {:remote_account => remote_account}
+    else
+      render :partial => "/categories/forms/#{remote_account.class_name}", :locals => {:remote_account => remote_account}
+    end
   end
 
   def update
@@ -45,25 +50,20 @@ class CategoriesController < ApplicationController
   end
 
   def reset
-    @category = @current_portfolio.categories.find(params[:id])
     @category.reset
     flash[:notice] = {:title => t("categories.reset.title"), :text => t("categories.reset.text")}
     redirect_to category_path(@category)
   end
 
   def refresh
-    @category = @current_portfolio.categories.find(params[:id])
-    if @category.remote_account.still_valid?
-      @category.refresh
-      flash[:notice] = {:title => t("categories.refresh.title"), :text => t("categories.refresh.text")}
-      redirect_to category_path(@category)
-    else
-      redirect_to expired_remote_account_path(@category.remote_account)
-    end
+    @category.refresh
+    flash[:notice] = {:title => t("categories.refresh.title"), :text => t("categories.refresh.text")}
+    redirect_to category_path(@category)
   end
 
   def create
     @category = params[:type].constantize.new(params[:category].merge(:portfolio_id => @current_portfolio.id))
+    use_valid_remote_account
     if @category.save
       flash[:notice] = {:title => t("categories.create.success_title"), :text => t("categories.create.success_text")}
       redirect_to category_path(@category)
@@ -83,4 +83,7 @@ class CategoriesController < ApplicationController
     @category = @current_portfolio.categories.find(params[:id])
   end
 
+  def use_valid_remote_account
+    redirect_to expired_remote_account_path(@category.remote_account) unless @category.remote_account.still_valid?
+  end
 end
