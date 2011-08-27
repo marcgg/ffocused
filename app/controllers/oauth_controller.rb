@@ -43,7 +43,7 @@ class OauthController < ApplicationController
           :remote_user_id => user_data["id"]
         )
     else
-      existing.update_attribute(:access_token, token)
+      existing.update_attribute(:access_token, response.access_token)
     end
     redirect_to remote_accounts_path
   end
