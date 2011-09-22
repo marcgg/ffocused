@@ -15,9 +15,12 @@ gem 'koala', '=1.1.0rc2'
 gem 'instagram', '=0.7'
 gem 'rake', '=0.9.2'
 
-group :test, :test do
-  gem 'rspec'
+group :test do
   gem 'rr'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
 end
 
 group :development do

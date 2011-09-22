@@ -10,11 +10,17 @@ class Category < ActiveRecord::Base
   validates_presence_of :slug, :if => Proc.new { |category| !category.new_record? }
 
   def set_slug
-    self.update_attribute(:slug, "#{self.id}-#{self.title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}")
+    unless self.slug
+      self.update_attribute :slug, generated_slug
+    end
   end
 
   def reset
     photos.destroy_all
     refresh
+  end
+
+  def generated_slug
+    "#{self.id}-#{self.title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}"
   end
 end
