@@ -3,6 +3,7 @@
 %head
   %title= t("app_name")
   = stylesheet_link_tag "compiled/home"
+  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "jquery.scrollTo-1.4.2-min.js", "home.js"
 
 %body
   %header
@@ -14,7 +15,7 @@
             #account= link_to t("account"), portfolio_path(current_user.portfolio)
           - else
             #login= link_to t("login"), "/login"
-        = link_to "Request invite code", "#", :class => "button-medium"
+        = link_to "Request invite code", "#", :class => "button-medium request-link"
 
       %h1 ffocused
       %p.baseline Your best shots. Full size. No clutter.
@@ -26,7 +27,7 @@
       #footer-items
         .footer-item
           %h3 Login
-          = link_to "- Request an invite code", "#"
+          = link_to "- Request an invite code", "#", :class => "request-link"
           = link_to "- Login", "/login"
         .footer-item
           %h3 Services Supported
@@ -35,12 +36,8 @@
           = link_to "- Instagram", "http://instagr.am"
         .footer-item
           %h3 Find Us
-          = link_to "- Twitter", "http://twitter.com/ffocusedapp"
-          = link_to "- Github", "http://github.com/marcgg/ffocused"
-        .footer-item
-          %h3 Find Us
-          = link_to "- Twitter", "http://twitter.com/ffocusedapp"
-          = link_to "- Github", "http://github.com/marcgg/ffocused"
+          = link_to "- on Twitter to get updates", "http://twitter.com/ffocusedapp"
+          = link_to "- on Github to see the code & help out", "http://github.com/marcgg/ffocused"
 
     .copyright.container
       ffocused is an open source project, feel free to

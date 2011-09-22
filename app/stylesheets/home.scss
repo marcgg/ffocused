@@ -201,6 +201,8 @@ footer{
   }
   #footer-items{
     @include clearfix;
+    width: 710px;
+    margin: auto;
     .footer-item{
       width: 230px;
       float:left;

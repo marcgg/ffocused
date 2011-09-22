@@ -2,8 +2,8 @@ class FutureUsersController < ApplicationController
   before_filter :ensure_admin, :only => [:handle]
 
   def create
-    FutureUser.create!(params[:future_user])
-    redirect_to "/"
+    FutureUser.create!(:email => params[:email])
+    render :nothing => true
   end
 
   def handle

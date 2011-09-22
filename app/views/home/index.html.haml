@@ -6,12 +6,17 @@
 
 #request-invite
   #request-data
-    .wrapper
-      %h3 Request Invite
-      %p Get early access, like a boss
-    - form_for FutureUser.new do |f|
-      = f.text_field :email, :id => "email-input"
-      = f.submit "Invite Me!", :class => "button-fat"
+    .first-step
+      .wrapper
+        %h3 Request Invite
+        %p Get early access, like a boss
+      - form_for FutureUser.new do |f|
+        = f.text_field :email, :id => "email-input"
+        = f.submit "Invite Me!", :class => "button-fat"
+
+    .second-step{:style => "display:none"}
+      %h3 We will send you your beta code soon
+      Thanks for your interest in ffocused, we appreciate it!
 
 #features
   .container
