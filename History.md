@@ -1,4 +1,12 @@
 
+v0.8.1 / 2011-09-23 
+==================
+
+  ** Minor CSS bug only seen in prod **
+
+  * Merge branch 'development'
+  * fixed layout for rlvnt yellow theme
+
 v0.8.0 / 2011-09-22
 ===================
 
