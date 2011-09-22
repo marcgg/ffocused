@@ -119,8 +119,8 @@ h1{
   padding: 20px 0px;
   @include clearfix;
   .feature{
-    width: 230px;
-    float:left;
+    width: 225px;
+    float: left;
     h3{
       font-size: 1.1em;
       font-weight: bold;
@@ -128,11 +128,12 @@ h1{
       padding: 4px 25px;
     }
     p{
-      line-height:1.3em;
+      line-height: 1.3em;
+      text-align: justify;
     }
   }
   .not-last{
-    margin-right: 10px;
+    margin-right: 15px;
   }
   .take h3{background:url(/images/home/icn_takepictures.png) no-repeat;}
   .link h3{background:url(/images/home/icn_linkaccounts.png) no-repeat;}

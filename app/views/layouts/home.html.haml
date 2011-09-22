@@ -43,13 +43,15 @@
           = link_to "- Github", "http://github.com/marcgg/ffocused"
 
     .copyright.container
-      ffocused is an open source project, feel free to 
+      ffocused is an open source project, feel free to
       = link_to "contribute", "http://github.com/marcgg/ffocused"
+      or
+      = link_to "report a problem", "http://github.com/marcgg/ffocused/issues"
     .credits.container
-      This is a free service created by 
+      This is a free service created by
       = link_to "Marc G Gauthier", "http://twitter.com/marcgg"
       and
       = link_to "Kevin Tunc", "http://twitter.com/kevintunc"
       = "."
 
-  = render :partial => "/shared/google_analytics"
+  = render :partial => "/shared/google_analytics" if Rails.env == "production"
