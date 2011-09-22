@@ -12,4 +12,8 @@ class Photo < ActiveRecord::Base
     update_attribute(:deleted, true)
   end
 
+  def update_stats
+    update_attribute(:prints, (prints + 1))
+  end
+
 end

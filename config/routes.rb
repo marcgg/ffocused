@@ -52,4 +52,5 @@ Prtfl::Application.routes.draw do
   # FRONT
   get "/:slug/about"            => "front#about",     :as => :about
   get "/:slug(/:category_slug)" => "front#showcase",  :as => :showcase
+  get "/:slug/:category_slug/:photo_id" => "front#single_photo", :as => :single_photo
 end

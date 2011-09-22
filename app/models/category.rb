@@ -10,7 +10,7 @@ class Category < ActiveRecord::Base
   validates_presence_of :slug, :if => Proc.new { |category| !category.new_record? }
 
   def set_slug
-    unless self.slug
+    if self.slug.blank?
       self.update_attribute :slug, generated_slug
     end
   end
@@ -20,7 +20,13 @@ class Category < ActiveRecord::Base
     refresh
   end
 
+  def update_stats
+    # TODO: Bench this vs a more SQL approach. This is nice because more readable and uses scopes.
+    photos.limited.ordered.activated.each{ |p| p.update_stats }
+  end
+
   def generated_slug
     "#{self.id}-#{self.title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}"
   end
+
 end

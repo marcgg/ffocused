@@ -178,6 +178,10 @@ en:
       title: "Category: \"%{title}\""
       get_started: Get Started
       back: "<< Back to Categories"
+      prints:
+        zero: "No views"
+        one: "One view"
+        other: "%{count} views"
       blurb: "Only the first 15 will be displayed on your portfolio. Drag & drop the photos to reorder them."
       reset: |
         Reset all photos in this category.
