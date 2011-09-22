@@ -9,6 +9,7 @@
       .title
         = photo.title
         #actions
+          = t(".prints", :count => photo.prints)
           = link_to t("edit"), edit_photo_path(photo, :category_id => @category.id), :class => "action"
           = link_to t("delete"), photo_path(photo, :category_id => @category.id), :class => "delete action", :rel => "#entry-#{photo.id}"
 

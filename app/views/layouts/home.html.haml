@@ -2,8 +2,58 @@
 %html
 %head
   %title= t("app_name")
+  = stylesheet_link_tag "compiled/home"
+  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "jquery.scrollTo-1.4.2-min.js", "home.js"
+
 %body
-  SITE COMMERCIAL
+  #warning{:style => "color:red; border-bottom: 1px solid red; line-height: 18px; font-size: 1.4em; text-align: center; padding: 15px;"}
+    Warning, this is a beta version of the beta website. It's very meta, I know. 
+    %br
+    Most features won't be working and this page is only for testing purposes and getting feedbacks.
+
+  %header
+    .container
+      #top-action
+        #account-actions
+          - if current_user
+            #logout= link_to t("logout"), "/logout"
+            #account= link_to t("account"), portfolio_path(current_user.portfolio)
+          - else
+            #login= link_to t("login"), "/login"
+        = link_to "Request invite code", "#", :class => "button-medium request-link"
+
+      %h1 ffocused
+      %p.baseline Your best shots. Full size. No clutter.
+
   = yield
 
-  = render :partial => "/shared/google_analytics"
+  %footer
+    .container
+      #footer-items
+        .footer-item
+          %h3 Login
+          = link_to "- Request an invite code", "#", :class => "request-link"
+          = link_to "- Login", "/login"
+        .footer-item
+          %h3 Services Supported
+          = link_to "- Flickr", "http://flickr.com"
+          = link_to "- Facebook", "http://facebook.com"
+          = link_to "- Instagram", "http://instagr.am"
+        .footer-item
+          %h3 Find Us
+          = link_to "- on Twitter to get updates", "http://twitter.com/ffocusedapp"
+          = link_to "- on Github to see the code & help out", "http://github.com/marcgg/ffocused"
+
+    .copyright.container
+      ffocused is an open source project, feel free to
+      = link_to "contribute", "http://github.com/marcgg/ffocused"
+      or
+      = link_to "report a problem", "http://github.com/marcgg/ffocused/issues"
+    .credits.container
+      This is a free service created by
+      = link_to "Marc G Gauthier", "http://twitter.com/marcgg"
+      and
+      = link_to "Kevin Tunc", "http://twitter.com/kevintunc"
+      = "."
+
+  = render :partial => "/shared/google_analytics" if Rails.env == "production"

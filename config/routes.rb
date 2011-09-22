@@ -16,8 +16,8 @@ Prtfl::Application.routes.draw do
 
   # PORTFOLIO
   resources :portfolios do
-    post "order_categories",  :on => :collection
-    get  "not_setup",         :on => :member
+    post "order_categories",        :on => :collection
+    get  "not_setup",               :on => :member
   end
 
   resources :categories do
@@ -44,11 +44,13 @@ Prtfl::Application.routes.draw do
   resources :photos
 
   # ADDITIONAL PAGES
-  match "/faq"      => "faq#index",     :as => :faq
-  match "/terms"    => "home#terms",    :as => :terms
-  match "/contact"  => "home#contact",  :as => :contact
+  match "/faq"      => "faq#index",       :as => :faq
+  match "/terms"    => "home#terms",      :as => :terms
+  match "/contact"  => "home#contact",    :as => :contact
+  match "/how_to/themes" => "faq#themes", :as => :themes_tutorial
 
   # FRONT
   get "/:slug/about"            => "front#about",     :as => :about
   get "/:slug(/:category_slug)" => "front#showcase",  :as => :showcase
+  get "/:slug/:category_slug/:photo_id" => "front#single_photo", :as => :single_photo
 end

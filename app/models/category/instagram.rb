@@ -1,10 +1,10 @@
 class Category::Instagram < Category
   after_create :set_photos_from_instagram
-  
+
   def refresh
     set_photos_from_instagram
   end
-  
+
   def set_photos_from_instagram
     remote_account.photos.each_with_index do |photo, i|
       Photo.create(

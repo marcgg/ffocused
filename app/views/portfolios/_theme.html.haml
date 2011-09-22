@@ -9,6 +9,7 @@
   = f.label :css
   = f.text_area :css, {:style => "height:300px; width:100%;"}
   .sidenote= raw t("portfolios.edit.theme.creative")
+  .sidenote= link_to t("portfolios.edit.theme.how_to_themes"), themes_tutorial_path
 
 #all-themes{:style => (@current_portfolio.theme_id.blank? ? "display:none;" : "")}
   - i = 0
@@ -18,7 +19,7 @@
     .theme{:class => (@current_portfolio.theme_id == k ? "selected" : ""), :rel => k}
       .image= image_tag "themes/#{v[:code]}.jpg"
       .info
-        %h4
+        %h5
           = v[:title]
           = raw t("by", :name => v[:user])
         .optimized= t(".optimized_for", :remote_accounts => v[:remote_accounts].join(", "))
@@ -26,5 +27,10 @@
         .used
           = t(".used_by")
           = raw used_by.map{|p| link_to(p.title[0..15], showcase_path(:slug => p.slug)) }.join(", ")
+        .preview
+          = link_to t(".preview"), showcase_path(:slug => @current_portfolio.slug, :theme_id => k), :target => "_blank"
     - i += 1
+
+  %p= link_to t("portfolios.edit.theme.themes_tutorial"), themes_tutorial_path
+
 

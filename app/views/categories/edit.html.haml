@@ -1,6 +1,5 @@
 %h2= t("categories.edit.title", :name => @category.title)
 - form_for @category, :url => category_path(@category) do |f|
-    
   = f.label :title
   = f.text_field :title
 

@@ -3,3 +3,5 @@ db/*.sqlite3
 log/*.log
 config/initializers/01_social_accounts.rb
 tmp/
+.DS_Store
+.rvmrc

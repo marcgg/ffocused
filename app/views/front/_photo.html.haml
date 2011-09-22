@@ -1,0 +1,11 @@
+.photo{:id => "photo-#{photo.id}", :class => "photo-order-#{i} #{cycle("photo-order-even", "photo-order-odd")}"}
+  .image-wrapper
+    %a.img-wrapper-link{:href => single_photo_path(:slug => @portfolio.slug, :category_slug => @category.slug, :photo_id => photo.id)}
+      = image_tag photo.large_photo_url
+  - unless photo.title.blank? && photo.description.blank?
+    .description-wrapper
+      - unless photo.title.blank?
+        %h3= photo.title
+      - unless photo.description.blank?
+        %p= photo.description
+

@@ -2,16 +2,16 @@
   .wrapper
     .first
     = link_to t("back.nav.home"), portfolio_path(@current_portfolio), :class => ((controller.controller_name == "portfolios" and controller.action_name == "show")? "selected" : "")
-  
+
     = link_to t("back.nav.remote_accounts"), remote_accounts_path, :class => ((controller.controller_name == "remote_accounts")? "selected" : "")
-  
+
     = link_to t("back.nav.categories"), categories_path, :class => ((controller.controller_name == "categories")? "selected" : "")
-  
+
     = link_to t("back.nav.theme"), edit_portfolio_path(@current_portfolio, :type => "theme"), :class => ((controller.controller_name == "portfolios" and controller.action_name == "edit" and params[:type] == "theme")? "selected" : "")
-  
+
     = link_to t("back.nav.settings"), edit_portfolio_path(@current_portfolio, :type => "settings"), :class => ((controller.controller_name == "portfolios" and controller.action_name == "edit" and params[:type] == "settings")? "selected" : "")
-  
+
     - if current_user.is_admin?
       = link_to t("back.nav.admin"), "/admin", :class => ((controller.controller_name == "admin")? "selected" : "")
-    
+
     .last

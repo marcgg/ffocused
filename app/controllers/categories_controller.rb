@@ -22,8 +22,11 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    params[:category] = params[:category_from_set] if params[:category].blank?
-    params[:category] = params[:category_from_tag] if params[:category].blank?
+    # FIXME: This is terrible
+    params[:category] = params[:category_instagram] if params[:category].blank?
+    params[:category] = params[:category_facebook] if params[:category].blank?
+    params[:category] = params[:category_flickr] if params[:category].blank?
+
     if @category.update_attributes(
                     :title => params[:category][:title],
                     :slug => params[:category][:slug],

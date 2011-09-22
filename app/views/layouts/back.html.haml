@@ -40,4 +40,4 @@
       .extra-details
         =raw t("back.footer.copyright", :year => Time.now.year)
 
-  = render :partial => "/shared/google_analytics"
+  = render :partial => "/shared/google_analytics" if Rails.env == "production"
