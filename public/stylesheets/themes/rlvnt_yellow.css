@@ -72,7 +72,8 @@ nav{
 
 .photo{
   border: 5px solid black;
-  margin-bottom: 30px;
+  margin: 0px auto 30px auto;
+  width: 1024px;
   text-align:center;
 }
 
@@ -93,7 +94,7 @@ nav{
   display: none;
 }
 /* Links and Such */
-a{
+nav a, #footest a{
   color: #333;
   background-color: yellow;
   text-decoration:none;
@@ -102,7 +103,7 @@ a{
 .selected{
   font-weight:bold;
 }
-a:hover{
+nav a:hover, #footest a:hover{
   color: yellow;
   background-color:#333;
 }
