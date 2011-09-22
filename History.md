@@ -1,4 +1,25 @@
 
+v0.8.0 / 2011-09-22
+===================
+
+  ** Various small features (stats, analytics, preview themes...) and
+commercial website draft **
+
+  * Merge branch 'development'
+  * Added warning because I want to deploy in production
+  * better UX for requesting invite
+  * First draft for featured photographers (todo: an admin panel to handle that)
+  * Fixed edit issue (issue #16); Some basic stats (issue #20); Permalink on photo (issue #19)
+  * Getting ready for 1.9.2 (I know this should have been done before); Minor CSS issue; Fixed issue #18
+  * Added some tests
+  * Ignoring DS store files
+  * Commercial website first draft
+  * How to create a theme simple tutorial
+  * Added custom google analytics
+  * shared css for front actions
+  * ability to preview theme (issue #12)
+  * Do not display containers if there isn't content (issue #11)
+
 v0.7.0 / 2011-08-27
 ===================
 
