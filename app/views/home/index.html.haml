@@ -44,15 +44,34 @@
 #examples.container
   .example.not-last
     .img-wrapper= image_tag "home/guillaumeflandre.jpg"
-    %h3 Guillaume Flandre
-    %p Blah
+    %h3
+      = link_to "Guillaume Flandre", "http://ffocused.com/gflandre"
+    %p
+      Photographer and traveller, Guillaume took pictures all around the world.
+      He enjoys alternating candid pictures and staged scenes as well as shooting on film or using a DSLR.
+      This approach gives us various yet consistent image collection.
+    %p
+      = link_to "See his portfolio", "http://ffocused.com/gflandre"
+
 
   .example.not-last
     .img-wrapper= image_tag "home/marcgg.jpg"
-    %h3 Marc G Gauthier
-    %p Blah
+    %h3
+      = link_to "Marc G Gauthier", "http://ffocused.com/marcgg"
+    %p
+      While traveling Marc developed a taste in photography, and for the past
+      years he documents his trips (Iceland, Balkans, Spain, New York...) while trying
+      to keep artistic considerations in mind.
+    %p
+      = link_to "See his portfolio", "http://ffocused.com/marcgg"
 
   .example
     .img-wrapper= image_tag "home/kevintunc.jpg"
-    %h3 Kevin Tunc
-    %p Blah
+    %h3 
+      = link_to "Kevin Tunc", "http://ffocused.com/kevintunc"
+    %p
+      Kevin is always prepared with his iPhone to shoot what is going on around him.
+      In his opinion the best way to share life is instagram
+      which he uses to capture everything!
+    %p
+      = link_to "See his portfolio", "http://ffocused.com/kevintunc"

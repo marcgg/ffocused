@@ -165,9 +165,17 @@ h1{
     font-size: 1.1em;
     font-weight: bold;
     margin: 5px 0px;
+    a{
+      color: #656363;
+      text-decoration: none;
+    }
   }
   p{
     line-height:1.3em;
+    margin-bottom: 10px;
+    a{
+      color: #656363;
+    }
   }
 
 }
