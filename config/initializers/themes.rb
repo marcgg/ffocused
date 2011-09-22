@@ -10,5 +10,11 @@ THEMES = {
     :code => "rlvnt_yellow",
     :user => "<a href='http://twitter.com/marcgg'>@marcgg</a>",
     :remote_accounts => ["Flickr"]
+  },
+  4 => {
+    :title => "Simple Instagram",
+    :code => "simple_instagram",
+    :user => "<a href='http://twitter.com/marcgg'>@marcgg</a>",
+    :remote_accounts => ["Instagram"]
   }
 }
