@@ -34,8 +34,7 @@ If you want to help out, please contact us directly and we'll figure out a solut
 Tests are made with rspec2. There isn't enough tests yet, we are working on it.
 
 Any pull request needs to have its set of tests to be accepted (except
-for themes). To run the tests simply run:
-    bundle exec rake spec
+for themes).
 
 ## Compatibility
 ffocused runs on Ruby 1.9.2 and 1.8.7, but the support for 1.8.7 will be
