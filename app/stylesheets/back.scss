@@ -538,3 +538,31 @@ ul{
   }
 }
 
+
+/* Stats */
+#stats{
+  width: 96%;
+  margin: 10px;
+  img{
+    width: 25px;
+    height: 25px;
+  }
+  .title{
+    width: 25px;
+  }
+  td, th{
+    padding: 4px 8px;
+    vertical-align: center;
+  }
+  th{
+    font-weight: bold;
+    background-color: #dee3e8;
+    @include text-shadow(#eee 1px 1px 0);
+    height: 25px;
+    color: #404d59;
+    text-transform:uppercase;
+  }
+  .even{
+    background-color: #ededed;
+  }
+}

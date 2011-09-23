@@ -39,6 +39,14 @@ en:
       title: "Editing Photo: %{title}"
       back: "<< Back to %{category}"
 
+  stats:
+    index:
+      main_title: Stats
+      views: Views
+      title: Title
+      category: Category
+      photo_title: "%{title}"
+
   users:
     new:
       title: Signup!

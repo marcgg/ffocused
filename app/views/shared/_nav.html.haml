@@ -7,6 +7,8 @@
 
     = link_to t("back.nav.categories"), categories_path, :class => ((controller.controller_name == "categories")? "selected" : "")
 
+    = link_to t("back.nav.stats"), stats_path, :class => ((controller.controller_name == "stats")? "selected" : "")
+
     = link_to t("back.nav.theme"), edit_portfolio_path(@current_portfolio, :type => "theme"), :class => ((controller.controller_name == "portfolios" and controller.action_name == "edit" and params[:type] == "theme")? "selected" : "")
 
     = link_to t("back.nav.settings"), edit_portfolio_path(@current_portfolio, :type => "settings"), :class => ((controller.controller_name == "portfolios" and controller.action_name == "edit" and params[:type] == "settings")? "selected" : "")
