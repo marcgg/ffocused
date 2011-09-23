@@ -6,12 +6,12 @@ class FrontController < ApplicationController
   before_filter :setup_theme_preview, :except => [:about]
 
   def showcase
-    @category.update_stats
+    @category.update_stats unless current_user and current_user.portfolio.id == @portfolio.id
   end
 
   def single_photo
     @photo = Photo.find(params[:photo_id])
-    @photo.update_stats
+    @photo.update_stats unless current_user and current_user.portfolio.id == @portfolio.id
   end
 
   def about
