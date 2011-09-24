@@ -1,4 +1,22 @@
 
+v0.9.0 / 2011-09-24
+===================
+
+** Added stats screen. Fixed flickr bugs; Refactoring and documentation **
+
+  * I was young and crazy, this could have never worked: fixes to handle heroku
+  * formating and setting sqlite version
+  * Doc mistake
+  * Friendlier way to setup the project localy, and hopefully fixing travis (#23)
+  * Removed useless blah
+  * Adding some things to read
+  * Testing github editor for readme
+  * Fetch sizes for each flickr photo to avoid bugs. reduced max fetch items to 100 to avoid crazy API calls (#25)
+  * Do not ask to set slug on category creation (#26)
+  * Do not register stats when coming from the portfolio admin
+  * Basic stats screen
+  * Added very basic instagram theme
+
 v0.8.1 / 2011-09-23 
 ==================
 
