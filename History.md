@@ -1,4 +1,13 @@
 
+v0.9.1 / 2011-09-24
+===================
+
+** Minor CSS tweaks and bug fixes **
+
+  * Fixed issue where the About link in nav would never be highlighted correctly
+  * Minor tweaks for the default theme
+  * Rlvnt is no more, kthx
+
 v0.9.0 / 2011-09-24
 ===================
 
