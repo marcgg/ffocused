@@ -1,5 +1,4 @@
 development: &DEVELOPMENT
-  use_heroku: false
   flickr:
     application_api_key: "XXX"
     application_secret: "XXX"
@@ -15,7 +14,4 @@ development: &DEVELOPMENT
 
 test:
   <<: *DEVELOPMENT
-
-production:
-  use_heroku: true
 

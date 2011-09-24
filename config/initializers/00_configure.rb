@@ -1,7 +1,7 @@
-config = YAML.load(File.open(File.join(Rails.root, "config", "social_accounts.yml")))
-env_config = config[Rails.env]
+# TODO: Improve how to define heroku as the main production environment
+USE_HEROKU = true
 
-if env_config["use_heroku"]
+if USE_HEROKU and Rails.env == "production"
   puts "Loading Heroku variables"
 
   FLICKR_APPLICATION_API_KEY    = ENV["FLICKR_APPLICATION_API_KEY"]
@@ -30,6 +30,8 @@ elsif ENV['TRAVIS']
 
 else
   puts "Loading variables from social_accounts.yml"
+  config = YAML.load(File.open(File.join(Rails.root, "config", "social_accounts.yml")))
+  env_config = config[Rails.env]
 
   FLICKR_APPLICATION_API_KEY    = env_config["flickr"]["application_api_key"]
   FLICKR_APPLICATION_SECRET     = env_config["flickr"]["application_secret"]
