@@ -62,14 +62,15 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 /* PORTFOLIO CONTENT */
 body{
   font-family: "Helvetica", "Arial";
-  font-size: 16px;
+  font-size: 14px;
+  color: #444;
 }
 a{
-  color:#222;
+  color:#444;
   text-decoration:none;
 }
 a:hover{
-  background-color: yellow;
+  background-color: #ccc;
 }
 /* Header */
 h1{
@@ -77,6 +78,7 @@ h1{
   font-weight:bold;
   text-align:center;
   margin:20px 0px;
+  text-shadow: #777 1px 0px 0;
 }
 
 header p{ 
@@ -88,17 +90,22 @@ nav{
   text-align:center;
   border-bottom:1px solid #ccc;
   margin-bottom: 20px;
-  padding-bottom:5px;
+  padding-bottom:2px;
+  font-size: 1em;
 }
 nav .nav-link-wrapper{
   display: inline-block;
 }
 nav a{
-  padding-top:2px;
+  padding: 2px 5px;
+  margin: 0px 5px;
+  border-radius: 5px 5px 0px 0px;
 }
 nav .selected a{
-  background-color: yellow;
+  background-color: #ccc;
+  font-weight:bold;
 }
+#nav-bottom{display:none;}
 
 /* Content */
 #content{
@@ -107,10 +114,12 @@ nav .selected a{
 }
 h2{
   font-size:2em;
+  margin-bottom: 5px;
 }
 #category-description .description{
   font-style:italic;
   margin-bottom: 30px;
+  color: #333;
 }
 .photo{
   background-color: #000;
@@ -143,17 +152,22 @@ h3{
 
 /* Footer */
 footer, #footest{
-  width: 1024px;
-  text-align:right;
   margin: auto;
-  
 }
 footer{
   margin-top:40px;
 }
 #footest{
-  margin-bottom:40px;
+  margin:20px 0px 40px 0px;
+  color: #777;
+  font-size: 0.8em;
+  text-align:center;
 }
+#footest a{
+  color:#777 !important;
+  text-decoration:underline;
+}
+
 #footest .ffocused{
   display:inline-block;
   margin-right: 20px;

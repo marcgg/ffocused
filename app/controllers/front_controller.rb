@@ -2,7 +2,7 @@ class FrontController < ApplicationController
   skip_before_filter :find_current_portfolio
   skip_before_filter :ensure_portfolio_setup
   before_filter :find_front_portfolio
-  before_filter :find_category
+  before_filter :find_category, :except => [:about]
   before_filter :setup_theme_preview, :except => [:about]
 
   def showcase

@@ -23,8 +23,9 @@ class User < ActiveRecord::Base
   end
 
   def setup_portfolio
-    # FIXME: Handle case where slug is already taken
-    Portfolio.create!(:title => "#{login}'s Portfolio", :description => "This is my portfolio using Rlvnt, it's awesome.", :user_id => id, :slug => login)
+    Portfolio.create!(:title => "#{login}'s Portfolio", 
+                      :description => "This is my portfolio using ffocused, it's awesome.", 
+                      :user_id => id, :slug => login)
   end
 
   def self.find_by_login_or_email(login)
