@@ -1,0 +1,128 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through;}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+header, footer, nav, section, article { display:block; }
+
+/* THEME */
+
+body{
+  font-family: "Lucida Grande";
+  background-color: #000;
+  color: #eee;
+  font-size: 13px;
+}
+
+header{
+  text-align: center;
+}
+h1{
+  margin: 20px 0px;
+  font-size: 3em;
+}
+header p{
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+nav{
+  text-align: center;
+  margin: 20px 0px;
+  border-bottom: 1px solid #231c11;
+  padding-bottom: 5px;
+}
+nav a{
+  font-weight: bold;
+  color: #ec9c2b;
+  text-decoration: none;
+  display:inline-block;
+  padding: 2px 5px;
+  border: 1px solid #000;
+}
+nav a:hover{
+  border: 1px solid #ec9c2b;
+}
+.selected a{
+  background-color:#ec9c2b;
+  color: #000;
+  border: 1px solid #ec9c2b;
+}
+
+.nav-link-wrapper{
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+#content{
+  width: 830px;
+  margin: auto;
+}
+
+.photo img{
+  width: 400px;
+}
+
+#nav-bottom{
+  clear:both;
+}
+
+#category-description{
+  display:none;
+}
+
+.photo *, .photo{
+  display:inline-block;
+}
+
+.description-wrapper{display:none;}
+
+.photo-order-even{
+  margin-right: 20px;
+}
+.photo{
+  margin-bottom: 20px;
+}
+#nav-bottom{
+  display:none;
+}
+
+#footest{
+  text-align:center;
+  padding: 30px 0px;
+}
+#footest a{
+  color: #fff;
+}
+.ffocused{display:block; margin-bottom: 10px;}
+
+#about-page h2{
+  display:none;
+}

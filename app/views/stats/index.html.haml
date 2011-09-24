@@ -1,0 +1,14 @@
+%h2= t("stats.index.main_title")
+
+%table#stats
+  %tr
+    %th.title
+    %th= t(".title")
+    %th= t(".category")
+    %th= t(".views")
+  - @photos.each do |photo|
+    %tr{:class => cycle("odd", "even")}
+      %td= image_tag photo.small_photo_url, :alt => ""
+      %td= photo.title
+      %td= photo.category.title
+      %td= photo.prints

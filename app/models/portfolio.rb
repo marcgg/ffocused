@@ -10,6 +10,7 @@ class Portfolio < ActiveRecord::Base
 
   has_many :remote_accounts, :dependent => :destroy
   has_many :categories, :order => "position ASC", :dependent => :destroy
+  has_many :photos, :through => :categories
 
   def set_default_css
     self.theme_id = 1 if self.new_record?

@@ -7,6 +7,7 @@ class Photo < ActiveRecord::Base
   scope :activated, :conditions => {:deleted => false}
   scope :limited,   :limit => 15
   scope :ordered,   :order => "position DESC"
+  scope :printed,   :conditions => "prints > 0"
 
   def mark_as_destroyed
     update_attribute(:deleted, true)

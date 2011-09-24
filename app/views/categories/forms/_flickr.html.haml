@@ -11,16 +11,10 @@
     = f.label :flickr_set_id
     = f.select(:flickr_set_id, options_for_select(remote_account.flickr_sets))
 
-  #group-flickr-tags{:style => "display:none"}
-    = f.label :flickr_tags
-    = f.text_field :flickr_tags
-
   = f.label :description
   = f.text_area :description
 
-  = f.label :slug
-  = f.text_field :slug
-
   .submit-wrapper
     = link_to t("cancel"), ""
-    = f.submit
+    = f.submit t("categories.flickr.warning")
+  %p.note

@@ -1,0 +1,21 @@
+development: &DEVELOPMENT
+  use_heroku: false
+  flickr:
+    application_api_key: "XXX"
+    application_secret: "XXX"
+  facebook:
+    application_id: "XXX"
+    application_secret: "XXX"
+    application_api_key: "XXX"
+    callback_url: "http://XXX.com/oauth/facebook_callback"
+  instagram:
+    client_id: "XXX"
+    client_secret: "XXX"
+    callback_url: "http://XXX.com/oauth/instagram_callback"
+
+test:
+  <<: *DEVELOPMENT
+
+production:
+  use_heroku: true
+

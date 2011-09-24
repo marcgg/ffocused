@@ -20,6 +20,8 @@ Prtfl::Application.routes.draw do
     get  "not_setup",               :on => :member
   end
 
+  match "/stats" => "stats#index", :as => :stats
+
   resources :categories do
     post "order_photos",  :on => :member
     post "reset",         :on => :member
