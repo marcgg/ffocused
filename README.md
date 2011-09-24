@@ -85,12 +85,12 @@ Copy the result that should look like something like:
 
     heroku config:add [blah blah blah lots of stuff here]
 
-And that's it! Well of course you have to setup Heroku, but that's
-another story documented here: http://devcenter.heroku.com/articles/quickstart
-
 Then setup your production environment to run on heroku by adding:
 
     use_heroku: true
+
+And that's it! Well of course you have to setup Heroku, but that's
+another story documented here: http://devcenter.heroku.com/articles/quickstart
 
 ## Tests
 Tests are made with rspec2. There isn't enough tests yet, we are working on it.
