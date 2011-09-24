@@ -39,7 +39,6 @@ From the project root run:
 This will create the social_accounts.yml file, that looks like this:
 
     development: &DEVELOPMENT
-      use_heroku: false
       flickr:
         application_api_key: "xxx"
         application_secret: "xxx"
@@ -55,9 +54,6 @@ This will create the social_accounts.yml file, that looks like this:
 
     test:
       <<: *DEVELOPMENT
-
-    production:
-      use_heroku: true
 
 Notice that you will have to create applications of your own and then
 report the configuration options here. More about each service here:
@@ -85,9 +81,13 @@ Copy the result that should look like something like:
 
     heroku config:add [blah blah blah lots of stuff here]
 
-Then setup your production environment to run on heroku by adding:
+Then you need to say that you wan to use Heroku by setting a variable in
+00_configure.rb:
 
-    use_heroku: true
+    USE_HEROKU = true
+
+Note: This will most likely change since I'm not convinced by this
+approach.
 
 And that's it! Well of course you have to setup Heroku, but that's
 another story documented here: http://devcenter.heroku.com/articles/quickstart
