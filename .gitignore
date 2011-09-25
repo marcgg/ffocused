@@ -6,3 +6,4 @@ tmp/
 .DS_Store
 .rvmrc
 config/social_accounts.yml
+coverage

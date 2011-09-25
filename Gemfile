@@ -13,6 +13,7 @@ gem 'rake',       '=0.9.2'
 
 group :test do
   gem 'rr'
+  gem 'simplecov'
 end
 
 group :development, :test do
