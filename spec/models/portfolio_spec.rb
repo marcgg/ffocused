@@ -17,5 +17,15 @@ describe Portfolio do
     @portfolio.slug.should == "marcgg"
   end
 
+  it "should return a theme based on the theme_id and the theme list" do
+    @portfolio.theme_id = 1
+    @portfolio.theme.should == THEMES[1]
+  end
+
+  it "should be setup once it has a remote account" do
+    @portfolio.should_not be_setup
+    mock(@portfolio).remote_accounts{[RemoteAccount.new]}
+    @portfolio.should be_setup
+  end
 
 end

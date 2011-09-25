@@ -8,7 +8,7 @@ class Category::Instagram < Category
   def set_photos_from_instagram
     remote_account.photos.each_with_index do |photo, i|
       Photo.create(
-        :position => i, 
+        :position => i,
         :large_photo_url => photo["images"]["standard_resolution"]["url"],
         :small_photo_url => photo["images"]["thumbnail"]["url"],
         :category_id => self.id,

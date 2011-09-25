@@ -7,7 +7,18 @@ require 'rspec/rails'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+WebMock.disable_net_connect!
+
 RSpec.configure do |config|
   config.mock_with :rr
-  config.use_transactional_fixtures = true
+
+  config.before :each do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.start
+  end
+
+  config.after do
+    DatabaseCleaner.clean
+  end
 end
+
