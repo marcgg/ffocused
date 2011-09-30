@@ -1,4 +1,12 @@
 
+v0.10.1 / 2011-10-01
+====================
+
+** Bugfix that would prevent adding any facebook or instagram account ^^ **
+
+  * added skip_before_filter :ensure_portfolio_setup when needed
+  * Do not display request link when logged in, instead display user name
+
 v0.10.0 / 2011-09-30
 ====================
 
