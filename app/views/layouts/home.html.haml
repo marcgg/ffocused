@@ -17,10 +17,10 @@
         #account-actions
           - if current_user
             #logout= link_to t("logout"), "/logout"
-            #account= link_to t("account"), portfolio_path(current_user.portfolio)
+            #account= link_to t("home.shared.account", :name => current_user.login), portfolio_path(current_user.portfolio)
           - else
             #login= link_to t("login"), "/login"
-        = link_to "Request invite code", "#", :class => "button-medium request-link"
+            = link_to "Request invite code", "#", :class => "button-medium request-link"
 
       %h1 ffocused
       %p.baseline Your best shots. Full size. No clutter.

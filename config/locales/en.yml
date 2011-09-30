@@ -11,6 +11,10 @@ en:
   by: "by %{name}"
   what_is_this: "What is this?"
 
+  home:
+    shared:
+      account: "See Your Account (%{name})"
+
   back:
     nav:
       categories: Categories

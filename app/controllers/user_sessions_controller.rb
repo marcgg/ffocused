@@ -1,11 +1,12 @@
 class UserSessionsController < ApplicationController
   skip_before_filter :find_current_portfolio
+  skip_before_filter :ensure_portfolio_setup
   layout "back"
-  
+
   def new
     @user_session = UserSession.new
   end
-  
+
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
