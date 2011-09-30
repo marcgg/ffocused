@@ -15,3 +15,13 @@ end
 
 Fabricator(:remote_account) do
 end
+
+Fabricator(:category) do
+  portfolio { Fabricate(:portfolio) }
+  remote_account { Fabricate(:remote_account) }
+  title "My Category"
+end
+
+Fabricator(:photo) do
+  category { Fabricate(:category) }
+end

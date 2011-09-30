@@ -7,12 +7,10 @@ describe StatsController do
   end
 
   describe "GET index" do
-    it "should load all the activated and printed photos" do
+    it "should load correctly" do
       get 'index'
-      puts response.body
       response.should be_success
       response.should render_template :index
-      assigns(:photos).should == "lole"
     end
   end
 end
