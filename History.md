@@ -1,4 +1,16 @@
 
+v0.10.0 / 2011-09-30
+====================
+
+** Update to rails 3.0.10; New themes; Lots of tests & bug fixes **
+
+  * Fixed bug where no one could ask for a beta account (lol); Lots of tests
+  * mocking user sessions and gettng ready for controller tests
+  * Removed unused files
+  * Added two themes with custom css
+  * A lot of tests; Going to rails 3.0.10; Added simplecov
+  * Added simplecov; travis configuration
+
 v0.9.1 / 2011-09-24
 ===================
 
