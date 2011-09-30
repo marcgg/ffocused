@@ -18,6 +18,7 @@ group :test do
   gem 'timecop'
   gem 'simplecov-rcov'
   gem 'webmock'
+  gem 'fabrication'
 end
 
 group :development, :test do
