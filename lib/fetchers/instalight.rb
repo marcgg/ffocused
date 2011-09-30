@@ -2,13 +2,13 @@ module Fetchers::Instalight
   BASE_URL = "https://api.instagram.com/v1/"
   VERBOSE = true
   FORMAT = "json"
-  
+
   class User
     attr_accessor :access_token
     def initialize(access_token)
       self.access_token = access_token
     end
-    
+
     def call_method(method, params=[])
       built_url = "#{BASE_URL}users/#{method}?access_token=#{access_token}&#{params.join("&")}"
       puts "CALLING INSTAGRAM: #{built_url}" if VERBOSE
@@ -18,5 +18,5 @@ module Fetchers::Instalight
       res["data"]
     end
   end
-  
+
 end

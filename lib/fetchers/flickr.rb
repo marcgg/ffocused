@@ -11,10 +11,4 @@ module Fetchers::Flickr
       JSON.parse(res.gsub("jsonFlickrApi(","").chop)
     end
   end
-
-  module Photo
-    def self.create_url_from_json(photo, size)
-      "http://farm#{photo["farm"]}.static.flickr.com/#{photo["server"]}/#{photo["id"]}_#{photo["secret"]}_#{size}.jpg"
-    end
-  end
 end

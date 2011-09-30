@@ -1,4 +1,7 @@
 class FutureUsersController < ApplicationController
+  skip_before_filter :find_current_portfolio, :only => [:create]
+  skip_before_filter :ensure_portfolio_setup, :only => [:create]
+
   before_filter :ensure_admin, :only => [:handle]
 
   def create

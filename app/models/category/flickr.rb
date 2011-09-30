@@ -16,7 +16,7 @@ class Category::Flickr < Category
       large_photo_url, small_photo_url = find_photo_sizes(flickr_photo_id)
       Photo.create(
         :position => i,
-        :flickr_photo_id => flickr_photo_id,
+        :flickr_photo_id => flickr_photo_id, #FIXME: dupe with flickr_id?
         :large_photo_url => large_photo_url,
         :small_photo_url => small_photo_url,
         :flickr_id => photo["id"],

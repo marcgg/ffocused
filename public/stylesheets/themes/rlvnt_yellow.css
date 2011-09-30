@@ -47,7 +47,7 @@ header{
   width:610px;
   height:210px;
   margin: 20px auto;
-  background: url(/images/themes/rlvnt_yellow/logo.png)
+  background: url(/images/themes/rlvnt_yellow/logo.png);
 }
 
 header h1, header p{ display:none; }
