@@ -13,7 +13,7 @@
 /* Generalities */
 body{
   font-family: "Lucida Grande", "Arial";
-  background-color: #fff;
+  background-color: #F4F6F9;
   font-size: 13px;
 }
 
@@ -27,9 +27,10 @@ a:hover{
 }
 
 p{
-  color:#777;
-  padding: 15px 20px;
-  line-height:1.2em;
+  color: gray;
+  padding: 10px 20px 20px 20px;
+  font-size: 0.9em;
+  line-height: 19px;
   a{
     text-decoration:underline;
   }
@@ -50,12 +51,12 @@ strong{
 
 h2{
   font-size: 1.3em;
-  @include border-radius(5px 5px 0px 0px);
-  @include linear-gradient(color-stops(#fff, #f3f3f3));
+  @include border-radius(3px 3px 0px 0px);
+  @include background-image(linear-gradient(#FBFBFB, #F2F2F2 50%, #EBEBEB 50%, #EBEBEB));
   margin: 0px 0px 10px 0px;
   background-color:#fefefe;
-  border-bottom:1px solid #C6CACE;
-  padding: 10px 20px;
+  border-bottom:1px solid #979FAA;
+  padding: 7px 20px;
   color: #678db4;
   text-align:center;
   @include text-shadow(#eee 1px 1px 0);
@@ -71,9 +72,9 @@ h3{
 h4{
   @include text-shadow(#fff 1px 1px 0);
   font-size: 1.1em;
-  color: #678db4;
-  font-weight:bold;
-  padding: 10px 0px 0px 20px;
+  color: #678DB4;
+  font-weight: bold;
+  padding: 10px 0px 0px 10px;
 }
 h5{
   font-weight:bold;
@@ -104,11 +105,14 @@ ul{
 /* Header */
 header{
   padding: 10px 0px;
-  background:url(/images/header_bg.jpg);
+  @include background(linear-gradient(#3193dc, #2975b2), image-url("/images/header_bg.jpg"));
+  height:25px;
+  border-bottom: 1px solid #164b70;
+  @include box-shadow(rgba(0, 0, 0, 0.52) 0 0 2px, #4e8dbf 0px -1px 0px inset);
 }
 
 h1{
-  background: url(/images/logo.png) no-repeat;
+  background: url(/images/logo*.png) no-repeat;
   width: 100px;
   height: 25px;
   display:inline-block;
@@ -189,25 +193,30 @@ nav{
   width: 560px;
   margin: auto;
   background-color: #fff;
-  border: 1px solid #c6cace;
+  border: 1px solid #979FAA;
   padding: 0px;
-  @include border-radius(5px);
+  @include border-radius(3px);
+  @include box-shadow(rgba(0, 0, 0, 0.10) 0 1px 0);
+  @include background(linear-gradient(white, white 0, white 90%, #F8F9FB 100%)); 
   @include clearfix;
+  
 }
 #content-wrapper{
-  background-color:#f5f5f5;
-  padding: 40px 0px 80px 0px;
+  background-color: #F4F6F9;
+  padding: 60px 0px 80px 0px;
 }
 
 /* Footer */
 footer{
-  background-color:#fff;
-  z-index:30;
-  width:100%;
-  height:50px;
-  border-top: 1px solid #c6cace ;
+  background-color: white;
+  width: 100%;
+  z-index: 30;
+  height: 50px;
+  border-top: 1px solid #C6CACE;
   padding: 15px 0px;
   color: #777;
+  position: relative;
+  bottom: 0%;
   .extra-nav{
     margin-bottom: 15px;
     a{
@@ -224,8 +233,14 @@ footer{
 
 /* Forms */
 form{
-  padding: 20px;
+  padding: 15px 15px 20px 15px;
 }
+.new_user_session{
+  @include border-radius(3px 3px 3px 3px);
+  @include background(linear-gradient(top, white 0, white 90%, #F8F9FB 100%)); 
+  font-size: 0.9em;
+  }
+
 label{
   display:block;
   margin-top: 15px;
@@ -239,25 +254,58 @@ select{
 input[type=text], textarea, .text, input[type=password]{
   width: 98%;
   padding: 5px;
-  border: 1px solid #d3d8dc;
-  font-size: 1em;
+  border: 1px solid #979FAA;
+  height:16px;
+  font-size: 0.9em;
   margin-top:5px;
-  color: #888;
-  font-family: "Arial";
-  @include border-radius(5px);
+  color: #5F5F5F;
+  font-family: "Lucida Grande", Arial;
+  @include border-radius(2px);
+  @include box-shadow(rgba(0, 0, 0, .1) 0px 1px 3px inset);
 }
+input[type=text]:focus, input[type=password]:focus{
+  border: 1px solid #2C7FAD;
+}
+
 textarea{
   height:200px;
 }
 .submit-wrapper{
   margin-top: 15px;
   input{
+    @include background-image(linear-gradient(#5db8f6, #237ee0 50%, #2e89ec), image-url("/images/button_bg.jpg"));     
     border: 1px solid #0052e2;
-    background: url(/images/button_bg.jpg) repeat-x;
     color: #fff;
-    padding: 4px 15px;
-    @include border-radius(5px);
+    text-shadow: 0 1px 0px #144da7;
+    padding: 3px 15px 5px 15px;
+    @include border-radius(3px);
+    @include box-shadow(#85e4ff 0px 1px 0px inset, #3c97fa 0px -1px 0px inset);
     float:right;
+    cursor:pointer;
+    @include transition-property(all);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-out);
+  }
+  input:hover{
+    @include box-shadow(#85e4ff 0px 1px 0px inset, #3c97fa 0px -1px 0px inset, #5e9ee3 0px 0px 04px);
+    @include transition-property(all);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-out);
+    
+  }
+  input:active{
+    @include background-image(linear-gradient(#5db8f6, #237ee0 50%, #2e89ec), image-url("/images/button_bg.jpg"));     
+    border: 1px solid #0052e2;
+    color: #fff;
+    text-shadow: 0 1px 0px #144da7;
+    padding: 3px 15px 5px 15px;
+    @include border-radius(3px);
+    @include box-shadow(#368be7 0px 1px 0px inset, #3c97fa 0px -1px 0px inset);
+    float:right;
+    cursor:pointer;
+    @include transition-property(all);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-out);
   }
   @include clearfix;
   a{
@@ -265,20 +313,28 @@ textarea{
   }
 }
 .plus-button{
-  @include border-radius(5px);
+  @include border-radius(3px);
   border: 1px solid #b8c9d9;
-  padding: 8px 0px;
-  color: #6d8fae;
+  padding: 9px 0px;
+  color: #7d9bb7;
   text-decoration:none;
-  @include text-shadow(#fff 1px 1px 0, #ccc 1px 0px 0);
+  @include text-shadow(#fff 0px 1px 0);
   background-color: #e5ecf4;
   display:block !important;
   text-align:center;
-  @include box-shadow(#fff 1px 1px 1px 0px inset);
+  @include box-shadow(#f2f8ff 0px 0px 0px 1px inset);
+  font-size: 11px;
+  @include transition-property(all);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-out);
 }
 .plus-button:hover{
-  border: 1px solid #7a8c97;
+  border: 1px solid #a2b7ca;
   text-decoration:none;
+  color: #6484a3;
+  @include transition-property(all);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-out);
 }
 
 .form-error{
@@ -358,7 +414,8 @@ textarea{
   text-align:justify;
   line-height:1.2em;
   form{
-   padding: 10px 0px;
+    border: 1px solid #979FAA;
+    padding: 10px 0px;
   }
   input{
     border: 1px solid #ccc;
