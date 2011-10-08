@@ -30,7 +30,7 @@ en:
       faq: FAQ
       copyright: "Copyright &copy %{year} fFocused"
     header:
-      view_website: View Your Website
+      view_website: View your website
 
   user_sessions:
     create:
@@ -121,7 +121,7 @@ en:
         Let us know if you think we should support other services!
       not_setup: |
         Welcome to f/Focused!  <br /><br />
-        We'll help you get a portfolio such as to feature your best pictures.<br /><br />
+        We'll help you get a portfolio such as to feature your best pictures.<br />
         To get started, you first need to link your fFocused account with your account on one of the supported photo services.
         So far we support Flickr, Instagram and Facebook.
       setup_button: Save
