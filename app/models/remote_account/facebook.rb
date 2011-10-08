@@ -23,4 +23,24 @@ class RemoteAccount::Facebook < RemoteAccount
     end
     res.map{|s| ["#{s["name"]} (#{s["count"]} photos)", s["id"]]}
   end
+
+  def self.init_from_callback(code)
+    oauth = Koala::Facebook::OAuth.new(FACEBOOK_APPLICATION_API_KEY, FACEBOOK_APPLICATION_SECRET, FACEBOOK_CALLBACK_URL)
+    token = oauth.get_access_token(code)
+    graph = Koala::Facebook::GraphAPI.new(token)
+    user = graph.get_object("me")
+
+    existing = RemoteAccount::Facebook.find(:first, :conditions => {:portfolio_id => @current_portfolio.id, :remote_user_id => user["id"]})
+
+    if existing.nil?
+      RemoteAccount::Facebook.create!(
+          :portfolio_id => @current_portfolio.id,
+          :access_token => token,
+          :remote_user_name => user["name"],
+          :remote_user_id => user["id"]
+        )
+    else
+      existing.update_attribute(:access_token, token)
+    end
+  end
 end

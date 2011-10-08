@@ -30,7 +30,7 @@ en:
       faq: FAQ
       copyright: "Copyright &copy %{year} fFocused"
     header:
-      view_website: View Your Website
+      view_website: View your website
 
   user_sessions:
     create:
@@ -121,7 +121,7 @@ en:
         Let us know if you think we should support other services!
       not_setup: |
         Welcome to f/Focused!  <br /><br />
-        We'll help you get a portfolio such as to feature your best pictures.<br /><br />
+        We'll help you get a portfolio such as to feature your best pictures.<br />
         To get started, you first need to link your fFocused account with your account on one of the supported photo services.
         So far we support Flickr, Instagram and Facebook.
       setup_button: Save
@@ -182,7 +182,7 @@ en:
       blurb: |
         Categories allow you to sort your photos. <br /><br />
         Each category must be linked to one of your photo accounts.
-        Keep in mind that you can only display a maximum of <strong>15</strong> photos, so pick your best work!
+        Keep in mind that you can only display a maximum of <strong>16</strong> photos, so pick your best work!
       new_category: Create a New Category
       all_categories: Manage Categories
       first_time: Please go ahead and create your first category!
@@ -196,7 +196,7 @@ en:
         zero: "No views"
         one: "One view"
         other: "%{count} views"
-      blurb: "Only the first 15 will be displayed on your portfolio. Drag & drop the photos to reorder them."
+      blurb: "Only the first 16 will be displayed on your portfolio. Drag & drop the photos to reorder them."
       reset: |
         Reset all photos in this category.
         This will fetch all the pictures again from the linked photo account, discarding the titles,

@@ -19,6 +19,7 @@ group :test do
   gem 'simplecov-rcov'
   gem 'webmock'
   gem 'fabrication'
+  gem 'spork'
 end
 
 group :development, :test do

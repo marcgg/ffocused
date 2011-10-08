@@ -34,4 +34,12 @@ describe RemoteAccountsController do
     end
   end
 
+  describe "POST create" do
+    it "should raise an error if an invalid remote account is passed" do
+      lambda{
+        post "create", :type => "GooglePlus"
+      }.should raise_error
+    end
+  end
+
 end

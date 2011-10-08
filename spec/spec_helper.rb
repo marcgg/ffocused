@@ -1,24 +1,34 @@
-require 'simplecov'
-SimpleCov.start 'rails'
+require 'rubygems'
+require 'spork'
 
-ENV["RAILS_ENV"] ||= 'test'
-require File.expand_path("../../config/environment", __FILE__)
-require 'rspec/rails'
+Spork.prefork do
+  require 'simplecov'
 
-Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+  SimpleCov.start 'rails'
 
-WebMock.disable_net_connect!
+  ENV["RAILS_ENV"] ||= 'test'
+  require File.expand_path("../../config/environment", __FILE__)
+  require 'rspec/rails'
 
-RSpec.configure do |config|
-  config.mock_with :rr
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-  config.before :each do
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.start
-  end
+  WebMock.disable_net_connect!
 
-  config.after do
-    DatabaseCleaner.clean
+  RSpec.configure do |config|
+    config.mock_with :rr
+
+    config.before :each do
+      DatabaseCleaner.strategy = :truncation
+      DatabaseCleaner.start
+    end
+
+    config.after do
+      DatabaseCleaner.clean
+    end
   end
 end
+
+Spork.each_run do
+end
+
 
