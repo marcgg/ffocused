@@ -3,15 +3,15 @@ class FrontController < ApplicationController
   skip_before_filter :ensure_portfolio_setup
   before_filter :find_front_portfolio
   before_filter :find_category, :except => [:about]
-  before_filter :setup_theme_preview, :except => [:about]
+  before_filter :setup_theme_preview
 
   def showcase
-    @category.update_stats unless current_user and current_user.portfolio.id == @portfolio.id
+    @category.update_stats unless (current_user and current_user.portfolio.id == @portfolio.id) or @category.nil?
   end
 
   def single_photo
-    @photo = Photo.find(params[:photo_id])
-    @photo.update_stats unless current_user and current_user.portfolio.id == @portfolio.id
+    @photo = @category.photos.find(params[:photo_id])
+    @photo.update_stats unless (current_user and current_user.portfolio.id == @portfolio.id) or @photo.nil?
   end
 
   def about
