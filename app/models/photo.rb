@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
   validates_uniqueness_of :facebook_photo_id, :scope => :category_id, :if => Proc.new{|p| !p.facebook_photo_id.blank?}
 
   scope :activated, :conditions => {:deleted => false}
-  scope :limited,   :limit => 15
+  scope :limited,   :limit => 16
   scope :ordered,   :order => "position DESC"
   scope :printed,   :conditions => "prints > 0"
 

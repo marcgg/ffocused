@@ -20,7 +20,7 @@ class FrontController < ApplicationController
   private
 
   def find_category
-    @category = params[:category_slug].blank? ? @portfolio.categories.first : Category.find_by_slug(params[:category_slug])    
+    @category = params[:category_slug].blank? ? @portfolio.categories.first : Category.find_by_slug(params[:category_slug])
   end
 
   def find_front_portfolio
