@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   layout 'home'
   skip_before_filter :find_current_portfolio
-  
+
   def new
     @user = User.new
     render :layout => "back"
