@@ -99,6 +99,16 @@ Any pull request needs to have its set of tests to be accepted (except
 for themes). I know right, do what I say and not what I do... It'll get
 fixed, tests are coming, I promise.
 
+### Spork
+
+You can use spork to run the test suite:
+
+    bundle exec spork
+
+... to start the drb server and then:
+
+    bundle exec rspec spec --drb
+
 ## Compatibility
 ffocused runs on Ruby 1.9.2 and 1.8.7, but the support for 1.8.7 will be
 soon dropped.
