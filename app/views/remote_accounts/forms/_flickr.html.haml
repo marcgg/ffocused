@@ -1,9 +1,9 @@
 = form_for RemoteAccount.new, :url => remote_accounts_path do |f|
   = hidden_field_tag :type, "RemoteAccount::Flickr"
-  
+
   = f.label :remote_user_email
   = f.text_field :remote_user_email
-  
+
   .submit-wrapper
     = link_to t("cancel"), ""
     = f.submit t("remote_accounts.new.submit")
