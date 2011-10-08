@@ -1,4 +1,22 @@
 
+v0.10.2 / 2011-10-08
+====================
+
+** Tests, minor fixes, refactoring and CSS changes for backend **
+
+  * moved remote account creation logic out of the controller and into the model
+  * Bunch of minor fixes, typos, removed whitespaces and so on
+  * More controller tests on remote accounts and categories
+  * Minor fixes and tests on front controller
+  * Added spork
+  * Order stats to have most viewed on top
+  * Better signup path
+  * Copy changes; Limit increased to 16 photos per category
+  * Class on link to 3rd party sites (GH #33)
+  * Removed DS_Store
+  * Improvement of BO design
+  * Style bouton + style global du back
+
 v0.10.1 / 2011-10-01
 ====================
 
