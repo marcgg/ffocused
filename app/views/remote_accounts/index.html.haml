@@ -7,8 +7,8 @@
 
   - @remote_accounts.each do |account|
     .account-entry{:class => "account-entry-#{account.class_name}", :id => "account-#{account.id}"}
-      = link_to t("delete"), remote_account_path(account), :class => "delete delete-remote-account", :rel => "#account-#{account.id}"
       = account.remote_user_name
+      = link_to t("delete"), remote_account_path(account), :class => "delete delete-remote-account", :rel => "#account-#{account.id}"
 
       .details
         - if account.categories.empty?

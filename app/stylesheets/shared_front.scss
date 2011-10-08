@@ -1,12 +1,22 @@
+@import "compass/reset";
+@import "compass/css3";
+
+@include reset-html5;
+
 #previewing{
-  text-align:center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  background-color:#fff;
-  font-family: "Helvetica", "Arial";
-  font-size: 14px;
+  text-align: center;
+  padding: 15px 0px;
+  border-bottom: 1px solid black;
+  background-color: #111111;
+  font-family: Lucida Grande;
+  font-size: 12px;
   position: fixed;
   width: 100%;
   top: 0px;
-  opacity: 0.6;
+  opacity: 0.9;
+  color: #CCC;
+  font-weight: normal;
+  text-shadow: 0 1px 0px black;
+  @include box-shadow(#2f2f2f 0px -1px 0px inset);
+  
 }
