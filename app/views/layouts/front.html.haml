@@ -8,6 +8,16 @@
     = stylesheet_link_tag "themes/#{@portfolio.theme[:code]}"
   = stylesheet_link_tag "compiled/shared_front"
 
+  %meta{:name => "title", :content => @portfolio.title}
+  - if @portfolio.description.blank?
+    %meta{:name => "description", :content => "Photo portfolio of #{@portfolio.user.login} powered by ffocused"}
+  - else
+    %meta{:name => "description", :content => @portfolio.description}
+
+  %meta{:property => "og:title",  :content => @portfolio.title}
+  %meta{:property => "og:type",   :content => "website"}
+  %meta{:property => "og:image",  :content => @portfolio.contextual_photo(@category).large_photo_url}
+
 %body{:id => (@category ? "category-#{@category.id}" : ""), :class => ((@category and @category.remote_account) ? "account-#{@category.remote_account.public_name}" : "")}
 
   - if params[:theme_id]
@@ -21,8 +31,7 @@
 
   #nav-top= render :partial => "/front/nav"
 
-  #content
-    = yield
+  #content= yield
 
   #nav-bottom= render :partial => "/front/nav"
 
@@ -32,7 +41,6 @@
 
   /
     If really necessary, removing credits can be done by contacting us directly.
-    In the meantime, do not remove credits using CSS or face our wrath.
     Feel free to style it, but please be nice and keep it visible somehow.
 
   #footest

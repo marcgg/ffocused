@@ -229,6 +229,7 @@ en:
         flickr_user_email: "Email used on Flickr*"
         slug: Slug*
         google_analytics_code: "Google Analytics Code (e.g. UA-25132842-1)"
+        facebook_share: "Show a Facebook like button on the about page"
 
       category:
         title: Title*

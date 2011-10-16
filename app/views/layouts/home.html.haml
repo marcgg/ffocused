@@ -2,6 +2,15 @@
 %html
 %head
   %title= t("app_name")
+
+  %meta{:name => "title", :content => t("app_name")}
+  %meta{:name => "description", :content => "Create your own photo portfolio with a custom design for free, and link it to your Facebook, Flickr & Instagram accounts."}
+
+  %meta{:property => "og:title",  :content => "f/Focused - Showcase your best photos"}
+  %meta{:property => "og:type",   :content => "website"}
+  %meta{:property => "og:url",    :content => "http://ffocused.com"}
+  %meta{:property => "og:image",  :content => "http://ffocused.com/images/home/centerpiece.png"}
+
   = stylesheet_link_tag "compiled/home"
   = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "jquery.scrollTo-1.4.2-min.js", "home.js"
 

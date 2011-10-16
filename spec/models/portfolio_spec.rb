@@ -28,4 +28,25 @@ describe Portfolio do
     @portfolio.should be_setup
   end
 
+  describe "contextual_photo" do
+    before(:each) do
+      @category = Category.create :title => "Yeah", :portfolio_id => @portfolio.id
+      @category.photos << Photo.new
+      @category.photos << Photo.new
+    end
+
+    it "should return the given category's first photo" do
+      @portfolio.contextual_photo(@category).should == @category.photos.first
+    end
+
+    it "should return the first category's first photo if no category is passed" do
+      @portfolio.contextual_photo.should == @category.photos.first
+    end
+
+    it "should return nil if the portfolio has no category" do
+      Category.delete_all
+      @portfolio.contextual_photo.should == nil
+    end
+  end
+
 end

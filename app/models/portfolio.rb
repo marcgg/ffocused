@@ -28,4 +28,15 @@ class Portfolio < ActiveRecord::Base
     !remote_accounts.empty?
   end
 
+  def contextual_photo(category=nil)
+    if category
+      photo = category.photos.first
+    elsif categories.empty?
+      photo = nil
+    else
+      photo = categories.first.photos.first
+    end
+    photo
+  end
+
 end

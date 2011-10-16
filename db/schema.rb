@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110922190430) do
+ActiveRecord::Schema.define(:version => 20111016180006) do
 
   create_table "beta_codes", :force => true do |t|
     t.string   "code"
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110922190430) do
     t.integer  "theme_id"
     t.string   "slug"
     t.string   "google_analytics_code"
+    t.boolean  "facebook_share",        :default => false
   end
 
   create_table "remote_accounts", :force => true do |t|

@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Category do
   before(:each) do
-    @category = Category.create :title => "Yeah"
+    @category = Category.create! :title => "Yeah"
   end
 
   it "should be able to reset" do
