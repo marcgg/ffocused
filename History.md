@@ -1,4 +1,11 @@
 
+v0.10.4 / 2011-10-16
+====================
+
+  * Wording
+  * Oops forgot a migration; Added module supposed to remove all www calls (GH #38)
+  * Ability to have basic SEO and facebook optimization. (GH #37) Added posibility to add a like button on the about page
+
 v0.10.3 / 2011-10-09
 ====================
 
