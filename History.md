@@ -1,4 +1,11 @@
 
+v0.10.5 / 2011-11-13
+====================
+
+  * Oops, I must have been drunk when I commited that
+  * Merge remote branch 'origin/feature-design' into development
+  * CSS Style improvement
+
 v0.10.4 / 2011-10-16
 ====================
 
