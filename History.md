@@ -1,4 +1,9 @@
 
+v0.10.6 / 2011-11-13
+====================
+
+  * carying to portfolio around to remote accounts
+
 v0.10.5 / 2011-11-13
 ====================
 
