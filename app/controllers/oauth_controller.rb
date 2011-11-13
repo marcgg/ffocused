@@ -7,11 +7,11 @@ class OauthController < ApplicationController
 
   def facebook_callback
     RemoteAccount::Facebook.init_from_callback(params[:code])
-    redirect_to remote_accounts_pat
+    redirect_to remote_accounts_path
   end
 
   def instagram_callback
-    RemoteAccount::Instagram.init_from_callback(params[:code])
+    RemoteAccount::InstagramAccount.init_from_callback(params[:code])
     redirect_to remote_accounts_path
   end
 end
