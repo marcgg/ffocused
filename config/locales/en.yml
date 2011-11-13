@@ -126,7 +126,7 @@ en:
         So far we support Flickr, Instagram and Facebook.
       setup_button: Save
       left_to_do:
-        title: Left to Do
+        title: Left to do
         intro: "Your portfolio is not yet fully setup. Here's what you need to do:"
         category:
           text: to showcase your best pictures.
