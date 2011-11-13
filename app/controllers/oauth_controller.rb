@@ -6,12 +6,12 @@ class OauthController < ApplicationController
   end
 
   def facebook_callback
-    RemoteAccount::Facebook.init_from_callback(params[:code])
+    RemoteAccount::Facebook.init_from_callback(params[:code], @current_portfolio)
     redirect_to remote_accounts_path
   end
 
   def instagram_callback
-    RemoteAccount::InstagramAccount.init_from_callback(params[:code])
+    RemoteAccount::InstagramAccount.init_from_callback(params[:code], @current_portfolio)
     redirect_to remote_accounts_path
   end
 end
