@@ -24,34 +24,35 @@
     #previewing
       You are currently previewing the theme #{THEMES[params[:theme_id].to_i][:title]}
 
-  %header
-    %h1= @portfolio.title
-    - unless @portfolio.description.blank?
-      %p= @portfolio.description
+  #main
+    %header
+      %h1= @portfolio.title
+      - unless @portfolio.description.blank?
+        %p= @portfolio.description
 
-  #nav-top= render :partial => "/front/nav"
+    #nav-top= render :partial => "/front/nav"
 
-  #content= yield
+    #content= yield
 
-  #nav-bottom= render :partial => "/front/nav"
+    #nav-bottom= render :partial => "/front/nav"
 
-  - unless @portfolio.footer.blank?
-    %footer
-      = @portfolio.footer
+    - unless @portfolio.footer.blank?
+      %footer
+        = @portfolio.footer
 
-  /
-    If really necessary, removing credits can be done by contacting us directly.
-    Feel free to style it, but please be nice and keep it visible somehow.
+    /
+      If really necessary, removing credits can be done by contacting us directly.
+      Feel free to style it, but please be nice and keep it visible somehow.
 
-  #footest
-    %span.ffocused
-      = link_to "Portfolio powered by f/Focused", "http://ffocused.com"
-    - unless @portfolio.theme_id.blank?
-      %span.theme
-        Original theme by
-        = raw @portfolio.theme[:user]
-        under license
-        = link_to "Creative Commons 'Attribution Non Commercial'", "http://creativecommons.org/licenses/by-nc/3.0/"
+    #footest
+      %span.ffocused
+        = link_to "Portfolio powered by f/Focused", "http://ffocused.com"
+      - unless @portfolio.theme_id.blank?
+        %span.theme
+          Original theme by
+          = raw @portfolio.theme[:user]
+          under license
+          = link_to "Creative Commons 'Attribution Non Commercial'", "http://creativecommons.org/licenses/by-nc/3.0/"
 
   = render :partial => "/shared/google_analytics" if Rails.env == "production"
 
