@@ -7,3 +7,4 @@ tmp/
 .rvmrc
 config/social_accounts.yml
 coverage
+database.yml
