@@ -1,4 +1,16 @@
 
+v0.11.0 / 2011-12-13
+====================
+
+** New theme, minor fixes **
+
+  * Merge pull request #39 from gflandre/feature-new-theme-simple-grey
+  * Centered theme Minimalist
+  * version 1 of the minimalist theme (not centered)
+  * ignore database.yml
+  * Removed database.yml from repo
+  * Wrap everything in a div
+
 v0.10.6 / 2011-11-13
 ====================
 
