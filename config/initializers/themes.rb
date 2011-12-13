@@ -28,5 +28,11 @@ THEMES = {
     :code => "simple_instagram",
     :user => "<a href='http://twitter.com/marcgg'>@marcgg</a>",
     :remote_accounts => ["Instagram"]
+  },
+  6 => {
+    :title => "Minimalist",
+    :code => "minimalist",
+    :user => "<a href='http://twitter.com/gflandre'>@gflandre</a>",
+    :remote_accounts => ["Flickr", "Facebook", "Instagram"]
   }
 }
