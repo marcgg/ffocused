@@ -13,3 +13,16 @@
   font-weight: normal;
   text-shadow: 0 1px 0px black;
 }
+
+.photo img{
+  display: none;
+}
+
+.photo .image-wrapper{
+  background: no-repeat url("/images/loader.gif") 50% 5%;
+  height: 680px;
+}
+.account-instagram .photo .image-wrapper{
+  height: 612px;
+  width: 612px;
+}
