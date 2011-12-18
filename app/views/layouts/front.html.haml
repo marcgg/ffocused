@@ -9,7 +9,7 @@
   - else
     = stylesheet_link_tag "themes/#{@portfolio.theme[:code]}"
     
-  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"
+  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
 
   %meta{:name => "title", :content => @portfolio.title}
   - if @portfolio.description.blank?
@@ -57,7 +57,7 @@
           under license
           = link_to "Creative Commons 'Attribution Non Commercial'", "http://creativecommons.org/licenses/by-nc/3.0/"
 
-  =javascript_include_tag  "front.js"
+  = javascript_include_tag  "front.js"
 
   = render :partial => "/shared/google_analytics" if Rails.env == "production"
 
