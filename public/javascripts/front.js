@@ -1,9 +1,12 @@
-function showImage( element ){
-  element.parents('.image-wrapper').css({
-    'background-image':'none',
-    'height':element.height()
-  });
-  element.fadeIn(500, 'linear');
+function showImage( elements ){
+  for(var i=0; i< elements.length; i++){
+    element = elements.eq(i);
+    element.parents('.image-wrapper').css({
+      'background-image':'none',
+      'height':element.innerHeight()
+    });
+    element.fadeIn(500, 'linear');
+  }
 }
 
 $(window).load(function(){
