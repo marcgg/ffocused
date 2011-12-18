@@ -50,7 +50,7 @@ body{
 header{
   padding-left: 10px;
   width: 100px;
-  height: 40px;
+  height: 48px;
   overflow: hidden;
   line-height: 16px;
   padding-top: 60px;
@@ -68,9 +68,8 @@ header p{
   padding-left: 10px;
   width: 100px;
   line-height: 16px;
-  padding-top: 60px;
   position: fixed;
-  top: 60px;
+  top: 128px;
   font-weight: normal;
 }
 #nav-top a{
@@ -110,11 +109,15 @@ header p{
 .account-facebook #content #photos .photo img{
   width: 1024px;
 }
-.account-instagram #content #category-showcase #photos .photo img{
+.account-instagram #content #category-showcase #photos .photo img,
+.account-instagram #content #category-showcase #photos .photo .image-wrapper{
   width: 480px;
+  height: 480px;
 }
-.account-instagram #content #single-photo-showcase #photos .photo img{
+.account-instagram #content #single-photo-showcase #photos .photo img,
+.account-instagram #content #single-photo-showcase #photos .photo .image-wrapper{
   width: 612px;
+  height: 612px;
 }
 .account-instagram #content #photos .photo{
   float:left;
