@@ -35,7 +35,7 @@ header, footer, nav, section, article { display:block; }
 /* THEME */
 
 body{
-  background: #F2F1F1;
+  background: #FFFFFF;
   font-family: "Helvetica Neue", Helvetica, Arial;
   font-size: 18px;
   color: #333;
@@ -43,50 +43,49 @@ body{
 
 /* Header and Nav */
 header{
-  display:block;
-  height:90px;
-  border-top:15px solid #fff;
-  background: #fff;
-  padding: 20px auto;
+  background-color: black;
+  padding: 45px 0px 0px 0px;
 }
 
 header h1{ 
-  text-align:center;
-  font-family: 'Helvetica Neue', Helvetica, Arial;
-  font-size:26px;
-  text-transform:uppercase;
-  font-weight:bold;
-  padding: 20px 0px;
-  letter-spacing:-1px;
-  color:#000;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  text-align: center;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #FF8400;
+  height: 34px;
     
 }
 
 header p{ display:none; }
 
-#nav-top nav{
-  text-align:center;
-  background:#fff;
+#nav-top nav {
+  text-align: center;
+  background: black;
   margin: 0px 0px 40px;
-  padding:0px 0px 20px 0px;
-  border-bottom:1px solid #ccc;
+  padding: 20px 0px 20px 0px;
+  height: 60px;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .9);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .9);
+  box-shadow: 0 0 6px rgba(0, 0, 0, .9);
 }
 
-#nav-top nav a{
+#nav-top nav a {
   font-family: 'Helvetica Neue', Helvetica, Arial;
-  background:none;
-  font-size:14px;
-  padding:0px 5px 0px 5px;
-  font-weight:bold;
-  color:#777;
+  background: none;
+  font-size: 14px;
+  padding: 0px 5px 0px 5px;
+  font-weight: normal;
+  color: #777;
 }
 
-#nav-top nav a:hover{
-  color:#666;
+#nav-top nav a:hover {
+  color:#9a9a9a;
 }
 
 #nav-top nav .selected a {
-  color:#444;
+  color:#ffffff;
   font-weight:bold;   
 }
 
@@ -94,13 +93,13 @@ header p{ display:none; }
   display:none;
 }
 
-.nav-link-wrapper{
+.nav-link-wrapper {
   display:inline-block;
 }
 
 /* Photos */
-#main-content{
-  width: 1034px;
+#main-content {
+  width: 960px;
   margin: auto;
 }
 
@@ -108,25 +107,49 @@ header p{ display:none; }
   display:none;
 }
 
-#photos{  
-  padding:0px 40px;
+#photos {  
+  padding: 0px 40px;
+  margin: 0 auto;
 }
 
 
-.photo{
+.photo {
   margin-bottom: 30px;
   text-align: left;
+  margin: 0 auto;
   font-weight: normal;
+  width: 960px;
 }
 
-.image-wrapper{
-  background-color: white;
+.image-wrapper {
+  max-width: 960px;
+  margin: 30px 0px 60px 0px;
+}
+
+.image-wrapper img {
+  max-width: 960px;
+  display: block;
+  margin: 0 auto;
+}
+
+.account-instagram .image-wrapper {
+  border: none;
+  width: 450px;
+  float: left;
+  padding: 0 15px 20px 15px;
+}
+
+.account-instagram .photo .image-wrapper {
+  width: 450px;
+  margin: 0px 0px 10px 0px;
+}
+
+#single-photo-showcase .image-wrapper {
   width: 950px;
-  border: 8px solid #fff;
 }
 
-.image-wrapper img{
-  width:950px;
+.account-instagram .image-wrapper img {
+  width: 450px;
 }
 
 .description-wrapper{
@@ -138,12 +161,13 @@ header p{ display:none; }
   text-shadow: 0 1px 0px white;
 }
 
-h3{
+h3 {
  font-weight: normal;   
 }
 
 /* About */
-#about-page{
+
+#about-page {
   width: 650px;
   padding: 10px;
   font-size: 12px;
@@ -153,27 +177,33 @@ h3{
   text-shadow: 0 1px 0 white;
   text-align: justify;
 }
-#about-page h2{
-  display:inline-block;
-  font-size:18px;
-  padding:0px 0px 10px 0px;
-  margin:0px 0px 10px 0px;
-  border-bottom: 1px dotted #666;   
+
+#about-page h2 {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0px 0px 10px 0px;
 }
+
+.fb_edge_widget_with_comment {
+  position: relative;
+  padding: 20px 0px;
+}
+
 /* Links and Such */
-a{
+a {
   color: #333;
   text-decoration:none;
   padding-top:1px;
 }
-.selected{
+
+.selected {
   font-weight:bold;
 } 
 
 
 /* Footer & Footest*/
 
-footer{
+footer {
   font-weight:normal;
   color: #777;
   font-family: 'Helvetica Neue', Helvetica, Arial;
@@ -188,23 +218,28 @@ footer{
 }
 
 
-#footest{
+#footest {
   text-align: center;
   font-size: 0.8em;
-  width:950px;
-  margin: 20px auto;
-  padding: 8px 0px;
+  width: 950px;
+  margin: 0px auto 40px auto;
+  padding: 5px 0px;
 }
 
-.ffocused a{
+
+.ffocused {
+  padding:5px;
+}
+  
+  
+  
+.ffocused a {
   display:block;    
   font-family: 'Helvetica Neue', Helvetica, Arial;
   font-size:12px;
-  height:18px;
-  padding:1px 0px 5px;
+  height:14px;
   font-weight:bold;
   color:#777;
-    
 }
 
 .theme, .theme a {
@@ -214,8 +249,7 @@ footer{
   font-size: 11px;  
 }
 
-.theme a:hover{
+.theme a:hover {
   color:#4587d3;
-  background:none;
-    
+  background:none; 
 }
