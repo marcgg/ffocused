@@ -19,7 +19,7 @@ class FrontController < ApplicationController
   end
 
   def most_recent
-    @photos = Photo.where(["category_id IN (?)", @portfolio.categories.map(&:id)]).limited.ordered_by_date
+    @photos = Photo.where(["category_id IN (?)", @portfolio.categories.map(&:id)]).limited.activated.ordered_by_date
     respond_to do |format|
       format.html
       format.rss { render :layout => false }
