@@ -1,0 +1,10 @@
+<![CDATA[
+  <a class="img-wrapper-link" href="<%= single_photo_path(:slug => @portfolio.slug, :category_slug => photo.category.slug, :photo_id => photo.id) %>">
+  <%= image_tag photo.large_photo_url %>
+  <% unless photo.title.blank? && photo.description.blank? %>
+    <div class="description-wrapper">
+      <h3> <%= photo.title %></h3>
+      <p> <%= photo.description %></p>
+    </div>
+  <% end %>
+]]>

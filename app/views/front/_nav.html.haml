@@ -3,5 +3,10 @@
     .nav-link-wrapper{:class => ((!@category.nil? and @category.id == category.id) ? " selected " : "") + "category-order-#{i}"}
       = link_to category.title, showcase_path(:slug => @portfolio.slug, :category_slug => category.slug)
 
-  .nav-link-wrapper#about{:class => (@category.nil? ? "selected" : "")}
-    = link_to "About", about_path(:slug => @portfolio.slug)
+  - if @portfolio.recent_page
+    .nav-link-wrapper#recent{:class => (controller.action_name == "most_recent" ? "selected" : "")}
+      = link_to "Most Recent", most_recent_path(:slug => @portfolio.slug)
+
+  - if @portfolio.about_page
+    .nav-link-wrapper#about{:class => (controller.action_name == "about" ? "selected" : "")}
+      = link_to "About", about_path(:slug => @portfolio.slug)

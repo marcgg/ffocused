@@ -2,11 +2,16 @@
 %html
 %head
   %title= @portfolio.title
+
+  = stylesheet_link_tag "compiled/shared_front"
   - if @portfolio.theme_id.blank?
     %style{:media => "screen", :rel => "stylesheet", :type => "text/css"}= @portfolio.css
   - else
     = stylesheet_link_tag "themes/#{@portfolio.theme[:code]}"
-  = stylesheet_link_tag "compiled/shared_front"
+
+  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+
+  %link{:rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => most_recent_url(:slug => @portfolio.slug, :format => :rss)}
 
   %meta{:name => "title", :content => @portfolio.title}
   - if @portfolio.description.blank?
@@ -34,8 +39,6 @@
 
     #content= yield
 
-    #nav-bottom= render :partial => "/front/nav"
-
     - unless @portfolio.footer.blank?
       %footer
         = @portfolio.footer
@@ -53,6 +56,8 @@
           = raw @portfolio.theme[:user]
           under license
           = link_to "Creative Commons 'Attribution Non Commercial'", "http://creativecommons.org/licenses/by-nc/3.0/"
+
+  = javascript_include_tag  "front.js"
 
   = render :partial => "/shared/google_analytics" if Rails.env == "production"
 
