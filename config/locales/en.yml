@@ -224,6 +224,7 @@ en:
   activerecord:
     attributes:
       portfolio:
+        recent_page: "Show 'Most Recent' page"
         title: "Your Portfolio's Title*"
         description: "Description used in the 'about' page*"
         flickr_user_email: "Email used on Flickr*"

@@ -53,7 +53,8 @@ Prtfl::Application.routes.draw do
   match "/how_to/themes" => "faq#themes", :as => :themes_tutorial
 
   # FRONT
-  get "/:slug/about"            => "front#about",     :as => :about
-  get "/:slug(/:category_slug)" => "front#showcase",  :as => :showcase
+  get "/:slug/about"            => "front#about",       :as => :about
+  get "/:slug/most_recent"      => "front#most_recent", :as => :most_recent
+  get "/:slug(/:category_slug)" => "front#showcase",    :as => :showcase
   get "/:slug/:category_slug/:photo_id" => "front#single_photo", :as => :single_photo
 end

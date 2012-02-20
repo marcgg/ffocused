@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120220190612) do
+ActiveRecord::Schema.define(:version => 20120220191831) do
 
   create_table "beta_codes", :force => true do |t|
     t.string   "code"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20120220190612) do
     t.string   "google_analytics_code"
     t.boolean  "facebook_share",        :default => false
     t.boolean  "about_page",            :default => false
+    t.boolean  "recent_page",           :default => true
   end
 
   create_table "remote_accounts", :force => true do |t|

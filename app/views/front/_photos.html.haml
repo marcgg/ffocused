@@ -1,0 +1,3 @@
+#photos
+  - photos.each_with_index do |photo, i|
+    = render :partial => "photo", :locals => {:photo => photo, :i => i}
