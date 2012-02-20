@@ -15,6 +15,7 @@ class FrontController < ApplicationController
   end
 
   def about
+    redirect_to root_path unless @portfolio.about_page
   end
 
   private

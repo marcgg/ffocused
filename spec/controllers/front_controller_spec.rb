@@ -17,11 +17,18 @@ describe FrontController do
 
   describe "GET about" do
     it "should display the about page" do
+      @portfolio.update_attributes(:about_page => true)
       get "about", :slug => @portfolio.slug
       response.should be_success
       response.should render_template :about
       assigns(:category).should be_nil
       assigns(:portfolio).should == @portfolio
+    end
+
+    it "should not display the about page if deactivated" do
+      @portfolio.update_attributes(:about_page => false)
+      get "about", :slug => @portfolio.slug
+      response.should redirect_to root_path
     end
   end
 

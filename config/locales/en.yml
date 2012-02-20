@@ -228,6 +228,7 @@ en:
         description: "Description used in the 'about' page*"
         flickr_user_email: "Email used on Flickr*"
         slug: Slug*
+        about_page: "Show the 'about' page"
         google_analytics_code: "Google Analytics Code (e.g. UA-25132842-1)"
         facebook_share: "Show a Facebook like button on the about page"
 
