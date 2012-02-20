@@ -78,7 +78,7 @@ nav{
 }
 
 .image-wrapper{
-  background-color:#000;
+  background-color:#000 !important;
 }
 
 .description-wrapper{
