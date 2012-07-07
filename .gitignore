@@ -6,5 +6,6 @@ tmp/
 .DS_Store
 .rvmrc
 config/social_accounts.yml
+config/mailer.yml
 coverage
 database.yml
