@@ -13,7 +13,7 @@ class ForgottenPasswordsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     user = User.find_by_login_or_email(params[:user_session][:login])
     if user
-      user.enable_password_reset!
+      user.reset_perishable_token!
       Mailer.forgotten_password_instructions(user).deliver
       flash[:notice] = {:title => t("forgotten_passwords.create.success_title"), :text =>  t("forgotten_passwords.create.success_text")}
       redirect_to reset_password_url

@@ -4,6 +4,7 @@ Fabricator(:user) do
   email "marc@ffocused.com"
   password "hello"
   password_confirmation "hello"
+  perishable_token = ""
 end
 
 Fabricator(:beta_code) do

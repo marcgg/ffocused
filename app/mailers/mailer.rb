@@ -5,6 +5,6 @@ class Mailer < ActionMailer::Base
   def forgotten_password_instructions(user)
     @user = user
     @url = edit_forgotten_password_url(user.perishable_token)
-    mail(:to => user.email, :subject => t("forgotten_password.email.subject"))
+    mail(:to => user.email, :subject => t("forgotten_passwords.email.subject"))
   end
 end

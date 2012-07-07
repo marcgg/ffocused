@@ -6,3 +6,7 @@ end
 def setup_portfolio(portfolio)
   portfolio.remote_accounts << Fabricate(:remote_account)
 end
+
+def last_email
+  ActionMailer::Base.deliveries.last
+end

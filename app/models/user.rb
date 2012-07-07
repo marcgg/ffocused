@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  acts_as_authentic
+  acts_as_authentic do |c|
+    c.perishable_token_valid_for = 30.minutes
+  end
+
   attr_protected :is_admin
 
   has_one :portfolio, :dependent => :destroy
@@ -30,9 +33,5 @@ class User < ActiveRecord::Base
 
   def self.find_by_login_or_email(login)
      find_by_login(login) || find_by_email(login)
-  end
-
-  def enable_password_reset!
-    reset_perishable_token!
   end
 end
