@@ -8,6 +8,8 @@ en:
   or: or
   delete: Delete
   cancel: Cancel
+  send: Send
+  change_password: Change password
   by: "by %{name}"
   what_is_this: "What is this?"
 
@@ -31,6 +33,34 @@ en:
       copyright: "Copyright &copy %{year} fFocused"
     header:
       view_website: View your website
+
+  forgotten_passwords:
+    link_text: "Forgot your password?"
+    new:
+      help_text: "We will send you an email with instructions to reset your password"
+    create:
+      error_title: Sorry
+      error_text: "This login isn't correct"
+      success_title: Sent!
+      success_text: "You'll soon receive an email with instructions to reset your password"
+    edit:
+      error_title: Sorry
+      error_text: "We could not locate your account"
+      help_text: "Enter your new password"
+    update:
+      error_title: Sorry
+      error_text: "Passwords don't match"
+      success_title: Password changed
+      success_text: "Your password has been changed succesfully."
+    email:
+      subject: Reset your password
+      body: |
+        Hello %{name},<br/>
+        <br/>
+        You asked to reset your password on ffocused.com.<br/>
+        In order to do so, go to <a href="%{url}">%{url}</a> and follow the instructions.<br/>
+        <br/>
+        The <a href="http://www.ffocused.com">ffocused</a> team.
 
   user_sessions:
     create:

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_one :portfolio, :dependent => :destroy
   has_many :themes
 
-  validate :check_beta_code
+  validate :check_beta_code, :on => :create
 
   after_create :setup_portfolio
   after_create :burn_beta_code
@@ -30,5 +30,9 @@ class User < ActiveRecord::Base
 
   def self.find_by_login_or_email(login)
      find_by_login(login) || find_by_email(login)
+  end
+
+  def enable_password_reset!
+    reset_perishable_token!
   end
 end

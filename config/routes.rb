@@ -12,6 +12,9 @@ Prtfl::Application.routes.draw do
   match "/logout" => "user_sessions#destroy", :as => :logout
   match "/signup" => "users#new"
 
+  resources :forgotten_passwords, :only => [:create, :edit, :update]
+  match "/forgotten_passwords" => "forgotten_passwords#new", :as => :reset_password
+
   # HOME
   root :to => "home#index"
 
