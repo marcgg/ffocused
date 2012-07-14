@@ -5,5 +5,8 @@
   = f.label :password
   = f.password_field :password, :class => "text"
 
+  .forgotten-password-wrapper
+    = link_to t("forgotten_passwords.link_text"), reset_password_path
+
   .submit-wrapper
     = f.submit t("login")

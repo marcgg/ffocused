@@ -1,0 +1,13 @@
+= form_for @user, :url => forgotten_password_path(@user.perishable_token) do |f|
+  = t("forgotten_passwords.edit.help_text")
+
+  .form-error= @user.errors[:password].is_a?(Array) ? @user.errors[:password].first : @user.errors[:password]
+  = f.label :password
+  = f.password_field :password
+
+  .form-error= @user.errors[:password_confirmation].is_a?(Array) ? @user.errors[:password_confirmation].first : @user.errors[:password_confirmation]
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation
+
+  .submit-wrapper
+    = f.submit t("change_password")

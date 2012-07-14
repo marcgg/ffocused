@@ -1,11 +1,14 @@
 class User < ActiveRecord::Base
-  acts_as_authentic
+  acts_as_authentic do |c|
+    c.perishable_token_valid_for = 1.day
+  end
+
   attr_protected :is_admin
 
   has_one :portfolio, :dependent => :destroy
   has_many :themes
 
-  validate :check_beta_code
+  validate :check_beta_code, :on => :create
 
   after_create :setup_portfolio
   after_create :burn_beta_code

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120220191831) do
+ActiveRecord::Schema.define(:version => 20120707083005) do
 
   create_table "beta_codes", :force => true do |t|
     t.string   "code"
@@ -96,6 +96,11 @@ ActiveRecord::Schema.define(:version => 20120220191831) do
     t.boolean  "is_admin"
     t.string   "login"
     t.string   "beta_code"
+    t.string   "forgotten_password_token"
+    t.datetime "forgotten_password_expires_at"
+    t.string   "perishable_token",              :default => "", :null => false
   end
+
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end

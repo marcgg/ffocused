@@ -1,0 +1,14 @@
+development: &DEVELOPMENT
+  smtp_port: 25
+  smtp_server: XXX
+  smtp_login: XXX
+  smtp_password: XXX
+
+  domain: localhost
+
+test:
+  <<: *DEVELOPMENT
+
+all:
+  no_reply_email_address: no-reply@example.com
+  default_url_options_host: example.com

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def find_current_portfolio
     if current_user.nil?
-      logger.info "Invalid User Session"
+      logger.info t("invalid_session")
       redirect_to "/login"
     else
       @current_portfolio = current_user.portfolio
@@ -36,4 +36,12 @@ class ApplicationController < ActionController::Base
   def ensure_admin
     raise Exception unless current_user.is_admin?
   end
+
+  def require_no_user 
+     if current_user 
+       flash[:notice] = t("must_log_out")
+       redirect_to root_url 
+       return false 
+     end
+   end
 end
