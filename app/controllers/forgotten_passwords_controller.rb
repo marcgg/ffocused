@@ -1,7 +1,7 @@
 class ForgottenPasswordsController < ApplicationController
   skip_before_filter :find_current_portfolio
   skip_before_filter :ensure_portfolio_setup
-  before_filter :load_user_using_perishable_token, :only => [:edit, :update]
+  before_filter :load_user_using_perishable_token, only: [:edit, :update]
   before_filter :require_no_user  
   layout "back"
 

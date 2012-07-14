@@ -12,6 +12,8 @@ en:
   change_password: Change password
   by: "by %{name}"
   what_is_this: "What is this?"
+  invalid_session: Invalid User Session
+  must_log_out: You must be logged out to access this page
 
   home:
     shared:
@@ -35,23 +37,23 @@ en:
       view_website: View your website
 
   forgotten_passwords:
-    link_text: "Forgot your password?"
+    link_text: Forgot your password?
     new:
-      help_text: "We will send you an email with instructions to reset your password"
+      help_text: We will send you an email with instructions to reset your password
     create:
       error_title: Sorry
-      error_text: "This login isn't correct"
+      error_text: This login isn't correct
       success_title: Sent!
-      success_text: "You'll soon receive an email with instructions to reset your password"
+      success_text: You'll soon receive an email with instructions to reset your password
     edit:
       error_title: Sorry
-      error_text: "We could not locate your account"
-      help_text: "Enter your new password"
+      error_text: We could not locate your account
+      help_text: Enter your new password
     update:
       error_title: Sorry
-      error_text: "Passwords don't match"
+      error_text: Passwords don't match
       success_title: Password changed
-      success_text: "Your password has been changed succesfully."
+      success_text: Your password has been changed succesfully
     email:
       subject: Reset your password
       body: |

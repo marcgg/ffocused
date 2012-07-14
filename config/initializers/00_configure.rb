@@ -1,6 +1,10 @@
 # TODO: Improve how to define heroku as the main production environment
 USE_HEROKU = true
 
+mailer_config = YAML.load(File.open(File.join(Rails.root, "config", "mailer.yml")))
+MAILER_DEFAULT_OPTIONS_HOST   = mailer_config['all']['default_url_options_host']
+MAILER_NO_REPLY_EMAIL_ADDRESS = mailer_config['all']['no_reply_email_address']
+
 if USE_HEROKU and Rails.env == "production"
   puts "Loading Heroku variables"
 
@@ -55,8 +59,7 @@ else
   INSTAGRAM_CLIENT_SECRET       = env_config["instagram"]["client_secret"]
   INSTAGRAM_CALLBACK_URL        = env_config["instagram"]["callback_url"]
 
-  config = YAML.load(File.open(File.join(Rails.root, "config", "mailer.yml")))
-  env_config = config[Rails.env]
+  env_config = mailer_config[Rails.env]
 
   SMTP_PORT       = env_config["smtp_port"]
   SMTP_SERVER     = env_config["smtp_server"]

@@ -8,3 +8,7 @@ development: &DEVELOPMENT
 
 test:
   <<: *DEVELOPMENT
+
+all:
+  no_reply_email_address: no-reply@example.com
+  default_url_options_host: example.com

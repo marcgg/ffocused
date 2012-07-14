@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_authentic do |c|
-    c.perishable_token_valid_for = 30.minutes
+    c.perishable_token_valid_for = 1.day
   end
 
   attr_protected :is_admin
